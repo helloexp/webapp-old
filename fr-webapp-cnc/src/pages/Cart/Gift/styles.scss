@@ -1,0 +1,64 @@
+@import '~theme/base/spa';
+
+.giftSelector {
+  @include cartSpacing('l', 'x', false, 'b');
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+
+  .checkbox {
+    @extend %baseAPlus1;
+    flex: 1;
+  }
+
+  .heading {
+    @include spacing('m', 'x', false, 'b');
+    display: block;
+  }
+
+  .textWrap {
+    flex-basis: 75%;
+  }
+
+  .toolTipImg {
+    flex-basis: 25%;
+  }
+
+  .textImgWrap {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .titlePriceWrap {
+    @include cartSpacing('xxs', 'x', true, 'b');
+    align-items: center;
+    display: flex;
+    flex: 8;
+  }
+
+  .title {
+    @extend %baseBPlus1;
+  }
+
+  .price {
+    @extend %baseBPlus2;
+    @include spacing('xs', 'x', true, 'l');
+    color: $cyanDark;
+  }
+
+  .applePayMessage {
+    @extend %smallLeftPadding;
+    @include spacing('m', 'x', false, 't');
+    color: $red;
+    display: block;
+    font-size: $fontSizeMinus2;
+    line-height: 1.5em;
+    text-indent: -10px;
+
+    &::before {
+      content: '\203B';
+    }
+  }
+}

@@ -1,0 +1,180 @@
+@import '~theme/base/spa';
+
+%filterIconStyles {
+  display: block;
+  font-size: $logoMiniBagFontSize;
+}
+
+.filtersContainer {
+  .filtersHeader {
+    border-bottom: 1px solid $grey150;
+    display: flex;
+
+    .numberOfResults {
+      @include spacing('m', 'h', true);
+      @include spacing('s+m', 'v', true);
+      border-right: 1px solid $grey150;
+      flex: 1;
+      text-align: center;
+    }
+
+    .filtersToggler {
+      @include spacing('m', 'v', false);
+      align-self: stretch;
+      width: 20%;
+
+      .filtersIcon {
+        @extend %icomoonFilterDeselected;
+        color: $black900;
+        font-size: $logoMiniBagFontSize;
+        padding: 0;
+
+        &.applied {
+          color: $cyanDark;
+
+          &::before {
+            display: none;
+          }
+        }
+
+
+        &::before {
+          @extend %filterIconStyles;
+        }
+
+        .toggleText {
+          color: $black900;
+          font-size: $fontSizeMinus2;
+          font-weight: $fontWeightBold;
+        }
+      }
+    }
+  }
+
+  .filtersBody {
+    @include spacing('m', 'h', true);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .2s linear;
+
+    &.expanded {
+      @include cartSpacing('xl', 'x', true, 'b');
+      border-bottom: 1px solid $grey150;
+      max-height: 600px;
+    }
+
+    .filterCt {
+      @include cartSpacing('l', 'x', false, 't');
+      display: flex;
+
+      button {
+        span {
+          color: $textColorLight;
+        }
+      }
+
+      .filterIcon {
+        @include spacing('s', 'h', false);
+        color: $textColorLight;
+        font-size: $fontSizePlus35;
+
+        &::before {
+          @extend %icomoonMultiSelectDeselected;
+          vertical-align: middle;
+        }
+
+        &::after {
+          @extend %icoMoon;
+          color: $white;
+          content: '\e926';
+          display: none;
+          margin-left: -1em;
+        }
+      }
+
+      &.selected {
+        .filterIcon {
+          &::before {
+            @extend %icomoonFloatCircle;
+            color: $cyanDark;
+          }
+
+          &::after {
+            display: inline;
+            vertical-align: middle;
+          }
+        }
+      }
+    }
+
+    .filter {
+      @include cartSpacing('xxs', 'x', true, 't');
+      color: $gray67;
+      font-size: $header4FontSize;
+      padding-left: 0;
+      text-align: left;
+
+      &.selected {
+        color: $blueGreen;
+      }
+    }
+
+    .title {
+      @extend %baseBPlus1;
+      @include cartSpacing('l', 'x', false, 't');
+    }
+
+    .filterBtn {
+      @include cartSpacing('xl', 'x', false, 't');
+    }
+  }
+}
+
+.buttonLabeldefault {
+  @extend %baseBMinus2;
+  display: block;
+}
+
+.filterHeader {
+  align-items: center;
+  display: flex;
+}
+
+%selectedIconPositionStyle {
+  left: 0;
+  position: absolute;
+  top: 0;
+}
+
+.filterSelectedIcon {
+  font-size: $logoMiniBagFontSize;
+  height: $logoMiniBagFontSize;
+  margin: 0 auto;
+  position: relative;
+  width: $logoMiniBagFontSize;
+}
+
+.filterSelectedPath1 {
+  &::before {
+    @extend %icomoonFilterSelectedPath1;
+    @extend %selectedIconPositionStyle;
+    color: $blueGreen;
+  }
+}
+
+.filterSelectedPath2 {
+  &::before {
+    @extend %icomoonFilterSelectedPath2;
+    @extend %selectedIconPositionStyle;
+    color: $black;
+  }
+}
+
+.filterSelectedPath3 {
+  &::before {
+    @extend %icomoonFilterSelectedPath3;
+    @extend %selectedIconPositionStyle;
+    color: $white;
+  }
+}
+

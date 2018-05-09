@@ -1,0 +1,124 @@
+@import '~theme/base/spa';
+
+%toggle {
+  @include square(24);
+  align-items: center;
+  color: $textColorLight;
+  display: flex;
+  flex-shrink: 0;
+  font-size: $header0FontSize;
+  justify-content: center;
+}
+
+.panel {
+  @include spacing('m', 'x', false, 'b');
+
+  .panelHeader {
+    align-items: center;
+    display: flex;
+  }
+
+  .subTitle {
+    @include spacing('m', 'v', true);
+    color: $uniqloBlack001;
+    display: flex;
+    justify-content: center;
+  }
+
+  .topHeader {
+    @extend %baseBPlus1;
+  }
+
+  .title {
+    flex-grow: 1;
+
+    h6 {
+      @extend %baseBPlus1;
+      @include spacing('z', 'x', false, 'b');
+      @include spacing('z', 'v', true);
+      text-align: left;
+      text-transform: uppercase;
+
+      .centered {
+        @include spacing('m', 'v', true);
+        color: $greyGull;
+        text-align: center;
+      }
+
+      &.orderHeader {
+        @extend %baseB;
+      }
+    }
+  }
+
+  .toggleCell {
+    align-items: flex-end;
+    height: 100%;
+    justify-content: center;
+
+    .chevronDown {
+      @extend %icomoonChevronDown;
+    }
+
+    .chevronUp {
+      @extend %icomoonChevronUp;
+    }
+
+    .chevronDown,
+    .chevronUp {
+      @extend %toggle;
+    }
+  }
+
+  .panelBody {
+    max-height: 0;
+    overflow: hidden;
+
+
+    &.expanded {
+      font-size: $header4FontSize;
+      max-height: none;
+      overflow: initial;
+    }
+
+    address {
+      @include spacing('z', 'x', true, 'b');
+    }
+  }
+
+  &.frame {
+    @extend %frame;
+    @include spacing('l', 'v', true);
+    font-size: $header4FontSize;
+
+    &.smallerFramePadding {
+      @include spacing('s+m', 'v', true);
+    }
+
+    &.lighterBoxShadow {
+      @extend %dropShadowCheckout;
+    }
+  }
+
+  &.disabledPanel {
+    color: $textColorLight;
+    pointer-events: none;
+
+    * {
+      color: $textColorLight;
+    }
+  }
+
+  .spacingTitle {
+    @include spacing('m', 'x', false, 'b');
+  }
+
+  .editText {
+    font-size: $textAreaFocusOuterFont;
+    line-height: 0;
+  }
+
+  .editLabel {
+    @extend %baseBMinus1;
+  }
+}

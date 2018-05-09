@@ -1,0 +1,16 @@
+@import '~theme/base/main';
+
+.title {
+  @extend %baseBPlus1;
+  color: $darkBlack;
+  float: left;
+
+  &.collageTitle {
+    @extend %baseBPlus3;
+    font-size: 17px;
+  }
+}
+
+.anchor {
+  text-decoration: none;
+}

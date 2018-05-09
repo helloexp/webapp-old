@@ -1,0 +1,82 @@
+@import '~theme/base/spa';
+
+.content {
+  @include cartSpacing('s', 'x', false, 'b');
+
+  &.shippingOption {
+    @extend %dropShadowCheckout;
+    @include cartSpacing('l', 'v', true);
+  }
+
+  .enterAddress {
+    @extend %baseBPlus1;
+  }
+
+  .headIconWrap {
+    @include spacing('z', 'x', false, 't');
+    @include cartSpacing('xl', 'x', false, 'b');
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .contactYou {
+    @extend %baseA;
+    @include spacing('xs', 'x', false, 't');
+    @include spacing('m', 'x', false, 'b');
+    display: block;
+    font-weight: $fontWeightNormal;
+   }
+
+  .deliverySubmitBtn {
+    @include spacing('m', 'x', false, 't');
+  }
+
+  .formLockIcon {
+    @include spacing('z', 'x', false, 'r');
+  }
+}
+
+.checkBoxOption {
+  @include spacing('m', 'v', true);
+  align-items: center;
+  display: flex;
+
+  input {
+    height: 18px;
+    width: 18px;
+  }
+}
+
+.boldHeaderText {
+  @extend %baseBPlus1;
+}
+
+.checkBoxWrap {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.check {
+  @include spacing('z', 'x', false, 'b');
+}
+
+.infoIcon {
+  @extend %iconInfo;
+  @include spacing('z', 'h', true);
+  align-items: flex-start;
+  display: flex;
+  justify-content: flex-end;
+  width: 40px;
+
+  &::before {
+    color: $gray;
+    font-size: $header0FontSize;
+    vertical-align: middle;
+  }
+}
+
+.priceStyle {
+  @extend %baseBPlus1;
+  border-left: none;
+}

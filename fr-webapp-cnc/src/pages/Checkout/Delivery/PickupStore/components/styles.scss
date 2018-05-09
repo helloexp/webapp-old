@@ -1,0 +1,22 @@
+@import '~theme/base/spa';
+
+%confirmButton {
+  @include spacing('l', 'x', false, 't');
+  color: $fullWhite;
+  font-weight: $fontWeightHeavy;
+  text-transform: uppercase;
+}
+
+.confirm {
+  @extend %confirmButton;
+  background-color: $grey900;
+}
+
+.disableConfirm {
+  @extend %confirmButton;
+  background-color: $grey150;
+}
+
+.smallTopPadding {
+  @include cartSpacing('s', 'x', true, 't');
+}

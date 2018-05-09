@@ -1,0 +1,56 @@
+@import '~theme/base/spa';
+
+.shoppingBagHeader {
+  @include spacing('s+m', 'x', true, 'b');
+  align-items: center;
+  border-bottom: 1px solid $grey150;
+  color: $black900;
+  display: flex;
+  justify-content: space-between;
+
+  .bag {
+    @extend %baseBPlus1;
+  }
+
+  .goToCart {
+    @extend %baseAMinus2;
+    @include spacing('z', 'h', true);
+    align-self: flex-end;
+    background: transparent;
+    border: none;
+    position: relative;
+    width: fit-content;
+  }
+
+  .goToCartLabel {
+    cursor: pointer;
+    display: inline-block;
+    font-size: $textAreaFocusOuterFont;
+    font-weight: $fontWeightBold;
+    padding-bottom: 3px;
+    text-decoration: underline;
+  }
+
+  .logos {
+    @include spacing('z', 'h', true);
+    flex-flow: row;
+    justify-content: flex-start;
+  }
+
+  .guLogo {
+    height: 30px;
+    width: 30px;
+  }
+
+  .uqLogo {
+    height: 30px;
+    width: 70px;
+  }
+}
+
+:global(.guCart) {
+  .shoppingBagHeader {
+    border-bottom: none;
+    margin-bottom: 0;
+  }
+}

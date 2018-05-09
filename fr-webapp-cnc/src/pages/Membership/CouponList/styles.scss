@@ -1,0 +1,76 @@
+@import '~theme/base/spa';
+
+.couponList {
+  .buttonSpan {
+    background-color: $white;
+    white-space: nowrap;
+  }
+
+  .buttonSpan,
+  .viewMoreButtonSpan {
+    font-family: $fontFamilySansSerif;
+    font-size: $fontSizeBase;
+    font-weight: $fontWeightHeavy;
+  }
+
+  .coupon {
+    @include spacing('l', 'v', true);
+    @include spacing('m', 'h', true);
+    align-items: stretch;
+    border-top: 1px solid $grey150;
+    display: flex;
+
+    &.selected {
+      @include spacing('z', 'h', false);
+      border: 2px solid $blueGreen;
+
+      +.noBorder {
+        border-top: none;
+      }
+
+      +.selected {
+        border: 2px solid $blueGreen;
+      }
+    }
+
+    .action {
+      align-items: center;
+      border-left: 1px solid $grey150;
+      display: flex;
+      flex: 2;
+      font-weight: bold;
+    }
+  }
+
+  .selected {
+    @extend %listItemSelected;
+    @include spacing('l', 'v', true);
+    @include spacing('xxs', 'x', false, 'b');
+    @include spacing('z', 'h');
+    border: 2px solid $cyanDark;
+  }
+
+  .buttonContainer {
+    &.lastCoupon {
+      border-top: 1px solid $grey150;
+    }
+
+    .caretDown {
+      @include spacing('l', 'h', true);
+      border-top: 1px solid $grey150;
+      color: $textColorLight;
+
+      &::after {
+        @extend %uniIcon;
+        @include spacing('z', 'v', true);
+        content: '\e917';
+        float: right;
+        font-size: 10px;
+      }
+
+      .viewMoreButtonSpan {
+        color: $uniqloGrey001;
+      }
+    }
+  }
+}

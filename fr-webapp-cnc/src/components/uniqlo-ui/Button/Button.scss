@@ -1,0 +1,221 @@
+@import '~theme/base/spa';
+@import '~theme/base/main';
+
+.button {
+  @extend %baseB;
+  background-color: transparent;
+  border: none;
+  font-weight: $fontWeightMedium;
+  outline: none;
+  overflow: hidden;
+  width: 100%;
+
+  &.showOverflow {
+    overflow: visible;
+  }
+
+  &:disabled {
+    color: $disabledColor;
+    cursor: default;
+    opacity: .5;
+  }
+
+  &%default,
+  &.default {
+    background-color: $fullWhite;
+    color: $black900;
+    font-size: $fontSizePlus2;
+    text-shadow: none;
+    text-transform: uppercase;
+  }
+
+  &.bold {
+    font-weight: $fontWeightHeavy;
+  }
+
+  &.editButton {
+    @include spacing('z', 'h', true);
+    @include spacing('z', 'v', true);
+    background-color: transparent;
+    color: $black900;
+    font-weight: $fontWeightHeavy;
+    text-align: right;
+    text-decoration: underline;
+    text-shadow: none;
+    text-transform: uppercase;
+    width: auto;
+
+    :global(.btnLabel) {
+      font-size: 12px;
+      text-decoration: underline;
+    }
+  }
+
+  &.showmore {
+    @include spacing('z', 'h', true);
+    @include spacing('z', 'v', true);
+    background-color: transparent;
+    color: $grey400;
+    font-size: $header6FontSize;
+    text-align: right;
+    text-shadow: none;
+    width: auto;
+  }
+
+  &.primary {
+    @extend %default;
+    background-color: $red100;
+    color: $fullWhite;
+  }
+
+  &.secondary {
+    @extend %default;
+    background-color: $black900;
+    color: $fullWhite;
+    font-weight: $fontWeightHeavy;
+
+    &:disabled {
+      background-color: $grey150;
+      opacity: 1;
+    }
+  }
+
+  &.small {
+    @include spacing('xxs', 'v', true);
+  }
+
+  &.medium {
+    @include spacing('m', 'v', true);
+  }
+
+  &.large {
+    @include spacing('l', 'v', true);
+  }
+
+  &.overlayButton {
+    @include compPadding('s', true);
+    @include compPadding('s');
+    background-color: transparent;
+    border: 1px solid $grey400;
+    display: inline-block;
+    width: 100%;
+  }
+
+  .label {
+    font-size: 15px;
+  }
+
+  .anchor {
+    display: block;
+    line-height: 0;
+  }
+
+  // Passed from TileButton
+  &.tileButton {
+    @include translate(0, 0, 0);
+    border-radius: 0;
+    display: inline-block;
+    flex: 1px;
+    height: 100%;
+    padding: 0;
+    position: relative;
+    top: 0;
+  }
+
+  $paddingLeft: 10px;
+
+  @mixin closeButtonStyles($right, $top) {
+    position: absolute;
+    right: $right;
+    top: $top;
+  }
+
+  &.baseCloseButtonTextClass {
+    color: $black;
+    padding-left: $paddingLeft;
+  }
+
+  &.closeButton {
+    background-color: transparent;
+    display: inline-block;
+    float: right;
+    margin: 2px;
+    padding: 2px;
+    text-align: center;
+    width: auto;
+  }
+
+  &%bold {
+    font-weight: $fontWeightBold;
+  }
+
+  &.doneButton {
+    @extend %bold;
+    @include spacing('m', 'v');
+    background-color: $black;
+    color: $white;
+    height: 50px;
+  }
+
+  &.continueShopping {
+    @extend %bold;
+    border: 2px solid $black;
+  }
+
+  &.showAll {
+    @extend %bold;
+  }
+
+  &.apply {
+    @extend %bold;
+    background: $black;
+    color: $white;
+    height: 40px;
+    text-transform: uppercase;
+  }
+
+  &.placeOrderButton {
+    border-bottom: none;
+
+    &:disabled {
+      background: $grey150;
+      color: $white;
+      opacity: 1;
+    }
+  }
+
+  &.applyButton {
+    @include spacing('l', 'x', false, 't');
+
+    &:disabled {
+      background-color: $grey150;
+    }
+  }
+
+  &.boldWithBorder {
+    @extend %bold;
+    @include spacing('m', 'x', false, 't');
+    border: 1px solid $black900;
+  }
+
+  &.boldLight {
+    @extend %bold;
+    color: $black900;
+  }
+
+  &.noMarginButton {
+    @include spacing('z', 'a');
+  }
+
+  &.storeButton {
+    @extend %bold;
+    @include spacing('l', 'x', false, 't');
+    border: 1px solid $black900;
+  }
+
+  &.storeButtonXL {
+    @extend %bold;
+    @include cartSpacing('xl', 'x', false, 't');
+    border: 1px solid $black900;
+  }
+}

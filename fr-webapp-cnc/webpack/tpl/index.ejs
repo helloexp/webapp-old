@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="<%= htmlWebpackPlugin.options.lang %>">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <meta name="format-detection" content="telephone=no" />
+    <title>Uniqlo</title>
+    <link rel="shortcut icon" href="<%= htmlWebpackPlugin.options.public_path %>misc/favicon.ico" />
+    <style>
+      @font-face {
+        font-family: 'Uniqlo Icons';
+        src: url('<%= htmlWebpackPlugin.options.public_path %>fonts/unico.woff') format('woff'),
+        url('<%= htmlWebpackPlugin.options.public_path %>fonts/unico.ttf') format('truetype');
+      }
+
+      @font-face {
+        font-family: 'Uniqlo Pro Bold';
+        src: url('<%= htmlWebpackPlugin.options.public_path %>fonts/UniqloProBold.woff') format('woff'),
+        url('<%= htmlWebpackPlugin.options.public_path %>fonts/UniqloProBold.ttf') format('truetype'),
+        url('<%= htmlWebpackPlugin.options.public_path %>fonts/UniqloProBold.eot');
+      }
+
+      @font-face {
+        font-family: 'Uniqlo Pro Regular';
+        src: url('<%= htmlWebpackPlugin.options.public_path %>fonts/UniqloProRegular.woff') format('woff'),
+        url('<%= htmlWebpackPlugin.options.public_path %>fonts/UniqloProRegular.ttf') format('truetype'),
+        url('<%= htmlWebpackPlugin.options.public_path %>fonts/UniqloProRegular.eot');
+      }
+
+      @font-face {
+        font-family: 'Uniqlo Pro Light';
+        src: url('<%= htmlWebpackPlugin.options.public_path %>fonts/UniqloProLight.woff') format('woff'),
+        url('<%= htmlWebpackPlugin.options.public_path %>fonts/UniqloProLight.ttf') format('truetype'),
+        url('<%= htmlWebpackPlugin.options.public_path %>fonts/UniqloProLight.eot');
+      }
+
+      @font-face {
+        font-family: 'fontIcons';
+        src: url('<%= htmlWebpackPlugin.options.public_path %>fonts/fontIcons.woff') format('woff'),
+        url('<%= htmlWebpackPlugin.options.public_path %>fonts/fontIcons.ttf') format('truetype');
+      }
+
+      @font-face {
+        font-family: 'icomoon';
+        src:  url('<%= htmlWebpackPlugin.options.public_path %>fonts/icomoon.eot?fkm8kz');
+        src:  url('<%= htmlWebpackPlugin.options.public_path %>fonts/icomoon.eot?fkm8kz#iefix') format('embedded-opentype'),
+          url('<%= htmlWebpackPlugin.options.public_path %>fonts/icomoon.woff?fkm8kz') format('woff'),
+          url('<%= htmlWebpackPlugin.options.public_path %>fonts/icomoon.ttf?fkm8kz') format('truetype'),
+          url('<%= htmlWebpackPlugin.options.public_path %>fonts/icomoon.svg?fkm8kz#icomoon') format('svg');
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      #fp1 { font-family: 'Uniqlo Icons'; }
+      #fp2 { font-family: 'Uniqlo Pro Bold'; }
+      #fp3 { font-family: 'Uniqlo Pro Light'; }
+      #fp1,#fp2,#fp3 { visibility: none; }
+    </style>
+    <script type="text/javascript">
+      /* eslint-disable */
+      // img load script
+      function llimg(i) {var el=new Image(),src=i.getAttribute('data-fullimg'),p=i.getBoundingClientRect();if (p.width && p.top<999){el.onload=function() {i.src=src;}; el.src=src;}} Array.prototype.slice.call(document.querySelectorAll('img[data-fullimg]')).forEach(llimg);
+
+      // reload the page on browser back
+      function reloadOnBrowserBack(){window.onpageshow=function(o){o.persisted&&window.location.reload()}}
+
+      // Avoid the use of forward - back cache in Safari.
+      !navigator.userAgent.match("Chrome")&&navigator.userAgent.match("Safari")&&(reloadOnBrowserBack());
+
+      var __gyr = { "config": { "clientToken": "NEAL1FDMMB","site": "uniqlo.com"}};
+      var dataLayer = [{ 'device': 'smartphone' }];
+      // native app support when native_app=uqapp cookie is present
+      var UQ_MOBILEAPP_PRESENT = false;
+      var GU_MOBILEAPP_PRESENT = false;
+      window.document.cookie.split(';').forEach(function (c) {
+        var i = c.split('=');
+        if ('native_app' === i[0].trim()) {
+          UQ_MOBILEAPP_PRESENT = i[1].trim()==='uqapp';
+          GU_MOBILEAPP_PRESENT = i[1].trim()==='guapp';
+
+          if (UQ_MOBILEAPP_PRESENT || GU_MOBILEAPP_PRESENT) {
+            reloadOnBrowserBack();
+            (function (firstScript) {
+              var script = document.createElement('script');
+              script.type = 'text/javascript';
+              script.src = UQ_MOBILEAPP_PRESENT
+                ? '//asset.fastretailing.com/uq/jp/mobileapp/v4/mobileapp.js'
+                : '//asset.fastretailing.com/gu/jp/mobileapp/v1/mobileapp.js';
+              firstScript.parentNode.insertBefore(script, firstScript);
+            })(document.scripts[0]);
+          }
+        }
+      });
+    </script>
+    <%= htmlWebpackPlugin.options.tags %>
+  </head>
+  <body>
+    <div class="uniqloMobileApp" id="content"></div>
+    <div id="fp1">&nbsp;</div>
+    <div id="fp2">&nbsp;</div>
+    <div id="fp3">&nbsp;</div>
+
+    <!-- USERDIVE tag -->
+    <script>
+    (function(e,t,n,c,r,a,s,u){e.USERDIVEObject=r;e[r]=e[r]||function(){(e[r].queue=e[r].queue||[]).push(arguments)};
+    s=t.createElement(n);u=t.getElementsByTagName(n)[0];s.async=1;s.src=c;s.charset=a;u.parentNode.insertBefore(s,u)
+    })(window,document,"script","//harpoon3.userdive.com/static/UDTracker.js?"+(new Date).getTime(),"ud","UTF-8");
+    ud("create", "625-1342");
+    </script>
+    <!-- End USERDIVE tag -->
+  </body>
+</html>

@@ -1,0 +1,136 @@
+@import '~theme/base/spa';
+
+.container {
+  @include spacing('l', 'v', true);
+  @include spacing('z', 'h', false);
+
+  &.disabledSelector {
+    color: $textColorLight;
+    pointer-events: none;
+
+    * {
+      color: $textColorLight;
+    }
+  }
+
+  .title {
+    @include spacing('s', 'x', true, 'l');
+    flex: 1;
+  }
+
+  .lockIcon {
+    @extend %lockSymbol;
+    @include spacing('z', 'a');
+    font-size: $fontSizePlus35;
+  }
+
+  &.postPay,
+  &.payment {
+    @extend %dropShadowCheckout;
+    @include spacing('s', 'h', true);
+    @include cartSpacing('l', 'v', true);
+    @include cartSpacing('s', 'x', false, 'b');
+
+    .giftTitle {
+      @include spacing('s', 'x', true, 'r');
+      align-items: center;
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  &.postPay {
+    label {
+      width: 85%;
+
+      &::before {
+        display: block;
+      }
+
+      input + span {
+        width: 85%;
+      }
+    }
+  }
+
+  .displayFlex {
+    align-items: center;
+    display: flex;
+    font-weight: $fontWeightHeavy;
+    justify-content: space-between;
+  }
+}
+
+.inputContainer {
+  align-items: center;
+  display: flex;
+  flex: 12;
+  font-size: $header4FontSize;
+}
+
+.radio {
+  @include spacing('z', 'v', false);
+  @include spacing('s', 'x', false, 'r');
+  @include spacing('z', 'x', false, 'l');
+  height: 20px;
+  width: 20px;
+}
+
+.displayBlock {
+  display: block;
+
+  &.baseFont {
+    @extend %baseA;
+    @include cartSpacing('xs', 'x', true, 't');
+  }
+}
+
+.price {
+  @extend %baseUB;
+  @include spacing('xs', 'x', false, 'l');
+  @include spacing('xs', 'x', true, 'l');
+  border-left: 1px solid $textTitleColor;
+  color: $blueGreen;
+  font-weight: $fontWeightBold;
+
+  &.free {
+    font-size: $fontSizePlus1;
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+.radioLabel {
+  align-items: center;
+  display: flex;
+}
+
+.toolTip {
+  font-weight: $fontWeightNormal;
+}
+
+.lockToolTipLink {
+  color: $grey600;
+}
+
+.paymentLabel {
+  @extend %baseBPlus1;
+}
+
+.infoIcon {
+  @extend %iconInfo;
+  @include spacing('z', 'h', true);
+  align-items: flex-start;
+  display: flex;
+  justify-content: flex-end;
+  pointer-events: all;
+  width: 40px;
+
+  &::before {
+    color: $gray;
+    font-size: $header0FontSize;
+    vertical-align: middle;
+  }
+}

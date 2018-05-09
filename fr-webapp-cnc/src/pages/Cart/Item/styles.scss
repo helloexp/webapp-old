@@ -1,0 +1,164 @@
+@import '~theme/base/spa';
+
+%redBlockMessages {
+  color: $red;
+  display: block;
+}
+
+.cartItem {
+  @include cartSpacing('l', 'x', true, 't');
+  border-top: 1px solid $grey150;
+
+  &.firstCartItem {
+    @include spacing('z', 'x', true, 't');
+    border: none;
+
+    img {
+      height: auto;
+    }
+  }
+
+  .content {
+    @include spacing('l', 'x', false, 'b');
+    display: flex;
+
+    .image {
+      position: relative;
+
+      img {
+        position: absolute;
+        right: 10px;
+        top: 10px;
+      }
+
+      a {
+        img {
+          position: static;
+        }
+      }
+    }
+
+    .detail {
+      @include spacing('m', 'x', false, 'l');
+      flex: 1;
+
+      .tokenLabel {
+        @include spacing('s', 'v');
+
+        span {
+          color: $grey400;
+        }
+      }
+
+      .title {
+        @include spacing('z', 'a');
+        @include spacing('s', 'x', false, 'b');
+        font-size: $header6FontSize;
+        line-height: 16px;
+        text-align: left;
+        text-transform: uppercase;
+
+        a {
+          color: $grey900;
+          text-align: left;
+          text-decoration: none;
+        }
+      }
+
+      .priceBefore {
+        @include spacing('s', 'x', false, 'l');
+        color: $textColorLight;
+        font-size: $header6FontSize;
+        font-weight: $fontWeightNormal;
+        text-decoration: line-through;
+      }
+
+      .flags {
+        @include spacing('m', 'x', false, 't');
+        @include spacing('s', 'x', false, 'b');
+        display: block;
+        text-align: left;
+
+        .flag {
+          @include spacing('xs', 'x', true, 'r');
+          display: inline;
+          font-size: $fontSizeBase;
+
+          &::after {
+            @include spacing('xs', 'x', false, 'l');
+            background-color: $grey900;
+            border-radius: 50%;
+            content: ' ';
+            display: inline-block;
+            height: 5px;
+            margin-bottom: 2px;
+            width: 5px;
+          }
+
+          &:last-child {
+            &::after {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.multiBuyCartItem {
+  @include spacing('m', 'h', true);
+  @include spacing('l', 'x', true, 't');
+  border: 1px solid $grey150;
+
+  &.multiSkuBuyTop {
+    @include spacing('z', 'v');
+  }
+
+  &.multiSkuBuyBorderLess {
+    border-bottom: none;
+  }
+
+  &.multiBuyReduceMargin {
+    @include spacing('m', 'x', false, 't');
+  }
+
+  &.multibuyFirstItem {
+    @include spacing('l', 'x', false, 't');
+  }
+}
+
+.multiSkuBuyBottom {
+  border-top: none;
+}
+
+.promoMessage {
+  @extend %baseB;
+  @extend %redBlockMessages;
+}
+
+.topMessage {
+  @extend %baseB;
+  @extend %redBlockMessages;
+}
+
+.bottomMessage {
+  @extend %baseB;
+  @extend %redBlockMessages;
+  @include cartSpacing('l', 'x', false, 'b');
+}
+
+.addMoreLink {
+  @extend %baseB;
+  @include spacing('xs', 'x', false, 't');
+  @include spacing('s+m', 'x', false, 'b');
+  color: $black900;
+  display: block;
+  text-decoration: underline;
+}
+
+.notQualified {
+  @extend %baseB;
+  color: $uniqloBlack001;
+  display: block;
+}

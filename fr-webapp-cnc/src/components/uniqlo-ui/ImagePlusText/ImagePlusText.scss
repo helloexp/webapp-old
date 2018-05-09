@@ -1,0 +1,128 @@
+@import '~theme/base/main';
+
+@mixin getImageContainerSizeClass($aspectRatio) {
+  position: relative;
+  width: 100%;
+
+  &::before {
+    content: '';
+    display: block;
+    padding-top: #{$aspectRatio * 100 + '%'};  // 1:1 ratio
+  }
+}
+
+.imagePlusTextWrapper {
+  position: relative;
+
+  .singleMediaSpacer {
+    @include spacing('z', 'v');
+  }
+}
+
+.imagePlusText {
+  position: relative;
+
+  .imageTopBottomWrapper {
+    width: 100%;
+  }
+
+  &.horizontalPadding {
+    &.zeroHorizontalPadding {
+      @include spacing('z', 'h', true);
+    }
+  }
+
+  &.horizontal,
+  .splitHead {
+    display: flex;
+    flex: 1;
+
+    .splitContent {
+      @include spacing('xs', 'h');
+
+      &.twoCaption {
+        min-width: 50%;
+      }
+    }
+  }
+
+  .imageRightAndLeftTextContainer {
+    @include spacing('s+s', 'h', true);
+    flex: 1;
+
+    &.right {
+      @include spacing('m', 'x', true, 'l');
+      @include spacing('z', 'x', false, 'l');
+    }
+
+    &.left {
+      @include spacing('m', 'x', true, 'r');
+      @include spacing('z', 'x', false, 'r');
+    }
+  }
+
+  .largeProdTextContainer {
+    @include spacing('m', 'h', true);
+    @include spacing('s', 'x', false, 't');
+    @include spacing('l', 'x', false, 'b');
+  }
+
+  .link {
+    @extend %baseB;
+    @include spacing('s', 'v');
+    color: $textFullBlack;
+    display: block;
+    font-weight: $fontWeightHeavy;
+    text-decoration: underline;
+  }
+
+  .singleMediaTextContainer {
+    @include spacing('m', 'h');
+    @include spacing('l', 'x', true, 't');
+    @include spacing('m+l', 'x', false, 'b');
+  }
+
+  &.singleMediaBg {
+    background-color: $white;
+  }
+
+  &.inSwipableSingleMedia {
+    .singleMediaTextContainer {
+      @include spacing('z', 'x', false, 'b');
+    }
+  }
+
+  .imageContent {
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  .imageBottom {
+    @include spacing('s+s', 'x', true, 'b');
+    @include spacing('m', 'h', true);
+  }
+
+  .imageTop {
+    @include spacing('s+s', 'x', true, 't');
+    @include spacing('m', 'h', true);
+  }
+
+  .imageWrapper {
+    @extend %componentImage%sqs;
+
+    &.imageLastChild {
+      margin: 0;
+    }
+  }
+
+  .accordionHeader {
+    @extend %baseB;
+  }
+
+  .accordionText {
+    @extend %baseBMinus1;
+  }
+}

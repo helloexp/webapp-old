@@ -1,0 +1,13 @@
+@import '~theme/base/spa';
+
+.errorList {
+  @include spacing('m', 'x', true, 'l');
+  @include spacing('m', 'x', true, 'b');
+  @include spacing('z', 'x', false, 't');
+}
+
+.errorItem {
+  color: $redA500;
+  font-size: $header6FontSize;
+  line-height: 19.5px;
+}

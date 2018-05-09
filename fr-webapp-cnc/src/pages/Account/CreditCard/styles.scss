@@ -1,0 +1,25 @@
+@import '~theme/base/spa';
+
+.creditCardContainer {
+  @include spacing('m', 'h', true);
+  background-color: $grey250;
+
+  .creditHeading {
+    @extend %baseBPlus4;
+    @include spacing('z', 'x', false, 't');
+    @include spacing('l', 'x', true, 't');
+    @include spacing('m', 'x', false, 'b');
+  }
+
+  .backButton {
+    @extend %baseBPlus2;
+    border: 1px solid $black;
+    display: block;
+    font-weight: $fontWeightBold;
+  }
+}
+
+.content {
+  @extend %baseA;
+  @include spacing('l', 'x', false, 'b');
+}

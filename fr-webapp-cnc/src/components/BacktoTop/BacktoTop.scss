@@ -1,0 +1,39 @@
+@import '~theme/base/typography';
+@import '~theme/base/pure-mixins';
+@import '~theme/base/variables';
+
+.backToTopContainer {
+  @extend %baseAMinus3;
+  @include square('50');
+  align-items: center;
+  background-color: $white;
+  border-radius: 1px;
+  bottom: 113px; //( Fixed footer height + wiki fixed spacing)
+  box-shadow: 0 1px 4px 1px $darkBlack;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: fixed;
+  right: 0;
+  text-align: center;
+  text-transform: uppercase;
+  z-index: 1;
+
+  & .backToTopIcon {
+    font-size: $upArrowSize;
+  }
+
+  & .text {
+    @extend %baseC;
+    letter-spacing: 1.2px;
+  }
+
+  &.hide {
+    display: none;
+  }
+}
+
+.onTop {
+  z-index: 10;
+}

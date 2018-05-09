@@ -1,0 +1,202 @@
+@import '~theme/base/main';
+
+.dropdown {
+  position: relative;
+
+  %container,
+  .container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  %listContainer {
+    background-color: $white;
+    border: 1px solid $uniqloGrey001;
+    border-top: none;
+    box-sizing: border-box;
+    left: 0;
+    overflow-y: auto;
+    position: absolute;
+    width: 100%;
+    z-index: 10;
+  }
+
+  .hide {
+    display: none;
+  }
+
+  .show {
+    display: block;
+  }
+
+  &.selectInput {
+    .selectedContainer {
+      @extend %container;
+      @include spacing('xs', 'x', true, 't');
+      @include spacing('s', 'h', true);
+      border: 1px solid $uniqloGrey001;
+      border-radius: 2px;
+    }
+
+    .dropdownIcon {
+      font-size: 8px;
+    }
+
+    %itemList {
+      @extend %listContainer;
+      @include spacing('xs', 'x', true, 't');
+      @include spacing('s', 'h', true);
+      border-radius: 2px;
+      max-height: 95px;
+    }
+
+    .itemListDown {
+      @extend %itemList;
+    }
+
+    .itemListUp {
+      @extend %itemList;
+      border-top: 1px solid $uniqloGrey001;
+      bottom: 36px;
+    }
+  }
+
+  &.bottomBordered {
+    font-size: 14px;
+
+    .selectedContainer {
+      @extend %container;
+      @include spacing('s', 'x', true, 'l');
+      align-items: baseline;
+      border-bottom: 1px solid $uniqloGrey001;
+      box-sizing: border-box;
+    }
+
+    .dropdownIcon {
+      font-size: 8px;
+    }
+
+    .selectedSizeContainer {
+      line-height: 1;
+    }
+
+    .itemList {
+      @extend %listContainer;
+      max-height: 100px;
+    }
+
+    .itemListDown {
+      @extend %itemList;
+    }
+
+    .itemListUp {
+      @extend %itemList;
+      border-top: 1px solid $uniqloGrey001;
+      bottom: 36px;
+    }
+
+    .selectedItem {
+      @extend %baseAPlus1;
+      @include spacing('s', 'v', true);
+      @include spacing('xxs', 'x', true, 'r');
+      color: $uniqloGrey001;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+
+    }
+
+    .selectedMenuItem,
+    .dropdownItem {
+      @include spacing('s', 'x', true, 't');
+      @include spacing('s', 'h', true);
+    }
+
+    .dropdownItem {
+      &:last-child {
+        @include spacing('s', 'x', true, 'b');
+      }
+    }
+  }
+
+  &.colorSelect {
+    font-size: 14px;
+
+    .selectedContainer {
+      @extend %container;
+      align-items: baseline;
+      border-bottom: 1px solid $uniqloGrey001;
+    }
+
+    .dropdownIcon {
+      font-size: 8px;
+    }
+
+    .itemList {
+      @extend %listContainer;
+      @include spacing('s', 'x', true, 't');
+      max-height: 128px;
+    }
+
+    .itemListDown {
+      @extend %itemList;
+    }
+
+    .itemListUp {
+      @extend %itemList;
+      border-top: 1px solid $uniqloGrey001;
+      bottom: 40px;
+    }
+
+    .selectedColorContainer {
+      &.selectedColorDetails {
+        align-items: baseline;
+      }
+    }
+
+    .selectedItem {
+      @include spacing('xs', 'v', true);
+      align-items: flex-end;
+      display: flex;
+
+      .childWrapper {
+        @include spacing('xs', 'x', false, 'r');
+      }
+    }
+
+    .selectedMenuItem {
+      @include spacing('s', 'h', true);
+      align-items: flex-end;
+      display: flex;
+
+      .childWrapper {
+        @include spacing('xs', 'x', false, 'r');
+        @include spacing('s', 'x', false, 'b');
+        border: 1px solid $black;
+        display: inline-block;
+        padding: 1px;
+      }
+
+      > span {
+        @include spacing('s', 'x', false, 'b');
+      }
+    }
+
+    .dropdownItem {
+      @include spacing('s', 'h', true);
+      align-items: flex-end;
+      display: flex;
+
+      .childWrapper {
+        @include spacing('xs', 'x', false, 'r');
+        @include spacing('s', 'x', false, 'b');
+        display: inline-block;
+      }
+
+      > span {
+        @include spacing('s', 'x', false, 'b');
+      }
+    }
+  }
+}

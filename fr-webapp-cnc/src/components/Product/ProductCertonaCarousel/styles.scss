@@ -1,0 +1,16 @@
+@import '~theme/base/spa';
+
+.container {
+  .heading {
+    @extend %baseBPlus3;
+    @include spacing('m', 'h');
+    @include spacing('l', 'x', false, 'b');
+    @include spacing('m+l', 'x', true, 't');
+    font-size: $header7FontSize;
+  }
+
+  .smallSpacingHeading {
+    @include cartSpacing('l', 'x', false, 'b');
+    @include cartSpacing('xxl', 'x', true, 't');
+  }
+}

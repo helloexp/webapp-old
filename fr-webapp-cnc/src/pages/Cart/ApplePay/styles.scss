@@ -1,0 +1,195 @@
+@import '~theme/base/spa';
+
+%blockText {
+  display: block;
+}
+
+.applePayDrawerSubHeading,
+.applePayDrawerText,
+.notesOnUsingApplePayText {
+  @extend %blockText;
+}
+
+.applePayDrawerText {
+  @include cartSpacing('s', 'x', false, 'b');
+}
+
+.horizontalRule {
+  border-top: none;
+  color: $grey150;
+  margin: 0;
+}
+
+.applePayContactNumber,
+.appleWebsiteLink,
+.notesOnUsingApplePayText,
+.applePayDrawerText {
+  font-size: $fontSizeBase;
+  font-weight: $fontWeightLight;
+  line-height: 1.5em;
+}
+
+.applePayDrawerSubHeading {
+  @include cartSpacing('xl', 'x', false, 't');
+  @include cartSpacing('s', 'x', false, 'b');
+  font-size: $fontSizeBase;
+  font-weight: $fontWeightBold;
+  line-height: 1.6em;
+}
+
+.appleWebsiteLink {
+  @include cartSpacing('s', 'x', false, 'b');
+  border-bottom: 1px solid $uniqloBlack001;
+  color: $uniqloBlack001;
+}
+
+.imageWrap {
+  display: inline-flex;
+  height: $creditCardImageHeight;
+}
+
+.notesOnUsingApplePayText {
+  @include cartSpacing('l', 'x', true, 'b');
+}
+
+.applePayContact {
+  align-items: center;
+  display: flex;
+}
+
+.applePayContactHeading {
+  @include spacing('xs', 'x', true, 'r');
+  color: $uniqloBlack001;
+  font-size: $fontSizeBase;
+  font-weight: $fontWeightBold;
+}
+
+.applePayButton {
+  @extend %baseB;
+  @include cartSpacing('l', 'x', false, 't');
+  @include cartSpacing('s', 'x', false, 'b');
+  font-size: $header1FontSize;
+  height: $applePayButtonHeight;
+}
+
+.applePayBlackButton {
+  -apple-pay-button-type: buy; // sass-lint:disable-line no-misspelled-properties
+  -webkit-appearance: -apple-pay-button; // sass-lint:disable-line no-vendor-prefixes
+  background-image: -webkit-named-image(apple-pay-logo-black); // sass-lint:disable-line no-vendor-prefixes function-name-format
+}
+
+.applePayButtonVer1 {
+  background-color: $black;
+  background-image: -webkit-named-image(apple-pay-logo-white); // sass-lint:disable-line no-vendor-prefixes function-name-format
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: 100% 60%;
+  border-radius: 5px;
+  box-sizing: border-box;
+  color: $white;
+  display: inline-block;
+  max-height: $applePayButtonHeight;
+  min-height: $applePayButtonHeight;
+  min-width: 200px;
+  padding: 0;
+}
+
+.termsAndConditions {
+  @include spacing('m', 'x', false, 'b');
+  color: $gray500;
+  font-size: $fontSizeMinus1;
+}
+
+.checkOrderHistory {
+  @include cartSpacing('l', 'x', false, 'b');
+  color: $uniqloBlack001;
+  font-size: $fontSizeBase;
+}
+
+.aboutApplePay {
+  color: $uniqloBlack001;
+}
+
+.aboutApplePayContainer {
+  @include cartSpacing('m', 'x', false, 'b');
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.wrapInfoIcon {
+  align-items: flex-start;
+  display: flex;
+  width: 24px;
+}
+
+.infoIcon {
+  @extend %icomoonInfo;
+  @include spacing('z', 'h', true);
+  line-height: 1;
+  margin: 0;
+  vertical-align: middle;
+
+  &::before {
+    color: $gray;
+    font-size: $header0FontSize;
+  }
+
+  &::after {
+    font-size: $fontSizePlus35;
+    margin-left: -1em;
+    vertical-align: top;
+  }
+
+  &.noRightMargin {
+    @include spacing('z', 'x', false, 'r');
+  }
+}
+
+.termsAndConditionsLink {
+  border-bottom: 1px solid $gray500;
+  color: $gray500;
+}
+
+.checkOrderHistoryLink {
+  border: none;
+  color: $uniqloBlack001;
+  cursor: pointer;
+  display: inline-flex;
+  font-weight: $fontWeightBold;
+  padding: 0;
+  text-decoration: underline;
+  width: auto;
+}
+
+.modalOpen {
+  height: 100%;
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+}
+
+.infoIconButton {
+  margin: 0;
+  padding: 0;
+}
+
+.giftCardApplyMessage {
+  @include spacing('s', 'x', false, 't');
+  display: block;
+  font-size: $fontSizeBase;
+}
+
+.applePayFAQLinkContainer {
+  @include cartSpacing('xl', 'x', false, 'b');
+
+  .applePayFAQLink {
+    border-bottom: 1px solid $black900;
+    display: inline-block;
+  }
+
+  .applePayFAQMessage {
+    @extend %baseA;
+    display: inline-block;
+  }
+}

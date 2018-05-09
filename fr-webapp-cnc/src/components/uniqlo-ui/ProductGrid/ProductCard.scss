@@ -1,0 +1,105 @@
+@import '~theme/base/spacing';
+@import '~theme/base/main';
+
+.productCard {
+  align-items: flex-start;
+
+  &%singleSm,
+  &.singleSm {
+    @include spacing('l', 'x', true, 'b');
+    flex-flow: row nowrap;
+
+    > div {
+      width: 49%;
+    }
+
+    &.singleSmall {
+      > div {
+        &:first-child {
+          @extend %productImage%p70;
+          height: 100%;
+        }
+      }
+    }
+  }
+
+  &.singleSmOutfit {
+    @extend %singleSm;
+    @include spacing('z', 'x', true, 'b');
+  }
+}
+
+.gridLinkWrapper {
+  height: 100%;
+}
+
+%twoCol,
+.twoCol {
+  box-sizing: border-box;
+  display: block;
+  flex-direction: column;
+  flex-grow: 0;
+  flex-shrink: 0;
+  height: 100%;
+}
+
+.twoColPl {
+  @extend %twoCol;
+}
+
+%cartCard {
+  flex-flow: row nowrap;
+
+  > div {
+    @media screen and (max-width: 320px) {
+      flex-basis: 35%;
+    }
+
+    &:first-child {
+      flex-basis: 31.1%;
+    }
+
+    &:last-child {
+      flex-basis: 68.9%;
+      max-width: 68.9%;
+      overflow: visible;
+    }
+  }
+}
+
+.singleSmPl {
+  @extend %singleSm;
+  @include spacing('z', 'x', true, 'b');
+}
+
+%singleLg,
+.singleLg {
+  align-items: stretch;
+  display: block;
+  flex-flow: column;
+  height: 100%;
+}
+
+.singleLgPl {
+  @extend %singleLg;
+}
+
+.singleSmCart {
+  @extend %cartCard;
+  overflow: visible;
+}
+
+.lgProduct {
+  @extend %singleLg;
+  @extend %carouselL;
+}
+
+.lgProduct1e1 {
+  @extend %singleLg;
+  @extend %carouselLargeSquare;
+}
+
+.lgProduct3e4 {
+  @extend %singleLg;
+  @extend %carouselLargeRect;
+}

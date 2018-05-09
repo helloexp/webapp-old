@@ -1,0 +1,56 @@
+@import '~theme/base/spa';
+
+.wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.label {
+  @include spacing('s', 'x', false, 'b');
+
+  &.inactive {
+    font-size: $fontSizePlus1;
+    top: 27px;
+  }
+}
+
+.inputWrapper {
+  @include spacing('s', 'x', true, 'b');
+  align-items: center;
+  display: flex;
+  position: relative;
+}
+
+.input {
+  @extend %baseAPlus1;
+  background-color: transparent;
+  border: none;
+  caret-color: $blueGreen; // sass-lint:disable-line no-misspelled-properties
+  color: $black900;
+  display: block;
+  flex-grow: 1;
+  height: $inputHeight;
+  outline: none;
+  padding: 0 5px 0 0;
+  transition: all .2s;
+  width: 100%;
+  z-index: 1;
+
+  &::-webkit-input-placeholder { // sass-lint:disable-line no-vendor-prefixes
+    color: $gray67;
+  }
+}
+
+.unit {
+  align-items: center;
+  color: $gray67;
+  display: flex;
+  flex-shrink: 0;
+  font-size: $fontSizePlus1;
+  height: $inputHeight;
+  transition: color .2s;
+
+  &.active {
+    color: inherit;
+  }
+}

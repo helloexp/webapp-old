@@ -1,0 +1,1208 @@
+@import "layout";
+
+$iconSize: 24px;
+$desktopGutter: 24px;
+$desktopKeylineIncrement: 64px;
+
+//vertical spacing same across all bps, bundle together, no media query required
+%zeroTopMargin {
+  margin-top: 0;
+}
+
+%zeroTopPadding {
+  padding-top: 0;
+}
+
+%zeroBottomMargin {
+  margin-bottom: 0;
+}
+
+%zeroBottomPadding {
+  padding-bottom: 0;
+}
+
+%zeroVtSpacing {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+%zeroVtSpacingP {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+%tinyTopMargin {
+  margin-top: 1px;
+}
+
+%tinyTopPadding {
+  padding-top: 1px;
+}
+
+%tinyBottomMargin {
+  margin-bottom: 1px;
+}
+
+%tinyBottomPadding {
+  padding-bottom: 1px;
+}
+
+%tinyVtSpacing {
+  margin-top: 1px;
+  margin-bottom: 1px;
+}
+
+%tinyVtSpacingP {
+  padding-top: 1px;
+  padding-bottom: 1px;
+}
+
+%extraSmallTopMargin {
+  margin-top: 5px;
+}
+
+%extraSmallTopPadding {
+  padding-top: 5px;
+}
+
+%extraSmallBottomMargin {
+  margin-bottom: 5px;
+}
+
+%extraSmallBottomPadding {
+  padding-bottom: 5px;
+}
+
+%extraSmallVtSpacing {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+%extraSmallVtSpacingP {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+%smallTopMargin {
+  margin-top: 10px;
+}
+
+%smallTopPadding {
+  padding-top: 10px;
+}
+
+%smallBottomMargin {
+  margin-bottom: 10px;
+}
+
+%smallBottomPadding {
+  padding-bottom: 10px;
+}
+
+%smallVtSpacing {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+%smallVtSpacingP {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+//t+t+s
+%tinyPlusTinyPlusSmallTopMargin{
+  margin-top: 10px;
+}
+
+%tinyPlusTinyPlusSmallBottomMargin{
+  margin-bottom: 10px;
+}
+
+%tinyPlusTinyPlusSmallVtSpacing{
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+
+%tinyPlusTinyPlusSmallTopPadding{
+  padding-top: 10px;
+}
+
+%tinyPlusTinyPlusSmallBottomPadding{
+  padding-bottom: 10px;
+}
+
+
+%tinyPlusTinyPlusSmallVtSpacingP{
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+
+%smallPlusMediumTopMargin {
+  margin-top: 25px;
+}
+
+%smallPlusMediumTopPadding {
+  padding-top: 25px;
+}
+
+%smallPlusMediumBottomMargin {
+  margin-bottom: 25px;
+}
+
+%smallPlusMediumBottomPadding {
+  padding-bottom: 25px;
+}
+
+%smallPlusMediumVtSpacing {
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+%smallPlusMediumVtSpacingP {
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+
+%mediumPlusLargeTopMargin {
+  margin-top: 45px;
+}
+
+%mediumPlusLargeTopPadding {
+  padding-top: 45px;
+}
+
+%mediumPlusLargeBottomMargin {
+  margin-bottom: 45px;
+}
+
+%mediumPlusLargeBottomPadding {
+  padding-bottom: 45px;
+}
+
+%mediumPlusLargeVtSpacing {
+  margin-top: 45px;
+  margin-bottom: 45px;
+}
+
+%mediumPlusLargeVtSpacingP {
+  padding-top: 45px;
+  padding-bottom: 45px;
+}
+
+%mediumTopMargin {
+  margin-top: 15px;
+}
+
+%mediumTopPadding {
+  padding-top: 15px;
+}
+
+%mediumBottomMargin {
+  margin-bottom: 15px;
+}
+
+%mediumBottomPadding {
+  padding-bottom: 15px;
+}
+
+%mediumVtSpacing {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+%mediumVtSpacingP {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+%smallPlusSmallTopMargin {
+  margin-top: 20px;
+}
+
+%smallPlusSmallTopPadding {
+  padding-top: 20px;
+}
+
+%smallPlusSmallBottomMargin {
+  margin-bottom: 20px;
+}
+
+%smallPlusSmallBottomPadding {
+  padding-bottom: 20px;
+}
+
+%smallPlusSmallVtSpacing {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+%smallPlusSmallVtSpacingP {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+%smallPlusLargeTopMargin {
+  margin-top: 40px;
+}
+
+%smallPlusLargeTopPadding {
+  padding-top: 40px;
+}
+
+%smallPlusLargeBottomMargin {
+  margin-bottom: 40px;
+}
+
+%smallPlusLargeBottomPadding {
+  padding-bottom: 40px;
+}
+
+%smallPlusLargeVtSpacing {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+%smallPlusLargeVtSpacingP {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+
+%largeTopMargin {
+  margin-top: 30px;
+}
+
+%largeTopPadding {
+  padding-top: 30px;
+}
+
+%largeBottomMargin {
+  margin-bottom: 30px;
+}
+
+%largeBottomPadding {
+  padding-bottom: 30px;
+}
+
+%largeVtSpacing {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+%largeVtSpacingP {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+%largePlusLargeTopMargin {
+  margin-top: 60px;
+}
+
+%largePlusLargeTopPadding {
+  padding-top: 60px;
+}
+
+%largePlusLargeBottomMargin {
+  margin-bottom: 60px;
+}
+
+%largePlusLargeBottomPadding {
+  padding-bottom: 60px;
+}
+
+%largePlusLargeVtSpacing {
+  margin-top: 60px;
+  margin-bottom: 60px;
+}
+
+%largePlusLargeVtSpacingP {
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+%verySmallVtSpacingP {
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+%mediumLargeBottomPadding {
+  padding-bottom: 70px;
+}
+
+%extraLargeTopPadding {
+  padding-top: 120px;
+}
+
+//horizontal spacing differs across device sizes
+//tiny is universal
+%zeroLeftPadding {
+  padding-left: 0;
+}
+
+%zeroLeftMargin {
+  margin-left: 0;
+}
+
+%zeroRightPadding {
+  padding-right: 0;
+}
+
+%zeroRightMargin {
+  margin-right: 0;
+}
+
+%zeroHzSpacing {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+%zeroHzSpacingP {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+%tinyLeftPadding {
+  padding-left: 1px;
+}
+
+%tinyLeftMargin {
+  margin-left: 1px;
+}
+
+%tinyRightPadding {
+  padding-right: 1px;
+}
+
+%tinyRightMargin {
+  margin-right: 1px;
+}
+
+%tinyHzSpacing {
+  margin-left: 1px;
+  margin-right: 1px;
+}
+
+%tinyHzSpacingP {
+  padding-left: 1px;
+  padding-right: 1px;
+}
+
+@include media('<=smallDevice') {
+  %extraSmallLeftPadding {
+    padding-left: 4px;
+  }
+
+  %extraSmallLeftMargin {
+    margin-left: 4px;
+  }
+
+  %extraSmallRightPadding {
+    padding-right: 4px;
+  }
+
+  %extraSmallRightMargin {
+    margin-right: 4px;
+  }
+
+  %extraSmallHzSpacing {
+    margin-left: 4px;
+    margin-right: 4px;
+  }
+
+  %extraSmallHzSpacingP {
+    padding-left: 4px;
+    padding-right: 4px;
+  }
+
+  %smallLeftPadding {
+    padding-left: 8px;
+  }
+
+  %smallLeftMargin {
+    margin-left: 8px;
+  }
+
+  %smallRightPadding {
+    padding-right: 8px;
+  }
+
+  %smallRightMargin {
+    margin-right: 8px;
+  }
+
+  %smallHzSpacing {
+    margin-left: 8px;
+    margin-right: 8px;
+  }
+
+  %smallHzSpacingP {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+
+  //t+t+t 0.93%
+  %tinyPlusTinyPlusTinyLeftMargin{
+    margin-left: 3px;
+  }
+
+  //t+t+s 3.12%
+  %tinyPlusTinyPlusSmallLeftMargin{
+    margin-left: 10px;
+  }
+
+  %tinyPlusTinyPlusSmallRightMargin{
+    margin-right: 10px;
+  }
+
+  %tinyPlusTinyPlusSmallHzSpacing{
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  %tinyPlusTinyPlusSmallLeftPadding{
+    padding-left: 10px;
+  }
+
+  %tinyPlusTinyPlusSmallRightPadding{
+    padding-right: 10px;
+  }
+
+  %tinyPlusTinyPlusSmallHzSpacingP{
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  %mediumLeftPadding {
+    padding-left: 12px;
+  }
+
+  %mediumLeftMargin {
+    margin-left: 12px;
+  }
+
+  %mediumRightPadding {
+    padding-right: 12px;
+  }
+
+  %mediumRightMargin {
+    margin-right: 12px;
+  }
+
+  %mediumHzSpacing {
+    margin-left: 12px;
+    margin-right: 12px;
+  }
+
+  %mediumHzSpacingP {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  %smallPlusSmallLeftPadding {
+    padding-left: 16px;
+  }
+
+  %smallPlusSmallLeftMargin {
+    margin-left: 16px;
+  }
+
+  %smallPlusSmallRightPadding {
+    padding-right: 16px;
+  }
+
+  %smallPlusSmallRightMargin {
+    margin-right: 16px;
+  }
+
+  %smallPlusSmallHzSpacing {
+    margin-left: 16px;
+    margin-right: 16px;
+  }
+
+  %smallPlusSmallHzSpacingP {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  %smallPlusMediumLeftPadding {
+    padding-left: 20px;
+  }
+
+  %smallPlusMediumLeftMargin {
+    margin-left: 20px;
+  }
+
+  %smallPlusMediumRightPadding {
+    padding-right: 20px;
+  }
+
+  %smallPlusMediumRightMargin {
+    margin-right: 20px;
+  }
+
+  %smallPlusMediumHzSpacing {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+  %smallPlusMediumHzSpacingP {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  %largeLeftPadding {
+    padding-left: 24px;
+  }
+
+  %largeLeftMargin {
+    margin-left: 24px;
+  }
+
+  %largeRightPadding {
+    padding-right: 24px;
+  }
+
+  %largeRightMargin {
+    margin-right: 24px;
+  }
+
+  %smallPlusMediumTopSpacing {
+    padding-top: 25px;
+  }
+
+  %largeHzSpacing {
+    margin-left: 24px;
+    margin-right: 24px;
+  }
+
+  %largeHzSpacingP {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  %smallPlusLargeLeftPadding {
+    padding-left: 32px;
+  }
+
+  %smallPlusLargeLeftMargin {
+    margin-left: 32px;
+  }
+
+  %smallPlusLargeRightPadding {
+    padding-right: 32px;
+  }
+
+  %smallPlusLargeRightMargin {
+    margin-right: 32px;
+  }
+
+  %smallPlusLargeHzSpacing {
+    margin-left: 32px;
+    margin-right: 32px;
+  }
+
+  %smallPlusLargeHzSpacingP {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+
+  %largePlusLargeLeftPadding {
+    padding-left: 48px;
+  }
+
+  %largePlusLargeLeftMargin {
+    margin-left: 48px;
+  }
+
+  %largePlusLargeRightPadding {
+    padding-right: 48px;
+  }
+
+  %largePlusLargeRightMargin {
+    margin-right: 48px;
+  }
+
+  %largePlusLargeHzSpacing {
+    margin-left: 48px;
+    margin-right: 48px;
+  }
+
+  %largePlusLargeHzSpacingP {
+    padding-left: 48px;
+    padding-right: 48px;
+  }
+}
+
+@include media('>smallDevice', '<=largeDevice') {
+  %extraSmallLeftPadding {
+    padding-left: 5px;
+  }
+
+  %extraSmallLeftMargin {
+    margin-left: 5px;
+  }
+
+  %extraSmallRightPadding {
+    padding-right: 5px;
+  }
+
+  %extraSmallRightMargin {
+    margin-right: 5px;
+  }
+
+  %extraSmallHzSpacing {
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+
+  %extraSmallHzSpacingP {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+
+  %smallLeftPadding {
+    padding-left: 10px;
+  }
+
+  %smallLeftMargin {
+    margin-left: 10px;
+  }
+
+  %smallRightPadding {
+    padding-right: 10px;
+  }
+
+  %smallRightMargin {
+    margin-right: 10px;
+  }
+
+  %smallHzSpacing {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  %smallHzSpacingP {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  //t+t+t 0.93%
+  %tinyPlusTinyPlusTinyLeftMargin{
+    margin-left: 4px;
+  }
+
+  //t+t+s 3.12%
+  %tinyPlusTinyPlusSmallLeftMargin{
+    margin-left: 12px;
+  }
+
+  %tinyPlusTinyPlusSmallRightMargin{
+    margin-right: 12px;
+  }
+
+  %tinyPlusTinyPlusSmallHzSpacing{
+    margin-left: 12px;
+    margin-right: 12px;
+  }
+
+  %tinyPlusTinyPlusSmallLeftPadding{
+    padding-left: 12px;
+  }
+
+  %tinyPlusTinyPlusSmallRightPadding{
+    padding-right: 12px;
+  }
+
+  %tinyPlusTinyPlusSmallHzSpacingP{
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  %mediumLeftPadding {
+    padding-left: 15px;
+  }
+
+  %mediumLeftMargin {
+    margin-left: 15px;
+  }
+
+  %mediumRightPadding {
+    padding-right: 15px;
+  }
+
+  %mediumRightMargin {
+    margin-right: 15px;
+  }
+
+  %mediumHzSpacing {
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+
+  %mediumHzSpacingP {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  %smallPlusSmallLeftPadding {
+    padding-left: 20px;
+  }
+
+  %smallPlusSmallLeftMargin {
+    margin-left: 20px;
+  }
+
+  %smallPlusSmallRightPadding {
+    padding-right: 20px;
+  }
+
+  %smallPlusSmallRightMargin {
+    margin-right: 20px;
+  }
+
+  %smallPlusSmallHzSpacing {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+  %smallPlusSmallHzSpacingP {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  %smallPlusMediumLeftPadding {
+    padding-left: 25px;
+  }
+
+  %smallPlusMediumLeftMargin {
+    margin-left: 25px;
+  }
+
+  %smallPlusMediumRightPadding {
+    padding-right: 25px;
+  }
+
+  %smallPlusMediumRightMargin {
+    margin-right: 25px;
+  }
+
+  %smallPlusMediumHzSpacing {
+    margin-left: 25px;
+    margin-right: 25px;
+  }
+
+  %smallPlusMediumHzSpacingP {
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+
+  %smallPlusMediumTopSpacing {
+    padding-top: 30px;
+  }
+
+  %largeLeftPadding {
+    padding-left: 30px;
+  }
+
+  %largeLeftMargin {
+    margin-left: 30px;
+  }
+
+  %largeRightPadding {
+    padding-right: 30px;
+  }
+
+  %largeRightMargin {
+    margin-right: 30px;
+  }
+
+  %largeHzSpacing {
+    margin-left: 30px;
+    margin-right: 30px;
+  }
+
+  %largeHzSpacingP {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  %smallPlusLargeLeftPadding {
+    padding-left: 40px;
+  }
+
+  %smallPlusLargeLeftMargin {
+    margin-left: 40px;
+  }
+
+  %smallPlusLargeRightPadding {
+    padding-right: 40px;
+  }
+
+  %smallPlusLargeRightMargin {
+    margin-right: 40px;
+  }
+
+  %smallPlusLargeHzSpacing {
+    margin-left: 40px;
+    margin-right: 40px;
+  }
+
+  %smallPlusLargeHzSpacingP {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  %largePlusLargeLeftPadding {
+    padding-left: 60px;
+  }
+
+  %largePlusLargeLeftMargin {
+    margin-left: 60px;
+  }
+
+  %largePlusLargeRightPadding {
+    padding-right: 60px;
+  }
+
+  %largePlusLargeRightMargin {
+    margin-right: 60px;
+  }
+
+  %largePlusLargeHzSpacing {
+    margin-left: 60px;
+    margin-right: 60px;
+  }
+
+  %largePlusLargeHzSpacingP {
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+}
+
+@include media('>largeDevice') {
+  %extraSmallLeftPadding {
+    padding-left: 5.5020px;
+  }
+
+  %extraSmallLeftMargin {
+    margin-left: 5.5020px;
+  }
+
+  %extraSmallRightPadding {
+    padding-right: 5.5020px;
+  }
+
+  %extraSmallRightMargin {
+    margin-right: 5.5020px;
+  }
+
+  %extraSmallHzSpacing {
+    margin-left: 5.5020px;
+    margin-right: 5.5020px;
+  }
+
+  %extraSmallHzSpacingP {
+    padding-left: 5.5020px;
+    padding-right: 5.5020px;
+  }
+
+  %smallLeftPadding {
+    padding-left: 11.040px;
+  }
+
+  %smallLeftMargin {
+    margin-left: 11.040px;
+  }
+
+  %smallRightPadding {
+    padding-right: 11.040px;
+  }
+
+  %smallRightMargin {
+    margin-right: 11.040px;
+  }
+
+  %smallHzSpacing {
+    margin-left: 11.040px;
+    margin-right: 11.040px;
+  }
+
+  %smallHzSpacingP {
+    padding-left: 11.040px;
+    padding-right: 11.040px;
+  }
+
+  //t+t+t 0.93%
+  %tinyPlusTinyPlusTinyLeftMargin{
+    margin-left: 5px;
+  }
+
+  //t+t+s 3.12%
+  %tinyPlusTinyPlusSmallLeftMargin{
+    margin-left: 13.040px;
+  }
+
+  %tinyPlusTinyPlusSmallRightMargin{
+    margin-right: 13.040px;
+  }
+
+  %tinyPlusTinyPlusSmallHzSpacing{
+    margin-left:  13.040px;
+    margin-right: 13.040px;
+  }
+
+  %tinyPlusTinyPlusSmallLeftPadding{
+    padding-left: 13.040px;
+  }
+
+  %tinyPlusTinyPlusSmallRightPadding{
+    padding-right: 13.040px;
+  }
+
+  %tinyPlusTinyPlusSmallHzSpacingP{
+    padding-left:  13.040px;
+    padding-right: 13.040px;
+  }
+
+  %mediumLeftPadding {
+    padding-left: 16.56px;
+  }
+
+  %mediumLeftMargin {
+    margin-left: 16.56px;
+  }
+
+  %mediumRightPadding {
+    padding-right: 16.56px;
+  }
+
+  %mediumRightMargin {
+    margin-right: 16.56px;
+  }
+
+  %mediumHzSpacing {
+    margin-left: 16.56px;
+    margin-right: 16.56px;
+  }
+
+  %mediumHzSpacingP {
+    padding-left: 16.56px;
+    padding-right: 16.56px;
+  }
+
+  %smallPlusSmallLeftPadding {
+    padding-left: 22.08px;
+  }
+
+  %smallPlusSmallLeftMargin {
+    margin-left: 22.08px;
+  }
+
+  %smallPlusSmallRightPadding {
+    padding-right: 22.08px;
+  }
+
+  %smallPlusSmallRightMargin {
+    margin-right: 22.08px;
+  }
+
+  %smallPlusSmallHzSpacing {
+    margin-left: 22.08px;
+    margin-right: 22.08px;
+  }
+
+  %smallPlusSmallHzSpacingP {
+    padding-left: 22.08px;
+    padding-right: 22.08px;
+  }
+
+  %smallPlusMediumLeftPadding {
+    padding-left: 27.6px;
+  }
+
+  %smallPlusMediumLeftMargin {
+    margin-left: 27.6px;
+  }
+
+  %smallPlusMediumRightPadding {
+    padding-right: 27.6px;
+  }
+
+  %smallPlusMediumRightMargin {
+    margin-right: 27.6px;
+  }
+
+  %smallPlusMediumHzSpacing {
+    margin-left: 27.6px;
+    margin-right: 27.6px;
+  }
+
+  %smallPlusMediumHzSpacingP {
+    padding-left: 27.6px;
+    padding-right: 27.6px;
+  }
+
+  %smallPlusMediumTopSpacing {
+    padding-top: 30px;
+  }
+
+  %largeLeftPadding {
+    padding-left: 33.12px;
+  }
+
+  %largeLeftMargin {
+    margin-left: 33.12px;
+  }
+
+  %largeRightPadding {
+    padding-right: 33.12px;
+  }
+
+  %largeRightMargin {
+    margin-right: 33.12px;
+  }
+
+  %largeHzSpacing {
+    margin-left: 33.12px;
+    margin-right: 33.12px;
+  }
+
+  %largeHzSpacingP {
+    padding-left: 33.12px;
+    padding-right: 33.12px;
+  }
+
+  %smallPlusLargeLeftPadding {
+    padding-left: 44.16px;
+  }
+
+  %smallPlusLargeLeftMargin {
+    margin-left: 44.16px;
+  }
+
+  %smallPlusLargeRightPadding {
+    padding-right: 44.16px;
+  }
+
+  %smallPlusLargeRightMargin {
+    margin-right: 44.16px;
+  }
+
+  %smallPlusLargeHzSpacing {
+    margin-left: 44.16px;
+    margin-right: 44.16px;
+  }
+
+  %smallPlusLargeHzSpacingP {
+    padding-left: 44.16px;
+    padding-right: 44.16px;
+  }
+
+  %largePlusLargeLeftPadding {
+    padding-left: 66.24px;
+  }
+
+  %largePlusLargeLeftMargin {
+    margin-left: 66.24px;
+  }
+
+  %largePlusLargeRightPadding {
+    padding-right: 66.24px;
+  }
+
+  %largePlusLargeRightMargin {
+    margin-right: 66.24px;
+  }
+
+  %largePlusLargeHzSpacing {
+    margin-left: 66.24px;
+    margin-right: 66.24px;
+  }
+
+  %largePlusLargeHzSpacingP {
+    padding-left: 66.24px;
+    padding-right: 66.24px;
+  }
+}
+
+$possibleDirections: (
+  'l' : 'Left',
+  't': 'Top',
+  'r': 'Right',
+  'b': 'Bottom'
+) !default;
+
+$sizes: (
+  'z': 'zero',
+  'xxs': 'tiny',
+  'xs': 'extraSmall',
+  'vs': 'verySmall',
+  's': 'small',
+  'm': 'medium',
+  't+t+t': 'tinyPlusTinyPlusTiny',
+  't+t+s': 'tinyPlusTinyPlusSmall',
+  's+s': 'smallPlusSmall',
+  's+m': 'smallPlusMedium',
+  's+l': 'smallPlusLarge',
+  'm+l': 'mediumPlusLarge',
+  'l': 'large',
+  'ml': 'mediumLarge',
+  'xl': 'extraLarge',
+  'l+l': 'largePlusLarge',
+) !default;
+
+@mixin padding($size, $direction) {
+  @extend #{'%' + $size + $direction + 'Padding'}
+}
+
+@mixin margin($size, $direction) {
+  @extend #{'%' + $size + $direction + 'Margin'}
+}
+
+@mixin customSpacing($size, $isPadding, $directions...) {
+  $mappedDirection: '';
+
+  @each $direction in $directions {
+    @if map-has-key($possibleDirections, $direction) {
+      $mappedDirection: map-get($possibleDirections, $direction);
+    } @else {
+      $_: log('Invalid direction provided: ' + $direction + '.');
+    }
+
+    @if ($isPadding) {
+      @include padding($size, $mappedDirection)
+    } @else {
+      @include margin($size, $mappedDirection)
+    }
+  }
+}
+
+@mixin spacing($size, $type, $isPadding: false, $directions...) {
+  $mappedSize: '';
+  $addPadding: '';
+
+  @if ($isPadding) {
+    $addPadding: 'P';
+  }
+
+  @if map-has-key($sizes, $size) {
+    $mappedSize: map-get($sizes, $size);
+  } @else {
+    $_: log('Invalid size provided: ' + $size + '.');
+  }
+
+  @if ($type == 'v') {
+    @extend #{'%' + $mappedSize + 'VtSpacing' + $addPadding};
+  } @else if ($type == 'h') {
+    @extend #{'%' + $mappedSize + 'HzSpacing' + $addPadding};
+  } @else if ($type == 'x') {
+    @include customSpacing($mappedSize, $isPadding, $directions...)
+  } @else if ($type == 'a') {
+    @extend #{'%' + $mappedSize + 'HzSpacing' + $addPadding};
+    @extend #{'%' + $mappedSize + 'VtSpacing' + $addPadding};
+  } @else {
+    $_: log('Invalid type provided: ' + $type + '.');
+  }
+}

@@ -1,0 +1,116 @@
+@import '~theme/base/spa';
+
+%orderSpacings {
+  @include spacing('s', 'x', true, 't');
+  @include spacing('s', 'x', false, 't');
+  @include spacing('z', 'x', true, 'b');
+}
+
+.orderSummaryContainer {
+  @include spacing('z', 'x', false, 't');
+
+  &.reviewOrder {
+    @include cartSpacing('l', 'x', false, 'b');
+  }
+}
+
+.itemSpacing {
+  @include spacing('z', 'x', false, 'b');
+}
+
+.itemSmallSpacing {
+  @include spacing('s', 'x', false, 'b');
+}
+
+.itemExtraSmallSpacing {
+  @include cartSpacing('xs', 'x', false, 'b');
+}
+
+.lightTopBorder {
+  border-top: 1px solid $grey250;
+}
+
+.itemLargeSpacing {
+  @include cartSpacing('l', 'x', false, 't');
+}
+
+.topItemSpacing {
+  @extend %orderSpacings;
+}
+
+.topExtraSmallSpacing {
+  @include cartSpacing('xs', 'x', true, 't');
+  @include cartSpacing('xs', 'x', false, 't');
+}
+
+.totalItemSpacing {
+  @extend %orderSpacings;
+  @include spacing('s+m', 'v', true);
+  @include spacing('s+m', 'x', false, 'b');
+  align-items: center;
+  border-bottom: 1px solid $grey150;
+  border-top: 1px solid $grey150;
+
+  &.totalPriceItem {
+    @include spacing('l', 'v', true);
+    @include spacing('z', 'x', false, 'b');
+    border-bottom: none;
+    border-top: 1px solid $grey150;
+  }
+
+  &.reviewOrder {
+    @include cartSpacing('l', 'v', true);
+    @include cartSpacing('l', 'x', false, 'b');
+    margin-top: 0;
+  }
+
+  .totalItemFlex {
+    display: block;
+    flex: 3;
+    font-size: $header4FontSize;
+    font-weight: $fontWeightHeavy;
+
+    .priceDeduction {
+      color: $blueGreen;
+    }
+  }
+
+  .cartTotalLblFont {
+    font-weight: $fontWeightBold;
+  }
+}
+
+.totalItemPrice {
+  @extend %baseUBPlus2;
+  font-weight: $fontWeightHeavy;
+ }
+
+.topBorder {
+  border-top: 1px solid $grey150;
+}
+
+.bottomBorder {
+  @include spacing('m', 'x', true, 'b');
+  border-bottom: 1px solid $grey150;
+}
+
+.itemFlex {
+  @extend %baseA;
+  display: block;
+  flex: 2;
+}
+
+.orderPanel {
+  @include spacing('z', 'v', false);
+}
+
+.orderSummaryPanel {
+  @include spacing('z', 'x', false, 'b');
+}
+
+:global(.orderSummaryExpanded) {
+  .totalItemSpacing {
+    @include spacing('l', 'x', true, 't');
+    border-top: 1px solid $grey150;
+  }
+}

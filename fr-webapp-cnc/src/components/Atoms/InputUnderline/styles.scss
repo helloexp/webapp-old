@@ -1,0 +1,44 @@
+@import '~theme/base/spa';
+
+%hr {
+  border: {
+    bottom: 1px solid $gray67;
+    left: none;
+    right: none;
+    top: none;
+  }
+  left: 0;
+  margin: 0;
+  position: absolute;
+  width: 100%;
+}
+
+.underline {
+  @extend %hr;
+  bottom: 0;
+
+  &::after {
+    @extend %hr;
+    border: {
+      bottom: 2px solid $blueGreen;
+    }
+    bottom: -1px;
+    content: '';
+    transform: scaleX(0);
+    transition: all 450ms cubic-bezier(.23, 1, .32, 1) 0ms;
+  }
+
+  &.focus {
+    &::after {
+      transform: scaleX(1);
+    }
+  }
+
+  &.invalid {
+    border-color: $red100;
+
+    &::after {
+      border-color: $red100;
+    }
+  }
+}

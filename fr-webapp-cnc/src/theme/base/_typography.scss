@@ -1,0 +1,215 @@
+@import 'colors';
+@import 'variables';
+
+// See the guideline here:
+// http://test036.members-dev.com/ariake/guideline/sp/design-guideline/
+
+%baseFont {
+  font-size: 13px;
+  line-height: 1.5em;
+}
+
+%baseB {
+  @extend %baseFont;
+  font-weight: 600;
+}
+
+%baseBMinus1,
+%baseBMinus2,
+%baseBPlus1,
+%baseBPlus2,
+%baseBPlus3,
+%baseBPlus35,
+%baseBPlus4,
+%baseBPlus5 {
+  @extend %baseB;
+}
+
+%baseBPlus3,
+%baseBPlus35,
+%baseBPlus4,
+%baseBPlus5 {
+  line-height: 1.5em;
+}
+
+%baseUA {
+  font-family: 'Uniqlo Pro Light', sans-serif;
+  font-size: $header2FontSize;
+  line-height: 1.2em;
+}
+
+%baseUB {
+  @extend %baseUA;
+  font-family: 'Uniqlo Pro Bold', sans-serif;
+}
+
+%baseA {
+  @extend %baseFont;
+  font-weight: 300;
+}
+
+%baseAMinus1,
+%baseAMinus2,
+%baseAPlus1,
+%baseAPlus2,
+%baseAPlus3,
+%baseAPlus35,
+%baseAPlus4,
+%baseAPlus5 {
+  @extend %baseA;
+}
+
+%baseC {
+  font-family: 'Uniqlo Pro', sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 1em;
+}
+
+%baseUC {
+  font-family: 'Uniqlo Pro Light', sans-serif;
+  font-size: 14px;
+  letter-spacing: 1em;
+}
+
+%baseD {
+  font-family: 'Uniqlo Pro', sans-serif;
+  font-size: 14px;
+  font-weight: lighter;
+  letter-spacing: 1.5em;
+}
+
+%baseDPlus1,
+%baseDPlus2,
+%baseDPlus3,
+%baseDPlus35,
+%baseDPlus4,
+%baseDPlus5,
+%baseDMinus4 {
+  @extend %baseD;
+}
+
+%baseUBMinus2,
+%baseUBMinus3,
+%baseUBPlus1,
+%baseUBPlus2,
+%baseUBPlus3 {
+  @extend %baseUB;
+}
+
+%baseUCMinus1,
+%baseUCMinus2,
+%baseUCMinus3,
+%baseUCPlus1,
+%baseUCPlus2,
+%baseUCPlus3,
+%baseUCPlus35 {
+  @extend %baseUC;
+}
+
+%baseCMinus1,
+%baseCMinus2,
+%baseCMinus3,
+%baseCPlus1,
+%baseCPlus2,
+%baseCPlus3,
+%baseCPlus35 {
+  @extend %baseC;
+}
+
+%baseCPlus1,
+%baseDPlus1 {
+  font-size: 17px;
+}
+
+%baseAPlus1,
+%baseBPlus1 {
+  font-size: $fontSizePlus1;
+}
+
+%baseUBPlus1 {
+  font-size: 18px;
+}
+
+%baseAPlus2,
+%baseBPlus2,
+%baseCPlus2,
+%baseDPlus2 {
+  font-size: $fontSizePlus2;
+}
+
+%baseAPlus3,
+%baseBPlus3,
+%baseCPlus3,
+%baseDPlus3 {
+  font-size: $fontSizePlus3;
+}
+
+%baseUBPlus3,
+%baseUCPlus3 {
+  font-size: 24px;
+}
+
+%baseAPlus35,
+%baseBPlus35,
+%baseCPlus35,
+%baseDPlus35 {
+  font-size: $fontSizePlus35;
+}
+
+%baseAPlus4,
+%baseBPlus4,
+%baseCPlus4,
+%baseDPlus4 {
+  font-size: $fontSizePlus4;
+}
+
+%baseDPlus5 {
+  font-size: 30px;
+}
+
+%baseAPlus5,
+%baseBPlus5,
+%baseCPlus5 {
+  font-size: $fontSizePlus5;
+}
+
+%baseAMinus1,
+%baseBMinus1,
+%baseCMinus1 {
+  font-size: 12px;
+}
+
+%baseUCMinus1,
+%baseUBMinus2,
+%baseAMinus2,
+%baseBMinus2,
+%baseCMinus2 {
+  font-size: 11px;
+}
+
+%baseAMinus3,
+%baseBMinus3,
+%baseCMinus3,
+%baseUBMinus3,
+%baseUCMinus3,
+%baseDMinus4 {
+  font-size: 10px;
+}
+
+%baseUBPlus2 {
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 1.2em;
+}
+
+%baseUCMinus2 {
+  @extend %baseUCMinus3;
+  line-height: 1.2em;
+}
+
+%finePrintText {
+  color: $gray500;
+  font-size: $fontSizeBase;
+  line-height: 1.4em;
+}

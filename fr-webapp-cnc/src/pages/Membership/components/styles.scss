@@ -1,0 +1,87 @@
+@import '~theme/base/spa';
+
+.couponListImage {
+  height: 100px;
+  position: relative;
+  width: 100px;
+
+  .couponImage {
+    height: 100%;
+  }
+}
+
+.couponDetailsImage {
+  position: relative;
+  width: 100%;
+}
+
+.overlayContainer {
+  align-items: flex-end;
+  background-color: $backgroundOpacityWhite;
+  display: flex;
+  height: 100%;
+  justify-content: flex-end;
+  position: absolute;
+  width: 100%;
+
+  .overlayImage {
+    height: auto;
+    width: 50%;
+  }
+}
+
+.couponWrapper {
+  @include spacing('z', 'v');
+  @include spacing('s', 'x', false, 'r');
+  display: flex;
+  flex: 9;
+}
+
+.description {
+  @include spacing('m', 'x', false, 'l');
+  flex: 1;
+  max-width: 75%;
+
+  .title {
+    @extend %baseA;
+    -webkit-box-orient: vertical; // sass-lint:disable-line no-vendor-prefixes
+    -webkit-line-clamp: 2; // sass-lint:disable-line no-vendor-prefixes
+    color: $uniqloBlack001;
+    display: flex;
+    display: -webkit-box; // sass-lint:disable-line no-vendor-prefixes no-duplicate-properties
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-transform: none;
+    word-break: break-all;
+  }
+
+  .couponDate {
+    @extend %baseAMinus3;
+    @include spacing('s', 'x', true, 't');
+    color: $gray500;
+  }
+
+  .valid {
+    @extend %texts;
+    @include spacing('s+m', 'x', false, 't');
+    color: $textColorLight;
+  }
+
+  .error {
+    @extend %errorText;
+  }
+}
+
+.addBtn {
+  @include spacing('z', 'x', true, 'r');
+  @include spacing('m', 'x', true, 'l');
+  background: transparent;
+  display: flex;
+  font-weight: bold;
+  justify-content: center;
+
+  .buttonSpan {
+    @extend %baseB;
+    color: $uniqloBlack001;
+  }
+}

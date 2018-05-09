@@ -1,0 +1,27 @@
+@import '~theme/base/spa';
+
+.paragraph {
+  @extend %baseAPlus1;
+  display: block;
+  white-space: pre-wrap;
+}
+
+.list {
+  @include spacing('s', 'x', true, 'l');
+  display: block;
+  white-space: pre-wrap;
+}
+
+.listItem {
+  @extend %baseAMinus1;
+  text-indent: -10px;
+
+  &::before {
+    content: '\203B';
+  }
+}
+
+.cardImage {
+  @include spacing('s', 'x', false, 't');
+  @include spacing('m', 'x', false, 'b');
+}

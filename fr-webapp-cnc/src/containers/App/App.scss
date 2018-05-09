@@ -1,0 +1,37 @@
+@import '~theme/base/globals';
+@import '~theme/base/spa';
+
+$size: 40px;
+
+nav :global(.fa) {
+  font-size: 2em;
+  line-height: 20px;
+}
+
+:global(.safari) :global(.appContainer) {
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  position: absolute;
+  width: 100%;
+}
+
+:global(.safari) {
+  .app {
+    position: relative;
+  }
+}
+
+.appContent {
+  margin: 0; // for fixed navbar
+  transition: opacity 1s;
+
+  &.hide {
+    height: 100%;
+    opacity: 0;
+    overflow: hidden;
+    position: fixed;
+    visibility: hidden;
+    z-index: 0;
+  }
+}

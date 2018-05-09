@@ -1,0 +1,13 @@
+@import '~theme/base/spa';
+
+.container {
+  display: block;
+
+  .heading {
+    @extend %baseB;
+    @include spacing('m', 'h');
+    @include cartSpacing('l', 'x', false, 'b');
+    @include cartSpacing('xxl', 'x', true, 't');
+    font-size: $header7FontSize;
+  }
+}

@@ -1,0 +1,53 @@
+@import '~theme/base/main';
+@import '~theme/base/colors';
+
+@mixin dialogStyles($width, $height, $paddingTop) {
+  @include dimensions($width, $height);
+  padding-top: $paddingTop;
+}
+
+@mixin modalCommonStyles($width, $height, $display, $position) {
+  @include dimensions($width, $height);
+  display: #{$display};
+  position: #{$position};
+}
+
+.modal {
+  background-color: $lighterWhite;
+  bottom: 0;
+  left: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 10;
+
+  .content {
+    @include modalCommonStyles(100%, 100%, '', 'relative');
+    background-color: transparent;
+  }
+
+  .modalBody {
+    @include modalCommonStyles(100%, 100%, 'block', '');
+    background-color: $white;
+  }
+
+  .modalDialog {
+    margin: 0 auto;
+    position: relative;
+
+    &.p85modalDialog {
+      max-height: 90%;
+      overflow-y: scroll;
+      padding-bottom: 5px;
+      padding-top: 5px;
+    }
+  }
+
+  .modalHeader {
+    @include modalCommonStyles(100%, auto, 'block', '');
+    background-color: transparent;
+    overflow: hidden;
+  }
+}

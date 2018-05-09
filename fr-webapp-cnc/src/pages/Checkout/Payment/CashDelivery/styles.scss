@@ -1,0 +1,23 @@
+@import '~theme/base/spa';
+
+.cashMethodSelector {
+  @include spacing('s', 'h', true);
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+
+  .instructions {
+    @extend %baseA;
+    @include cartSpacing('l', 'v', false);
+    display: block;
+  }
+}
+
+.paymentTitle {
+  font-weight: $fontWeightBold;
+}
+
+.payCashButton {
+  height: 54px;
+  width: 82.5vw;
+}

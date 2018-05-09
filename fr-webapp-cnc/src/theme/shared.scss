@@ -1,0 +1,70 @@
+@import '~theme/base/spa';
+
+// Colors
+
+.colorText {
+  color: $black900;
+}
+
+.colorTextGrey {
+  color: $gray67;
+}
+
+.colorBorder {
+  color: $grey150;
+}
+
+.colorBlueGreen {
+  color: $blueGreen;
+}
+
+// Font
+
+.plus1 {
+  font-size: $fontSizePlus1;
+}
+
+.plus2 {
+  font-size: $fontSizePlus2;
+}
+
+.plus3 {
+  font-size: $fontSizePlus3;
+}
+
+.plus4 {
+  font-size: $fontSizePlus4;
+}
+
+.minus1 {
+  font-size: $fontSizeMinus1;
+}
+
+.minus2 {
+  font-size: $fontSizeMinus2;
+}
+
+.minus3 {
+  font-size: $fontSizeMinus3;
+}
+
+// Background colors
+
+.backgroundWhite {
+  background: $white;
+}
+
+.tile {
+  background-color: $white;
+  box-shadow: 0 1px 2px 0 $lightShade;
+}
+
+.hr {
+  border: none;
+  border-bottom: 1px solid $grey150;
+  margin: 0;
+}
+
+.textUnderline {
+  text-decoration: underline;
+}

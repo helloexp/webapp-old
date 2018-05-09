@@ -1,0 +1,59 @@
+@import '~theme/base/spa';
+
+%couponPanel,
+.couponPanel {
+  @include cartSpacing('l', 'v', true);
+  border-bottom: 1px solid $grey150;
+  border-top: 1px solid $grey150;
+  position: relative;
+  text-align: left;
+
+  .coupon {
+    @extend %baseA;
+    @include cartSpacing('s', 'x', false, 't');
+    display: block;
+  }
+
+  .linkCaret {
+    @extend %icomoonChevronRight;
+    @extend %tinyPlusTinyPlusSmallRightMargin;
+    @include spacing('z', 'a', true);
+    font-size: 24px;
+    width: 0;
+  }
+
+  :global(.linkContent) {
+    h6 {
+      @extend %baseBPlus1;
+    }
+  }
+
+}
+
+.couponReviewPanel {
+  @extend %couponPanel;
+  @include cartSpacing('l', 'v');
+  border: none;
+  padding: 0;
+}
+
+.cartCouponContainer {
+  @extend %couponPanel;
+  @extend %smallPlusMediumTopPadding;
+  @include spacing('z', 'x', false, 'b');
+  border-bottom: 1px solid $grey150;
+  border-top: 1px solid $grey150;
+}
+
+.couponActivePanel {
+  @extend %dropShadowCheckout;
+  @include spacing('m', 'h', true);
+  @include cartSpacing('l', 'v', true);
+  @include cartSpacing('s', 'x', false, 'b');
+  background: $white;
+
+  .coupon {
+    @include cartSpacing('s', 'x', false, 't');
+    display: block;
+  }
+}

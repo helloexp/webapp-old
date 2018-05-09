@@ -1,0 +1,54 @@
+@import 'pure-mixins';
+@import 'colors';
+@import 'typography';
+@import 'spacing';
+
+@mixin tooltip {
+  @extend %baseAPlus2;
+  background: $white;
+  border-radius: 3px;
+  bottom: 100%;
+  box-shadow: 3px 3px 6px $lightTransparentBlack;
+  color: $black;
+  display: block;
+  margin-bottom: 10px;
+  opacity: 0;
+  padding: 10px;
+  position: absolute;
+  right: 30%;
+  transform: translateY(10px);
+  transition: all .35s ease-out;
+  width: auto;
+
+  &::before {
+    background: transparent;
+    bottom: -5px;
+    box-shadow: 6px 6px 6px $lightTransparentBlack;
+    content: '';
+    height: 15px;
+    opacity: .75;
+    position: absolute;
+    right: 1px;
+    transform: rotate(45deg);
+    width: 15px;
+    z-index: -1;
+  }
+
+  //for now just right side triangle, can extend
+  &::after {
+    border: 10px solid $white;
+    content: ' ';
+    height: 0;
+    margin-left: -13px;
+    pointer-events: none;
+    position: absolute;
+    right: 0;
+    top: 98.5%;
+    width: 0;
+  }
+}
+
+@mixin compPadding($size, $isPadding: false) {
+  @include spacing($size, 'v', $isPadding);
+  @include spacing($size, 'h', $isPadding);
+}

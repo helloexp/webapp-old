@@ -1,0 +1,147 @@
+@import '~theme/base/spa';
+
+.addressForm {
+  .fieldLabelWrapper {
+    .fieldStyle {
+      color: $gray67;
+    }
+
+    .requiredSymbol {
+      color: $blueGreen;
+    }
+
+    div {
+      color: $uniqloGrey001;
+    }
+  }
+
+  .inputField {
+    @extend %textfield;
+    border-bottom: 2px solid $greyLight;
+    border-radius: 0;
+    border-top: none;
+
+    &:focus {
+      border-bottom: 2px solid $cyanDark;
+    }
+
+  }
+
+  .postalCode {
+    @include spacing('z', 'x', true, 'b');
+    width: 100%;
+  }
+
+  $colWidth: .48;
+
+  .postalCodeToolTip {
+    width: percentage(1 / $colWidth);
+  }
+
+  .row {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .col {
+    width: percentage($colWidth);
+  }
+
+  .rowSearch {
+    position: relative;
+  }
+
+  .wrapFindBtn {
+    margin: auto 0 auto auto;
+    position: absolute;
+    right: 0;
+    top: $header3FontSize;
+    width: 40%;
+
+    :global(.sfs-message) {
+      margin-bottom: 0;
+      width: 100%;
+    }
+
+    :global(.sfs-button) {
+      width: 100%;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+    }
+  }
+
+  .fieldWrapper {
+    @include spacing('s+m', 'x', false, 't');
+  }
+
+  .requiredField {
+    @extend %baseA;
+    color: $blueGreen;
+    font-size: $fontSizeMinus1;
+    text-align: right;
+  }
+
+  .genderRadioButton {
+    @include spacing('l', 'x', false, 'b');
+  }
+
+  .newsLetterWrapper {
+    @include spacing('s+m', 'x', false, 't');
+
+    .newsLetter {
+      @include spacing('m', 'v');
+    }
+
+    .newsLetterLabel {
+      @include spacing('l', 'x', false, 'b');
+      color: $uniqloBlack001;
+      display: block;
+      font-size: $header4FontSize;
+      font-weight: $fontWeightHeavy;
+      text-align: left;
+      text-transform: uppercase;
+    }
+
+    .memberCheckBox {
+      @include spacing('z', 'h', true);
+      @include spacing('l', 'x', true, 'b');
+    }
+  }
+
+  .passInfoText {
+    @include spacing('s+m', 'x', false, 'b');
+  }
+
+  .birthday {
+    @include spacing('s', 'v', true);
+  }
+
+  .messageStyle {
+    color: $gray67;
+    text-align: left;
+  }
+}
+
+.requiredWrapper {
+  position: relative;
+  top: 0;
+}
+
+.required {
+  color: $blueGreen;
+  display: inline-flex;
+  font-size: $textAreaFocusOuterFont;
+  justify-content: flex-end;
+  line-height: 1;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.error {
+  @include spacing('m', 'x', true, 'l');
+  color: $red;
+}

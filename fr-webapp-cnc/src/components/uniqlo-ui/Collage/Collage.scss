@@ -1,0 +1,57 @@
+@import '~theme/base/main';
+
+.collage {
+  display: flex;
+  width: 100%;
+
+  %halfSize,
+  .halfSize {
+    @extend %tinyRightPadding;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .fullSize {
+    @extend %halfSize;
+    @extend %componentImage%collageL;
+  }
+
+  .smallSize {
+    @extend %componentImage%collageM;
+  }
+}
+
+.container {
+  @include spacing('l', 'x', false, 'b');
+}
+
+.heading {
+  @extend %baseB;
+  @include spacing('m', 'h');
+  @include spacing('l', 'v', true);
+  color: $black900;
+}
+
+.iconHeadClass {
+  @include spacing('m', 'h');
+  @include spacing('l', 'v', true);
+  display: inline-block;
+}
+
+.iconHeadClassCollage {
+  @include spacing('m', 'h');
+  @include spacing('l', 'v', true);
+  align-items: center;
+  display: flex;
+}
+
+.imageClassName {
+  @extend %iconS;
+  @include spacing('xs', 'h');
+}
+
+.image {
+  object-fit: contain;
+}

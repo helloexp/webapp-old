@@ -1,0 +1,256 @@
+@import '~theme/base/spa';
+
+.smallBottomPadding {
+  @include cartSpacing('s', 'x', true, 'b');
+}
+
+.smallBottomMargin {
+  @include cartSpacing('s', 'x', false, 'b');
+}
+
+.smallRightMargin,
+%smallRightMargin {
+  @include spacing('s', 'x', false, 'r');
+}
+
+%smallVerticalMargin {
+  @include cartSpacing('s', 'v');
+}
+
+.xLBottomMargin,
+%xLBottomMargin {
+  @include cartSpacing('xl', 'x', false, 'b');
+
+  input {
+    font-size: $fontSizePlus2;
+  }
+}
+
+%xLBottomPadding {
+  @include cartSpacing('xl', 'x', true, 'b');
+}
+
+%xxLBottomMargin {
+  @include cartSpacing('xxl', 'x', false, 'b');
+}
+
+%largeBottomMargin,
+.largeBottomMargin {
+  @include cartSpacing('l', 'x', false, 'b');
+}
+
+%largeVerticalMargin {
+  @include cartSpacing('l', 'v');
+}
+
+%largeVerticalPadding {
+  @include cartSpacing('l', 'v', true);
+}
+
+%mediumBottomMargin {
+  @include cartSpacing('m', 'x', false, 'b');
+}
+
+.blackUnderline,
+%blackUnderline {
+  border-bottom: 1px solid $uniqloBlack001;
+}
+
+.blackBorderBottom {
+  border-bottom: 1px solid $grey150;
+}
+
+%commonBtn {
+  border: 1px solid $black900;
+
+  & > :global(.btnLabel) {
+    @extend %baseBPlus2;
+  }
+}
+
+.link,
+.notReceiveMailWrapper,
+.flexWrapper,
+.linksWrapper,
+.flex {
+  display: flex;
+}
+
+.emailMagazine,
+.applePayModalRedText,
+.requiredNotice,
+.applePayPanelText,
+.baseBlockText,
+.showPassword,
+.terms,
+.notReceiveMail,
+.toggleRegistrationModalBtn,
+.pleaseNote,
+.applePayPanelTitle,
+.applePayModalGreyText,
+.mailAddress {
+  display: block;
+}
+
+.applePayModalRedText,
+.requiredNotice,
+.applePayPanelText,
+.baseBlockText,
+.showPassword {
+  @extend %baseA;
+}
+
+.outerPanel {
+  @extend %largeVerticalMargin;
+  @extend %largeVerticalPadding;
+  @include spacing('m', 'h');
+  @include spacing('m', 'h', true);
+  background-color: $white;
+  box-shadow: 0 2px 4px $dropShadowBlack;
+}
+
+.requiredNotice {
+  color: $cyanDark;
+  font-size: $fontSizeMinus1;
+  text-align: right;
+}
+
+.skipRgnButton {
+  @extend %commonBtn;
+  @extend %largeVerticalMargin;
+}
+
+.succesRgnButton {
+  & > :global(.btnLabel) {
+    @extend %baseBPlus2;
+  }
+}
+
+.newsLetter {
+  @extend %baseAPlus1;
+  @extend %largeBottomMargin;
+}
+
+.toggleRegistrationModalBtn {
+  & > :global(.btnLabel) {
+    @extend %baseBPlus2;
+  }
+}
+
+.applePayPanelTitle {
+  @extend %baseBPlus2;
+}
+
+.pleaseNote {
+  @extend %baseBPlus2;
+  @extend %largeBottomMargin;
+}
+
+.applePayPanelText {
+  @extend %largeVerticalPadding;
+}
+
+.emailMagazine {
+  @extend %baseBPlus1;
+  @extend %largeBottomMargin;
+}
+
+.terms {
+  @extend %baseAPlus1;
+  @extend %largeVerticalPadding;
+}
+
+.link {
+  @extend %baseB;
+  @extend %blackUnderline;
+  color: $uniqloBlack001;
+}
+
+.notReceiveMailWrapper {
+  justify-content: flex-end;
+}
+
+.notReceiveMail {
+  @extend %baseBMinus1;
+  @extend %blackUnderline;
+  @include cartSpacing('l', 'x', false, 't');
+  @include cartSpacing('xl', 'x', false, 'b');
+  color: $uniqloBlack001;
+}
+
+.continueShopping {
+  @extend %commonBtn;
+  @include cartSpacing('xxl', 'v');
+}
+
+.flexWrapper {
+  justify-content: space-between;
+}
+
+.toolTipText {
+  font-size: $fontSizePlus1;
+}
+
+.infoToolTip {
+  @extend %smallVerticalMargin;
+  display: inline-block;
+  float: right;
+
+  + div {
+    clear: right;
+  }
+}
+
+.infoIcon {
+  @extend %infoIcon;
+  align-self: center;
+  font-size: $fontSizePlus35;
+}
+
+.modalUpperTextWrap {
+  @extend %baseA;
+  @extend %xLBottomPadding;
+  border-bottom: 1px solid $uniqloGrey001;
+}
+
+.modalLowerTextWrap {
+  @extend %baseA;
+  @extend %xxLBottomMargin;
+  @include cartSpacing('xl', 'x', false, 't');
+}
+
+.applePayModalRedText {
+  @include spacing('m', 'v', true);
+  color: $red;
+}
+
+.applePayModalGreyText {
+  color: $uniqloGrey001;
+}
+
+.mailAddress {
+  @extend %smallVerticalMargin;
+}
+
+.showPassword {
+  @extend %xLBottomMargin;
+}
+
+.linksWrapper {
+  align-items: center;
+}
+
+.errorItem {
+  color: $redA500;
+  font-size: $header6FontSize;
+}
+
+.errorList {
+  @include cartSpacing('m', 'x', true, 'b');
+  @include spacing('m', 'x', true, 'l');
+  margin-bottom: 0;
+}
+
+.registrationPolicy {
+  @include spacing('s', 'x', true, 'r');
+}

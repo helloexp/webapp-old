@@ -1,0 +1,64 @@
+@import '~theme/base/spa';
+
+.confirmation {
+  @extend %dropShadowStrong;
+  background-color: $white;
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  right: 0;
+
+  .content {
+    @include spacing('m', 'h');
+    @include spacing('m', 'x', true, 't');
+    @include spacing('l', 'x', true, 'b');
+    height: 120px; // sass-lint:disable no-duplicate-properties
+    height: $confirmationHeight;
+    overflow: auto;
+  }
+
+  .buttons {
+    display: flex;
+
+    .accept,
+    .cancel {
+      display: block;
+      flex: 1;
+      font-weight: $fontWeightBold;
+
+      .labelStyle {
+        font-size: $fontSizePlus1;
+      }
+    }
+
+    .cancel {
+      border-top: 1px solid $grey150;
+    }
+  }
+}
+
+.distanceText {
+  @include spacing('m', 'x', true, 'b');
+  color: $grey900;
+  letter-spacing: 0;
+}
+
+.possibleTime {
+  @include spacing('s', 'x', true, 't');
+}
+
+.weekDayTime {
+  @include spacing('s', 'x', true, 'b');
+}
+
+.timeContainer {
+  @include spacing('s', 'x', true, 'b');
+}
+
+.featureContainer {
+  display: inline-block;
+}
+
+.delimiter {
+  color: $black900;
+}

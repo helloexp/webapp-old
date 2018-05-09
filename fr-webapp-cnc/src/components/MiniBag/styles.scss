@@ -1,0 +1,66 @@
+@import '~theme/base/spa';
+
+.miniBagContainer {
+  &.miniBagWrapper {
+    @include spacing('l', 'h', false);
+    bottom: $minibagBottomHeight;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    left: 0;
+    padding: 0;
+    position: fixed;
+    right: 0;
+    top: $minibagHeight;
+    width: auto;
+  }
+
+  .miniBagHeader {
+    @extend %baseC;
+    @include spacing('s', 'a', true);
+    @include spacing('l', 'x', false, 'b');
+    @include spacing('z', 'x', false, 't');
+    background-color: $greyGull;
+    color: $white;
+    font-size: $textAreaFocusOuterFont;
+    letter-spacing: 0;
+    text-align: center;
+  }
+
+  .summary {
+    @extend %dropShadowMiniBag;
+    @include spacing('m', 'h', true);
+    background-color: $white;
+    overflow-y: auto;
+    position: relative;
+    z-index: z('miniBag');
+
+    .miniBagClose {
+      @include spacing('m', 'x', false, 't');
+      @include spacing('s+m', 'v', true);
+      @include spacing('z', 'a');
+      background-color: transparent;
+      border-top: 1px solid $grey150;
+      width: 100%;
+    }
+
+    .closeText {
+      font-size: $header2FontSize;
+      font-weight: $fontWeightBold;
+    }
+
+    .titleStyle {
+      @include spacing('l', 'x', false, 't');
+      @include spacing('m', 'x', false, 'b');
+
+      h6 {
+        font-weight: $fontWeightHeavy;
+      }
+    }
+  }
+}
+
+.bottomTile {
+  @include spacing('z', 'x', false, 'b');
+  border-bottom: none;
+}

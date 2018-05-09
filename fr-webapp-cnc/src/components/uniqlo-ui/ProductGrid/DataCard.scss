@@ -1,0 +1,262 @@
+@import '~theme/base/spa';
+
+.dataCard {
+  @extend %mediumHzSpacingP;
+  @extend %baseAMinus1;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: flex-start;
+  text-align: left;
+  width: 100%;
+
+  &.oddTwoColumnCell {
+    border-right: 1px solid $greyCool100;
+  }
+
+  &.cartData {
+    @include spacing('z', 'x', true, 'r');
+
+    > div {
+      &:last-child {
+        @include cartSpacing('l', 'x', false, 'b');
+        @include cartSpacing('s', 'x', false, 't');
+      }
+    }
+
+    section {
+      .productProperties,
+      .skuLabel {
+        font-size: 13px;
+      }
+    }
+  }
+
+  &.noHzSpazing {
+    @include spacing('z', 'h', true);
+  }
+}
+
+.genderSize {
+  @extend %smallBottomMargin;
+  @extend %baseAMinus3;
+  color: $uniqloBlack001;
+  display: flex;
+  justify-content: space-between;
+
+  :last-child {
+    text-align: right;
+  }
+
+  &.mediumBottom {
+    @include spacing('m', 'x', false, 'b');
+  }
+}
+
+.prodName {
+  @extend %mediumBottomMargin;
+  color: $uniqloBlack001;
+
+  &.prodNameLarge {
+    @extend %extraSmallBottomMargin;
+    font-size: $fontSizeBase;
+  }
+}
+
+.flags,
+.productOnlineId {
+  @extend %mediumBottomMargin;
+  color: $gray500;
+  letter-spacing: .2px;
+
+  &.topPadding {
+    @include cartSpacing('xxs', 'x', false, 'b');
+  }
+
+  &.flagsSmallMargin {
+    @include spacing('xs', 'x', false, 'b');
+    color: $uniqloBlack001;
+    font-size: $fontSizeBase;
+  }
+}
+
+.price {
+  @extend %smallBottomMargin;
+  @extend %baseUBPlus1;
+  color: $uniqloBlack001;
+  font-weight: 600;
+  line-height: 1.5em;
+
+  &.twoColPrice {
+    line-height: 1em;
+  }
+
+  &.singleLargePrice {
+    @extend %baseUBPlus1;
+    line-height: 1em;
+  }
+
+  &.priceSmallMargin {
+    @extend %extraSmallBottomMargin;
+  }
+}
+
+.sale {
+  .price {
+    color: $red100;
+  }
+}
+
+.priceFlags {
+  @extend %smallBottomMargin;
+  color: $red;
+  letter-spacing: .2px;
+
+  &.inCart {
+    @extend %zeroBottomMargin;
+  }
+
+  &.specialMargin {
+    @extend %mediumBottomMargin;
+  }
+}
+
+.limitedOffer {
+  @extend %mediumBottomMargin;
+  @extend %baseFont;
+  color: $red100;
+  display: block;
+  font-size: $header6FontSize;
+
+  &.noMarginLimitedOffer {
+    @include spacing('xs', 'x', false, 'b');
+  }
+}
+
+.multiBuy {
+  @extend %baseA;
+  @include spacing('xs', 'x', false, 'b');
+  color: $red100;
+}
+
+.productProperties {
+  @extend %baseBMinus1;
+  display: block;
+  font-weight: $fontWeightLight;
+  line-height: 1.5em;
+
+  &.verySmallBottomSpacing {
+    @include spacing('z', 'x', false, 't');
+    @include cartSpacing('xxs', 'x', false, 'b');
+  }
+}
+
+.productTitle {
+  @extend %baseBMinus1;
+  @include spacing('z', 'x', false, 't');
+  @include spacing('s', 'x', false, 'b');
+  color: $uniqloBlack001;
+  display: block;
+  font-weight: $fontWeightBold;
+}
+
+.skuLabel {
+  @include spacing('s', 'v', false);
+  color: $gray500;
+  display: block;
+}
+
+.priceWrapper {
+  font-size: $header2FontSize;
+  word-break: break-all;
+}
+
+.itemPrice {
+  @extend %baseUBPlus1;
+}
+
+.multiBuyPrice {
+  @extend %baseUBPlus1;
+  color: $redA500;
+}
+
+.productOnOffer {
+  color: $red100;
+}
+
+.kingPromoPrice {
+  color: $red100;
+  display: block;
+}
+
+.promoMessage {
+  font-weight: $fontWeightLight;
+}
+
+.selectWrapper {
+  @extend %selectArrow;
+  @include cartSpacing('s', 'x', false, 'b');
+  position: relative;
+
+  &::after {
+    z-index: 0;
+  }
+}
+
+.xsBottomPadding {
+  @include spacing('xs', 'x', true, 'b');
+}
+
+.dataCardWrapper {
+  display: flex;
+}
+
+.fullHeight {
+  height: 100%;
+}
+
+.fullFlex {
+  flex-basis: 100%;
+  height: 100%;
+  width: 100%;
+}
+
+.multiLine {
+  @include spacing('s', 'x', false, 'b');
+  display: block;
+
+  &.multiLineSmall {
+    @include cartSpacing('xxs', 'x', false, 't');
+    @include spacing('z', 'x', false, 'b');
+  }
+
+  &.multiLineLarge {
+    @extend %extraSmallBottomMargin;
+    font-size: $fontSizeBase;
+  }
+}
+
+.selectWithButton {
+  .select {
+    display: inline-block;
+    width: 75%;
+
+    div {
+      @include cartSpacing('s', 'x', true, 'b');
+    }
+  }
+
+  .removeButtonText {
+    @extend %baseBMinus1;
+    border-bottom: 1px solid currentColor;
+  }
+
+  .deleteButton {
+    @include spacing('z', 'a', true);
+    display: inline-block;
+    text-align: right;
+    vertical-align: bottom;
+    width: 25%;
+  }
+}

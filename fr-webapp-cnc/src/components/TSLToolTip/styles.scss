@@ -1,0 +1,16 @@
+@import '~theme/base/spa';
+
+.lockIcon {
+  @extend %lockSymbol;
+  font-size: $fontSizePlus35;
+}
+
+.tooltipText {
+  @include spacing('m', 'x', false, 'b');
+  display: block;
+}
+
+.tooltipLink {
+  @extend %baseB;
+  color: $uniqloGrey001;
+}

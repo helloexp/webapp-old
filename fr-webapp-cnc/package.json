@@ -1,0 +1,315 @@
+{
+  "name": "fr-webapp",
+  "description": "SPA for serving Fast Retailing sites",
+  "author": "Fast Retailing / Wearex",
+  "license": "UNLICENSED",
+  "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fastretailing/fr-webapp"
+  },
+  "homepage": "https://uniqlo.com",
+  "main": "bin/server.js",
+  "scripts": {
+    "coverage": "npm run coverage:clean && npm run coverage:build",
+    "coverage:clean": "node test/coverageClean.js",
+    "coverage:build": "better-npm-run test:nowebpack:coverage",
+    "coverage:report": "nyc report --reporter=lcov --reporter=text-summary",
+    "start": "concurrently --kill-others \"npm run prod\"",
+    "start-prod": "better-npm-run start-prod",
+    "start-prod-profiling": "better-npm-run start-prod-profiling",
+    "build": "better-npm-run build",
+    "devbuild": "webpack --verbose --colors --display-error-details --config webpack/dev.config.js",
+    "funbuild": "better-npm-run funbuild",
+    "lint": "esw -c .eslintrc ./src ./webpack ./test --ext '.js, .jsx' --color",
+    "lint:f": "esw -c .eslintrc ./src ./webpack ./test --ext '.js, .jsx' --color --fix",
+    "lint:w": "esw -c .eslintrc ./src ./webpack ./test --ext '.js, .jsx' --color -w",
+    "lint:styles": "sass-lint -c .sass-lint.yml -v -q",
+    "lint:s": "sass-lint -c .sass-lint.yml -v -q",
+    "start-dev": "better-npm-run start-dev",
+    "start-dev-profiling": "better-npm-run start-dev-profiling",
+    "watch-client": "better-npm-run watch-client",
+    "dev": "better-npm-run watch-client",
+    "prod": "better-npm-run prod-server",
+    "dev-profiling": "concurrently --kill-others \"npm run watch-client\" \"npm run start-dev-profiling\"",
+    "test": "npm run test:nowebpack",
+    "t:w": "npm run test:nowebpack -- w",
+    "test:w": "npm run test:nowebpack -- w",
+    "test:watch": "npm run test:nowebpack -- w",
+    "test:webpack": "better-npm-run test:webpack",
+    "test:webpack:w": "npm run test:webpack -- w",
+    "test:w:w": "npm run test:webpack -- w",
+    "test:webpack:watch": "npm run test:webpack -- w",
+    "test:webpack:full": "npm run test:webpack -- browsers=Chrome,Safari,Firefox,jsdom",
+    "test:w:f:w": "npm run test:webpack -- w browsers=Chrome,Safari,Firefox,jsdom",
+    "test:webpack:full:watch": "npm run test:webpack -- w browsers=Chrome,Safari,Firefox,jsdom",
+    "test:w:f": "npm run test:webpack -- browsers=Chrome,Safari,Firefox,jsdom",
+    "t:n": "better-npm-run test:nowebpack",
+    "t:n:w": "better-npm-run test:nowebpack -- w",
+    "test:nowebpack": "better-npm-run test:nowebpack",
+    "check": "concurrently --raw \"npm run lint\" \"npm run lint:s\" \"npm run test\"",
+    "c:w": "npm run lint && npm run lint:s && npm run test:watch",
+    "deploy-staging": "better-npm-run build",
+    "dll": "webpack --config webpack/dlls/vendor/webpack.config.js",
+    "david": "david",
+    "weinre": "better-npm-run watch-client-weinre"
+  },
+  "betterScripts": {
+    "test:webpack": {
+      "command": "babel-node ./test/test.entry",
+      "env": {
+        "UV_THREADPOOL_SIZE": 100,
+        "NODE_ENV": "test",
+        "BABEL_ENV": "test"
+      }
+    },
+    "test:nowebpack": {
+      "command": "babel-node ./test/webpacklessTestRunner -- headless",
+      "env": {
+        "UV_THREADPOOL_SIZE": 100,
+        "NODE_ENV": "test",
+        "BABEL_ENV": "test"
+      }
+    },
+    "test:nowebpack:coverage": {
+      "command": "nyc --all --cache babel-node ./test/webpacklessTestRunner -- headless",
+      "env": {
+        "UV_THREADPOOL_SIZE": 100,
+        "NODE_ENV": "test",
+        "BABEL_ENV": "test"
+      }
+    },
+    "start-prod": {
+      "command": "node ./bin/server.js",
+      "env": {
+        "NODE_PATH": "./src",
+        "NODE_ENV": "production",
+        "PORT": 3000,
+        "HOST": "dev.uniqlo.com"
+      }
+    },
+    "start-prod-profiling": {
+      "command": "node ./bin/server.js profiling",
+      "env": {
+        "NODE_PATH": "./src",
+        "NODE_ENV": "production",
+        "PORT": 8080,
+        "HOST": "ariake.uniqlo.com"
+      }
+    },
+    "start-dev": {
+      "command": "DEBUG=log:* node ./bin/server.js",
+      "env": {
+        "NODE_PATH": "./src",
+        "NODE_ENV": "development",
+        "DEBUG": "log:*",
+        "PORT": 3000,
+        "HOST": "dev.uniqlo.com"
+      }
+    },
+    "start-dev-profiling": {
+      "command": "DEBUG=log:* node ./bin/server.js profiling",
+      "env": {
+        "NODE_PATH": "./src",
+        "NODE_ENV": "development",
+        "DEBUG": "log:*",
+        "PORT": 3000,
+        "HOST": "dev.uniqlo.com"
+      }
+    },
+    "watch-client": {
+      "command": "webpack-dev-server --config webpack/dev.csr.config.js",
+      "env": {
+        "UV_THREADPOOL_SIZE": 100,
+        "NODE_PATH": "./src",
+        "WEBPACK_DLLS": "1",
+        "DEBUG": "log:*",
+        "LANG": "jp",
+        "PERF": "0",
+        "PUBLIC_PATH": "http://dev.uniqlo.com:3000",
+        "PORT": 3000
+      }
+    },
+    "watch-client-weinre": {
+      "command": "webpack-dev-server --config webpack/dev.csr.config.js",
+      "env": {
+        "UV_THREADPOOL_SIZE": 100,
+        "NODE_PATH": "./src",
+        "WEBPACK_DLLS": "1",
+        "DEBUG": "log:*",
+        "LANG": "jp",
+        "PERF": "0",
+        "WEINRE": "1",
+        "PUBLIC_PATH": "http://dev.uniqlo.com:3000",
+        "PORT": 3000
+      }
+    },
+    "prod-server": {
+      "command": "webpack-dev-server --config webpack/prod.csr.config.js",
+      "env": {
+        "UV_THREADPOOL_SIZE": 100,
+        "NODE_PATH": "./src",
+        "WEBPACK_DLLS": "0",
+        "DEBUG": "error:*",
+        "NODE_ENV": "production",
+        "BABEL_ENV": "production",
+        "HOST": "dev.uniqlo.com",
+        "LANG": "jp",
+        "PORT": 3000
+      }
+    },
+    "build": {
+      "command": "webpack --display-error-details --config webpack/prod.csr.config.js",
+      "env": {
+        "NODE_ENV": "production",
+        "BABEL_ENV": "production",
+        "DEBUG": "error:*",
+        "HOST": "dev.uniqlo.com",
+        "LANG": "jp",
+        "PORT": 8080
+      }
+    },
+    "funbuild": {
+      "command": "webpack --colors --config webpack/funtest.config.js",
+      "env": {
+        "NODE_ENV": "production",
+        "BABEL_ENV": "production",
+        "FUNCTIONAL_TESTING": "1"
+      }
+    }
+  },
+  "dependencies": {
+    "atob": "^2.0.3",
+    "babel-core": "^6.5.2",
+    "babel-loader": "^6.2.1",
+    "babel-plugin-add-module-exports": "^0.1.4",
+    "babel-plugin-transform-decorators-legacy": "^1.3.4",
+    "babel-plugin-transform-react-constant-elements": "^6.9.1",
+    "babel-plugin-transform-react-display-name": "^6.3.13",
+    "babel-plugin-transform-react-pure-class-to-function": "^1.0.1",
+    "babel-plugin-transform-react-remove-prop-types": "^0.2.11",
+    "babel-plugin-transform-runtime": "^6.3.13",
+    "babel-polyfill": "^6.3.14",
+    "babel-preset-react": "^6.3.13",
+    "babel-preset-stage-1": "^6.3.13",
+    "babel-register": "^6.3.13",
+    "babel-runtime": "^6.3.19",
+    "bowser": "^1.4.3",
+    "btoa": "^1.1.2",
+    "classnames": "^2.2.3",
+    "express": "^4.13.3",
+    "file-loader": "^0.9.0",
+    "form-urlencoded": "^1.4.0",
+    "google-map-react": "^0.12.1",
+    "helmet": "^2.2.0",
+    "http-proxy": "^1.12.0",
+    "isomorphic-fetch": "^2.2.1",
+    "piping": "^0.3.0",
+    "pretty-error": "^2.0.2",
+    "qs": "^6.2.1",
+    "react": "15.4.2",
+    "react-addons-update": "15.4.2",
+    "react-cookie": "^0.4.7",
+    "react-dom": "15.4.2",
+    "react-helmet": "^3.1.0",
+    "react-redux": "^4.0.0",
+    "react-router": "^2.7.0",
+    "react-router-redux": "^4.0.5",
+    "react-router-scroll": "^0.3.2",
+    "redux": "^3.0.4",
+    "redux-connect": "^2.4.0",
+    "serialize-javascript": "^1.1.2",
+    "serve-favicon": "^2.3.0",
+    "url-loader": "^0.5.7",
+    "v8-profiler": "^5.6.5",
+    "warning": "^2.1.0",
+    "webpack-isomorphic-tools": "^2.2.18",
+    "whatwg-fetch": "^2.0.2"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.18.0",
+    "babel-eslint": "^7.0.0",
+    "babel-plugin-istanbul": "^2.0.3",
+    "babel-plugin-react-transform": "^2.0.0",
+    "babel-plugin-typecheck": "^3.6.0",
+    "babel-preset-latest": "^6.22.0",
+    "babel-preset-react-optimize": "^1.0.1",
+    "babel-register": "^6.16.3",
+    "better-npm-run": "0.0.11",
+    "chai": "^3.5.0",
+    "chai-as-promised": "^6.0.0",
+    "chokidar": "^1.6.1",
+    "concurrently": "^3.1.0",
+    "css-loader": "0.14.5",
+    "cssnano": "^3.5.2",
+    "david": "^9.0.0",
+    "enzyme": "^2.5.0",
+    "eslint": "^3.8.0",
+    "eslint-config-airbnb": "^12.0.0",
+    "eslint-loader": "^1.6.0",
+    "eslint-plugin-import": "^2.0.1",
+    "eslint-plugin-jsx-a11y": "^2.2.3",
+    "eslint-plugin-react": "^6.5.0",
+    "eslint-watch": "^2.1.14",
+    "expect": "^1.14.0",
+    "expect-jsx": "^2.3.0",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "happypack": "^2.2.1",
+    "html-webpack-plugin": "^2.22.0",
+    "icepick": "^1.3.0",
+    "istanbul": "^0.4.5",
+    "jsdom": "^9.8.0",
+    "json-loader": "^0.5.4",
+    "karma": "^1.3.0",
+    "karma-chrome-launcher": "^2.0.0",
+    "karma-cli": "^1.0.1",
+    "karma-firefox-launcher": "^1.0.0",
+    "karma-jsdom-launcher": "^4.0.0",
+    "karma-mocha": "^1.2.0",
+    "karma-mocha-reporter": "^2.2.0",
+    "karma-phantomjs2-launcher": "^0.5.0",
+    "karma-safari-launcher": "^1.0.0",
+    "karma-sourcemap-loader": "^0.3.5",
+    "karma-webpack": "^1.7.0",
+    "mocha": "^3.1.2",
+    "nock": "^9.0.2",
+    "node-sass": "^3.4.2",
+    "null-loader": "^0.1.1",
+    "nyc": "^8.3.2",
+    "postcss": "^5.0.19",
+    "postcss-import": "^8.1.0",
+    "postcss-loader": "^0.8.2",
+    "postcss-scss": "^0.1.7",
+    "precss": "^1.4.0",
+    "progress-bar-webpack-plugin": "^1.9.0",
+    "react-a11y": "^0.3.3",
+    "react-addons-perf": "15.4.2",
+    "react-addons-test-utils": "15.4.2",
+    "react-textarea-autosize": "4.0.5",
+    "react-transform-catch-errors": "^1.0.0",
+    "react-transform-hmr": "^1.0.1",
+    "redbox-react": "^1.1.1",
+    "redux-devtools": "^3.0.0-beta-3",
+    "redux-devtools-dock-monitor": "^1.0.0-beta-3",
+    "redux-devtools-log-monitor": "^1.0.0-beta-3",
+    "reselect": "^2.5.4",
+    "sass-lint": "^1.9.1",
+    "sass-loader": "^3.1.2",
+    "scroll-behavior": "^0.8.2",
+    "sinon": "^1.17.6",
+    "sinon-chai": "^2.8.0",
+    "strip-loader": "^0.1.0",
+    "style-loader": "^0.13.0",
+    "webpack": "^1.12.9",
+    "webpack-dev-middleware": "^1.4.0",
+    "webpack-dev-server": "^1.16.2",
+    "webpack-hot-middleware": "^2.5.0",
+    "webpack-merge": "^0.15.0",
+    "webpack-s3-plugin": "^0.6.7",
+    "webpack-strip-block": "^0.1.0",
+    "weinre-webpack": "0.0.8"
+  },
+  "engines": {
+    "node": "6.5.0"
+  }
+}

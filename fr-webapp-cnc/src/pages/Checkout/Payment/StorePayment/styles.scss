@@ -1,0 +1,62 @@
+@import '~theme/base/spa';
+
+.container {
+  @include spacing('s', 'h', true);
+  @include cartSpacing('l', 'x', true, 't');
+}
+
+.instructionsImage {
+  @include cartSpacing('l', 'x', false, 'b');
+  height: auto;
+}
+
+.instructions {
+  @extend %baseAMinus2;
+  @include spacing('m', 'v', false);
+  color: $gray500;
+  display: block;
+}
+
+.uniqloPaymentBtn {
+  @include spacing('xs', 'x', false, 't');
+}
+
+.storeSelect {
+  @include cartSpacing('l', 'x', false, 't');
+
+  .selectStore {
+    @extend %baseBPlus2;
+  }
+}
+
+.continueToBtn {
+  @include spacing('m', 'v' , true);
+  @include cartSpacing('s', 'x', false, 't');
+  background-color: $white;
+  border: $black solid 1px;
+  color: $black;
+
+  .continueLabel {
+    @extend %baseBPlus2;
+  }
+}
+
+.payButton {
+  @extend %secondaryButton;
+}
+
+.shippingAddress {
+  @include spacing('l', 'x', false, 'b');
+}
+
+.paymentTitle {
+  font-weight: $fontWeightBold;
+}
+
+.errorMessage {
+  @include spacing('l', 'x', false, 'b');
+  @include spacing('m', 'h');
+  color: $red;
+  display: block;
+  text-align: center;
+}

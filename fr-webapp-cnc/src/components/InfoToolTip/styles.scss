@@ -1,0 +1,14 @@
+@import '~theme/base/spa';
+
+.iconToolTip {
+  @extend %baseAPlus1;
+
+  .infoIcon {
+    @extend %icomoonInfo;
+    color: $gray;
+    font-size: $header0FontSize;
+    font-weight: $fontWeightNormal;
+    line-height: 1;
+    vertical-align: middle;
+  }
+}

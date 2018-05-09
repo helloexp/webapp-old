@@ -1,0 +1,31 @@
+@import '~theme/base/spa';
+
+.cartMainContainer {
+  background-color: $grey250;
+
+  h6 {
+    @extend %baseBPlus1;
+  }
+}
+
+.guCartContainer {
+  @extend %largeTopMargin;
+  @extend %smallPlusMediumBottomMargin;
+  @extend %dropShadowCheckout;
+  @include spacing('m', 'h', true);
+  @include cartSpacing('l', 'x', true, 't');
+  @include cartSpacing('l', 'x', false, 't');
+  @include cartSpacing('m', 'x', false, 'b');
+  background-color: $white;
+
+  > div {
+    &:first-child {
+      @include cartSpacing('l', 'x', true, 'b');
+    }
+  }
+}
+
+.multiBuyBorder {
+  @include spacing('m', 'h', false);
+  border-bottom: 1px solid $grey150;
+}

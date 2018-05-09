@@ -1,0 +1,274 @@
+//vertical spacing same across all bps, bundle together, no media query required
+%zeroTopMarginV1 {
+  margin-top: 0;
+}
+
+%zeroTopPaddingV1 {
+  padding-top: 0;
+}
+
+%zeroBottomMarginV1 {
+  margin-bottom: 0;
+}
+
+%zeroBottomPaddingV1 {
+  padding-bottom: 0;
+}
+
+%zeroVtSpacingV1 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+%zeroVtSpacingPV1 {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+%tinyTopMarginV1 {
+  margin-top: 3px;
+}
+
+%tinyTopPaddingV1 {
+  padding-top: 3px;
+}
+
+%tinyBottomMarginV1 {
+  margin-bottom: 3px;
+}
+
+%tinyBottomPaddingV1 {
+  padding-bottom: 3px;
+}
+
+%tinyVtSpacingV1 {
+  margin-top: 3px;
+  margin-bottom: 3px;
+}
+
+%tinyVtSpacingPV1 {
+  padding-top: 3px;
+  padding-bottom: 3px;
+}
+
+%extraSmallTopMarginV1 {
+  margin-top: 6px;
+}
+
+%extraSmallTopPaddingV1 {
+  padding-top: 6px;
+}
+
+%extraSmallBottomMarginV1 {
+  margin-bottom: 6px;
+}
+
+%extraSmallBottomPaddingV1 {
+  padding-bottom: 6px;
+}
+
+%extraSmallVtSpacingV1 {
+  margin-top: 6px;
+  margin-bottom: 6px;
+}
+
+%extraSmallVtSpacingPV1 {
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+%smallTopMarginV1 {
+  margin-top: 9px;
+}
+
+%smallTopPaddingV1 {
+  padding-top: 9px;
+}
+
+%smallBottomMarginV1 {
+  margin-bottom: 9px;
+}
+
+%smallBottomPaddingV1 {
+  padding-bottom: 9px;
+}
+
+%smallVtSpacingV1 {
+  margin-top: 9px;
+  margin-bottom: 9px;
+}
+
+%smallVtSpacingPV1 {
+  padding-top: 9px;
+  padding-bottom: 9px;
+}
+
+%mediumTopMarginV1 {
+  margin-top: 15px;
+}
+
+%mediumTopPaddingV1 {
+  padding-top: 15px;
+}
+
+%mediumBottomMarginV1 {
+  margin-bottom: 15px;
+}
+
+%mediumBottomPaddingV1 {
+  padding-bottom: 15px;
+}
+
+%mediumVtSpacingV1 {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+%mediumVtSpacingPV1 {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+%largeTopMarginV1 {
+  margin-top: 18px;
+}
+
+%largeTopPaddingV1 {
+  padding-top: 18px;
+}
+
+%largeBottomMarginV1 {
+  margin-bottom: 18px;
+}
+
+%largeBottomPaddingV1 {
+  padding-bottom: 18px;
+}
+
+%largeVtSpacingV1 {
+  margin-top: 18px;
+  margin-bottom: 18px;
+}
+
+%largeVtSpacingPV1 {
+  padding-top: 18px;
+  padding-bottom: 18px;
+}
+
+
+%extraLargeTopMarginV1 {
+  margin-top: 24px;
+}
+
+%extraLargeTopPaddingV1 {
+  padding-top: 24px;
+}
+
+%extraLargeBottomMarginV1 {
+  margin-bottom: 24px;
+}
+
+%extraLargeBottomPaddingV1 {
+  padding-bottom: 24px;
+}
+
+%extraLargeVtSpacingV1 {
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+
+%extraLargeVtSpacingPV1 {
+  padding-top: 24px;
+  padding-bottom: 24px;
+}
+
+
+%veryLargeTopMarginV1 {
+  margin-top: 36px;
+}
+
+%veryLargeTopPaddingV1 {
+  padding-top: 36px;
+}
+
+%veryLargeBottomMarginV1 {
+  margin-bottom: 36px;
+}
+
+%veryLargeBottomPaddingV1 {
+  padding-bottom: 36px;
+}
+
+%veryLargeVtSpacingV1 {
+  margin-top: 36px;
+  margin-bottom: 36px;
+}
+
+%veryLargeVtSpacingPV1 {
+  padding-top: 36px;
+  padding-bottom: 36px;
+}
+
+$cartSizes: (
+  'xxs': 'tiny',
+  'xs': 'extraSmall',
+  's': 'small',
+  'm': 'medium',
+  'l': 'large',
+  'xl': 'extraLarge',
+  'xxl': 'veryLarge',
+) !default;
+
+@mixin marginMixin($size, $direction) {
+  @extend #{'%' + $size + $direction + 'MarginV1'}
+}
+
+@mixin paddingMixin($size, $direction) {
+  @extend #{'%' + $size + $direction + 'PaddingV1'}
+}
+
+@mixin customCartSpacing($size, $isPadding, $directions...) {
+  $mappedDirection: '';
+
+  @each $direction in $directions {
+    @if map-has-key($possibleDirections, $direction) {
+      $mappedDirection: map-get($possibleDirections, $direction);
+    } @else {
+      $_: log('Invalid direction provided: ' + $direction + '.');
+    }
+
+    @if ($isPadding) {
+      @include paddingMixin($size, $mappedDirection)
+    } @else {
+      @include marginMixin($size, $mappedDirection)
+    }
+  }
+}
+
+@mixin cartSpacing($size, $type, $isPadding: false, $directions...) {
+  $mappedSize: '';
+  $addPadding: '';
+
+  @if ($isPadding) {
+    $addPadding: 'P';
+  }
+
+  @if map-has-key($cartSizes, $size) {
+    $mappedSize: map-get($cartSizes, $size);
+  } @else {
+    $_: log('Invalid size provided: ' + $size + '.');
+  }
+
+  @if ($type == 'v') {
+    @extend #{'%' + $mappedSize + 'VtSpacing' + $addPadding + 'V1'};
+  } @else if ($type == 'h') {
+    @extend #{'%' + $mappedSize + 'HzSpacing' + $addPadding + 'V1'};
+  } @else if ($type == 'x') {
+    @include customCartSpacing($mappedSize, $isPadding, $directions...)
+  } @else if ($type == 'a') {
+    @extend #{'%' + $mappedSize + 'HzSpacing' + $addPadding + 'V1'};
+    @extend #{'%' + $mappedSize + 'VtSpacing' + $addPadding + 'V1'};
+  } @else {
+    $_: log('Invalid type provided: ' + $type + '.');
+  }
+}

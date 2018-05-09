@@ -1,0 +1,28 @@
+@import '~theme/base/spa';
+
+.couponDetailsContainer {
+  @include spacing('s+m', 'x', true, 'b');
+
+  .descriptionContainer {
+    @include spacing('s+m', 'v', true);
+
+    .couponHeading {
+      @include spacing('s+m', 'x', true, 'b');
+      font-weight: $fontWeightHeavy;
+    }
+
+    .couponName {
+      @include spacing('m', 'x', true, 'b');
+    }
+
+    .descriptionText {
+      @extend %baseAMinus3;
+      color: $gray500;
+    }
+
+    .greyOutText {
+      color: $grey90;
+      font-weight: $fontWeightLight;
+    }
+  }
+}

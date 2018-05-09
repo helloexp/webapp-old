@@ -1,0 +1,14 @@
+@import '~theme/base/images';
+
+.swipeContainer {
+  @extend %productImage%p32;
+  height: auto;
+  position: relative;
+}
+
+.swipableWrapper {
+  .swipeItemClass {
+    @include spacing('m', 'x', true, 'l');
+    @include spacing('z', 'x', true, 'r');
+  }
+}

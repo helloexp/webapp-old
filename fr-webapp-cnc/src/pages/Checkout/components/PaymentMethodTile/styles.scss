@@ -1,0 +1,149 @@
+@import '~theme/base/spa';
+
+.giftCardWrap {
+  .leftRightTextWrapper {
+    @include spacing('s', 'x', false, 'b');
+  }
+}
+
+.editLink {
+  @include spacing('z', 'a', false);
+  @include spacing('z', 'a', true);
+  @include spacing('m', 'x', true, 'r');
+  font-size: $header3FontSize;
+  position: absolute;
+  right: 0;
+  text-transform: uppercase;
+
+  h6 {
+    border-bottom: 1px solid $uniqloBlack001;
+    color: $uniqloBlack001;
+    line-height: 1.2em;
+  }
+}
+
+.tileContainer {
+  @extend %dropShadowCheckout;
+  @include spacing('s', 'x', false, 't');
+  @include spacing('m', 'h', true);
+  @include cartSpacing('l', 'v', true);
+  background-color: $white;
+  position: relative;
+
+  .subInfo {
+    @include spacing('z', 'a', true);
+    color: $cyanDark;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  .creditCardImage {
+    @include cartSpacing('s', 'v', false);
+    @include spacing('s', 'x', false, 'r');
+    display: inline;
+    vertical-align: middle;
+  }
+
+  .savedCreditCard {
+    font-size: $fontSizeBase;
+    font-weight: $fontWeightHeavy;
+  }
+
+  .tileHead {
+    @include spacing('s', 'x', false, 'b');
+    display: inline-block;
+  }
+
+  .reviewTileText {
+    @extend %baseA;
+  }
+
+  .cvvWrapper {
+    .infoIcon {
+      border: none;
+    }
+  }
+
+  .postPayText {
+    &:nth-child(2) {
+      @include spacing('s', 'x', false, 't');
+    }
+  }
+
+  .smallBottomPadding {
+    @include cartSpacing('s', 'x', false, 'b');
+  }
+}
+
+.securityInfoWrapper {
+  margin-top: 10px;
+
+  .securityInfoLock {
+    font-size: 15px;
+    margin-right: 10px;
+  }
+
+  .securityInfo {
+    bottom: 3px;
+    font-size: 13px;
+    position: relative;
+  }
+}
+
+.lastGiftCard {
+  padding-bottom: 0;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.cvvWrapper {
+  @include spacing('s', 'x', false, 't');
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.addressCover {
+  flex-basis: 90%;
+}
+
+.infoIcon {
+  @extend %icomoonInfo;
+  font-size: $fontSizePlus35;
+  line-height: 1;
+  padding: 0;
+  width: 24px;
+
+  &::before {
+    color: $gray;
+    font-size: $header0FontSize;
+  }
+
+  &::after {
+    font-size: $fontSizePlus35;
+  }
+}
+
+.errorMessage {
+  @include spacing('l', 'x', false, 'b');
+  color: $red;
+  display: block;
+}
+
+.inputWrap {
+  position: relative;
+}
+
+.cvvToolTip {
+  bottom: 35px;
+  left: 0;
+  z-index: z('miniBag');
+}
+
+.paymentTileText {
+  @include spacing('m', 'x', true, 'b');
+  font-size: $fontSizeBase;
+}

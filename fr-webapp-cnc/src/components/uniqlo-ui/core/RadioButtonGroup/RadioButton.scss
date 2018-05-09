@@ -1,0 +1,80 @@
+@import '~theme/base/main';
+
+.radioButton {
+  .label {
+    color: $darkBlack;
+    display: inline;
+    margin: 0 10px;
+  }
+
+  .spaRadioContainer {
+    display: flex;
+  }
+
+  .spaTopLabels {
+    flex: 1;
+  }
+
+  .spaLabel {
+    @extend %baseB;
+    display: inline-block;
+
+    &.left {
+      @include spacing('s', 'x', false, 'l');
+      @include spacing('xs', 'x', false, 'r');
+      color: $darkBlack;
+    }
+
+    &.right {
+      @include spacing('xs', 'x', true, 'l');
+      border-left: 1px solid $lightBlack;
+      color: $blueGreen;
+    }
+
+    &.bottom {
+      @include spacing('l', 'x', true, 'l');
+      @include spacing('s', 'h', false);
+      color: $darkBlack;
+    }
+
+    &.disabledLabel {
+      color: $disabledColor;
+    }
+  }
+
+  &:disabled {
+    color: $disabledColor;
+  }
+
+  &.radioFilter {
+    @include spacing('l', 'x', false, 'b');
+    align-self: flex-start;
+
+    input {
+      display: none;
+
+      &:checked + label {
+        @extend %iconRadioSelected;
+        color: $lightGreen1000;
+
+        &::before {
+          color: $lightGreen1000;
+        }
+      }
+    }
+
+    input + label {
+      @extend %baseBMinus1;
+      @extend %iconRadioSelected;
+      color: $uniqloGrey001;
+      margin: 0;
+
+      &::before {
+        @include spacing('s', 'x', true, 'r');
+        color: $uniqloGrey001;
+        font-size: 19px;
+        vertical-align: sub;
+      }
+    }
+  }
+}

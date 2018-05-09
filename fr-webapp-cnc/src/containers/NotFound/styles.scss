@@ -1,0 +1,31 @@
+@import '~theme/base/spa';
+
+.notFoundWrapper {
+  @include spacing('l', 'v', true);
+  @include spacing('m', 'h', true);
+  background: $grey250;
+
+  &.notFoundBg {
+    background: $white;
+  }
+
+  .notFoundTitle {
+    @include spacing('m', 'x', true, 'b');
+    border-bottom: 1px solid $textColorLight;
+    font-weight: $fontWeightHeavy;
+  }
+
+  .notFoundsubTitle {
+    @include spacing('s', 'x', false, 'b');
+    display: block;
+  }
+
+  .notFoundText {
+    @extend %baseFont;
+    color: $uniqloBlack001;
+  }
+
+  .goHome {
+    @include spacing('l', 'x', false, 't');
+  }
+}

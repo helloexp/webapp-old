@@ -1,0 +1,162 @@
+@import '~theme/base/spa';
+
+.membershipInfo {
+  @include spacing('m', 'x', true, 't');
+  @include spacing('l', 'x', false, 'b');
+
+  .header {
+    @include spacing('m', 'x', false, 't');
+    @include spacing('z', 'x', false, 'r');
+    @include spacing('z', 'x', true, 't');
+    @include spacing('m', 'h');
+    border: none;
+    flex: 1;
+    font-size: $header2FontSize;
+    font-weight: $fontWeightHeavy;
+  }
+
+  .infoHeader {
+    @include spacing('z', 'x', true, 't');
+    @include spacing('m', 'h');
+    border: none;
+    font-size: $header5FontSize;
+    font-weight: $fontWeightHeavy;
+    line-height: 1.5em;
+  }
+
+  .subtitle {
+    @extend %baseBPlus3;
+    @include spacing('m', 'h');
+    @include spacing('m+l', 'x', false, 't');
+    @include spacing('s+m', 'x', true, 'b');
+  }
+
+  .linksContainer {
+    @include spacing('m', 'x', true, 'r');
+    @include spacing('m', 'h', true);
+    margin-top: 0;
+    padding-bottom: 0 !important; // that is not following the design guidelines O.o
+    padding-top: 0 !important;    // This is a very unique design
+
+    h6 {
+      font-size: $fontSizePlus1;
+      font-weight: $fontWeightBold;
+    }
+  }
+
+  .links {
+    @include spacing('s+m', 'v', true);
+    align-items: center;
+    border-bottom: 1px solid $grey150;
+    display: flex;
+
+    span {
+      @include spacing('z', 'x', true, 'r');
+      @include spacing('z', 'v', true);
+      color: $gray67;
+    }
+
+    &:last-child {
+      border: none;
+    }
+  }
+
+  .infoContainer {
+    @include spacing('s+m', 'v', true);
+    @include spacing('m', 'h', false);
+
+    &.infoWrapper {
+      @include spacing('m', 'h', true);
+    }
+  }
+
+  .tabInfoContainer {
+    @extend %dropShadowCheckout;
+    background-color: $white;
+
+    .tabJpImage {
+      @include spacing('m', 'v', true);
+      height: 28px;
+      width: 63px;
+    }
+
+    .tabGuImage {
+      @include spacing('m', 'v', true);
+      height: 28px;
+      width: 28px;
+    }
+  }
+
+  .infoTab {
+    @include spacing('z', 'v', true);
+    @include spacing('s', 'x', false, 'b');
+    @include spacing('l', 'x', true, 'l');
+    @include spacing('m', 'x', true, 'r');
+    background-color: $white;
+    box-shadow: 0 1px 2px 0 $dropShadowBlack;
+  }
+
+  .backButton {
+    @include spacing('l', 'v', false);
+    background-color: $white;
+    border: 1px solid $black;
+    color: $black;
+    height: 50px;
+  }
+
+  .membershipInfoContainer {
+    @include spacing('m', 'x', true, 'b');
+    @include spacing('m', 'x', false, 'b');
+    @include spacing('l', 'x', true, 't');
+    @include spacing('m', 'h');
+    border-bottom: 1px solid $gray;
+
+    .header,
+    .toolTipIcon {
+      @include spacing('z', 'a');
+      @include spacing('z', 'a', true);
+      border: none;
+    }
+
+    .toolTipIcon {
+      &.toolTip {
+        @include spacing('z', 'a');
+        font-size: $header5FontSize;
+      }
+    }
+  }
+}
+
+.withdraw {
+  @include spacing('s+m', 'v', true);
+  @include spacing('z', 'h', true);
+  display: flex;
+}
+
+.modalContent {
+  @extend %baseA;
+  @include spacing('m', 'x', false, 'b');
+  color: $black;
+  font-size: $fontSizeBase;
+}
+
+.modalContentConfirmation {
+  @extend %baseAPlus1;
+  @include spacing('m', 'x', false, 'b');
+  color: $black900;
+}
+
+.modalText {
+  display: block;
+  font-size: $fontSizeBase;
+}
+
+.completionText {
+  @include spacing('l', 'v', false);
+  color: $black;
+  width: 100%;
+}
+
+.gridTabStyle {
+  border-bottom: 1px solid $grey150;
+}

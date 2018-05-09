@@ -1,0 +1,11 @@
+@import '~theme/base/variables';
+
+.overlay {
+  background-color: $lightTransparentGray;
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: $minibagHeight;
+  z-index: 0;
+}

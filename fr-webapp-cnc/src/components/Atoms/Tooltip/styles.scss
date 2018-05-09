@@ -1,0 +1,67 @@
+@import '~theme/base/spa';
+
+.container {
+  @extend %dropShadow;
+  @extend %baseAPlus1;
+  @include spacing('m', 'h', true);
+  @include spacing('m', 'v', true);
+  background-color: $white;
+  border: 1px solid;
+  bottom: 100%;
+  box-sizing: border-box;
+  position: absolute;
+  width: 100%;
+  z-index: z('tooltip');
+
+  &.info {
+    border-color: $blueGreen;
+
+    &.top {
+      &::before {
+        border-top-color: $blueGreen;
+      }
+    }
+  }
+
+  &.error {
+    border-color: currentColor;
+    color: $red;
+
+    &.top {
+      &::before {
+        border-top-color: $red;
+      }
+    }
+  }
+
+  &.center {
+    &::before,
+    &::after {
+      border-left: 12px solid transparent;
+      border-right: 12px solid transparent;
+      content: '';
+      height: 0;
+      left: 50%;
+      margin-left: -12px;
+      position: absolute;
+      width: 0;
+    }
+
+    &::before {
+      border-top: 10px solid;
+      margin-top: 1px;
+      top: 100%;
+    }
+
+    &::after {
+      border-top: 10px solid $white;
+      top: 100%;
+    }
+  }
+
+}
+
+.heading {
+  @extend %baseAPlus1;
+  @include spacing('m', 'x', false, 'b');
+}

@@ -1,0 +1,135 @@
+@import '~theme/base/spa';
+
+.footer {
+  @extend %smallPlusMediumTopMargin;
+  padding-bottom: $stickyTotalHeight;
+
+  &.noTopSpacing {
+    @include spacing('z', 'x', false, 't');
+  }
+}
+
+.links {
+  @include spacing('m', 'h');
+
+  &.topBorder {
+    border-top: 2px solid $black900;
+  }
+}
+
+.link {
+  @extend %baseBPlus1;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid $gray67;
+  color: $black900;
+  display: block;
+  font-family: inherit;
+  font-weight: $fontWeightHeavy;
+  line-height: 1;
+  text-align: left;
+  width: 100%;
+}
+
+.copyright {
+  @extend %baseUCMinus2;
+  @include spacing('m', 'h');
+  @include spacing('l', 'v');
+  color: $gray67;
+  font-size: $fontSizeMinus2;
+  letter-spacing: initial;
+  text-align: center;
+
+  &.smallSpacingCopyright {
+    @include cartSpacing('xl', 'v')
+  }
+}
+
+.tabs {
+  border-bottom: 1px solid $gray67;
+  display: flex;
+}
+
+.tabButton {
+  @include spacing('l', 'x', true, 't');
+  @include spacing('m', 'x', true, 'b');
+  background-color: transparent;
+  border: none;
+  border-bottom: 4px solid transparent;
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: {
+    left: 0;
+    right: 0;
+  }
+  width: 50%;
+
+  &.isActive {
+    border-bottom-color: $blueGreen;
+  }
+}
+
+.guLogoContainer {
+  border-bottom: 1px solid $gray67;
+}
+
+.logos {
+  @include spacing('s+m', 'v', true);
+  flex-flow: row;
+  justify-content: flex-start;
+
+  &.smallSpacingLogos {
+    @include cartSpacing('l', 'v', true);
+  }
+
+  &.uq {
+    height: 40px;
+    width: 90px;
+  }
+
+  &.gu {
+    height: 40px;
+    width: 40px;
+  }
+
+  .guLogoImg {
+    height: 28px;
+    width: 28px;
+  }
+
+  .fixedSizeImg {
+    height: 28px;
+    width: 63px;
+  }
+}
+
+.image {
+  display: block;
+  height: 28px;
+  margin: {
+    left: auto;
+    right: auto;
+  }
+}
+
+.guLink {
+  @extend %baseBPlus1;
+  color: $black900;
+  font-weight: $fontWeightHeavy;
+  width: 100%;
+}
+
+.linkContainer {
+  @include spacing('l', 'x', true, 't');
+  @include spacing('m', 'x', false, 'l');
+  height: initial;
+}
+
+.smallLinkContainer {
+  @include cartSpacing('xl', 'x', true, 't');
+}
+
+.smallSpacingLink {
+  @include cartSpacing('xl', 'v', true);
+}

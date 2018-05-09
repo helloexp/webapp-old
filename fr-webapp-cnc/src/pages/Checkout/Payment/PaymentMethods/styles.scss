@@ -1,0 +1,11 @@
+@import '~theme/base/spa';
+
+.paymentMethodsWrap {
+  @include cartSpacing('xl', 'x', false, 'b');
+}
+
+.title {
+  @extend %baseBPlus1;
+  @include spacing('z', 'x', false, 't');
+  @include cartSpacing('l', 'x', false, 'b');
+}

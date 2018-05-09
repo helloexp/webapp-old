@@ -1,0 +1,30 @@
+@import '~theme/base/spa';
+
+.checkLockWrap {
+  align-items: baseline;
+  display: flex;
+  justify-content: space-between;
+}
+
+.slimLabel {
+  font-weight: $fontWeightNormal !important;
+}
+
+.check {
+  @include spacing('z', 'x', false, 'b');
+}
+
+.infoIcon {
+  @extend %iconInfo;
+  @include spacing('z', 'h', true);
+  align-items: flex-start;
+  display: flex;
+  justify-content: flex-end;
+  width: 40px;
+
+  &::before {
+    color: $gray;
+    font-size: $header0FontSize;
+    vertical-align: middle;
+  }
+}

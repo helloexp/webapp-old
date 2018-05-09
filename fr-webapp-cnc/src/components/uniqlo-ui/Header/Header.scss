@@ -1,0 +1,13 @@
+@import '~theme/base/main';
+
+.iconContainer {
+  @extend %iconUniqloLogo;
+  @extend %mediumHzSpacingP;
+  @extend %mediumVtSpacingP;
+  line-height: 45px;
+}
+
+.icon {
+  color: $redA700;
+  font-size: 45px;
+}

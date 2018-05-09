@@ -1,0 +1,54 @@
+@import '~theme/base/variables';
+
+.base {
+  align-items: center;
+  display: flex;
+  font-size: $fontSizeBase;
+  line-height: 1;
+
+  &.inline {
+    display: inline-flex;
+  }
+
+  &.paragraph {
+    display: block;
+    line-height: 1.5em;
+  }
+
+  &.lighter {
+    font-weight: 300;
+  }
+
+  &.bolder {
+    font-weight: 600;
+  }
+
+  &.plus1 {
+    font-size: $fontSizePlus1;
+  }
+
+  &.plus2 {
+    font-size: $fontSizePlus2;
+  }
+
+  &.plus3 {
+    font-size: $fontSizePlus3;
+  }
+
+  &.plus4 {
+    font-size: $fontSizePlus4;
+  }
+
+  &.minus1 {
+    font-size: $fontSizeMinus1;
+  }
+
+  &.minus2 {
+    font-size: $fontSizeMinus2;
+  }
+
+  &.minus3 {
+    font-size: $fontSizeMinus3;
+  }
+}
+

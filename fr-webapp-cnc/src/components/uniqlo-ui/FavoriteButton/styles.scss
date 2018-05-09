@@ -1,0 +1,21 @@
+@import '~theme/base/spa';
+
+.favoriteIcon {
+  @include square(24);
+  cursor: pointer;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: inherit;
+
+  &.smallIcon,
+  &.twoColumn {
+    padding: 10px;
+  }
+
+  &.singleLarge {
+    @include square(35);
+    padding: 9px 9px 0 0;
+  }
+}
+

@@ -1,0 +1,172 @@
+@import '~theme/base/colors';
+
+$dotWidth: 9px;
+$dotHeight: 9px;
+$circleRadius: 22px;
+
+@keyframes g-r {
+  0%,
+  100% {
+    background-color: $gray;
+  }
+
+  50% {
+    background-color: $red;
+  }
+}
+
+.dots {
+  align-items: center;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  min-height: 14em;
+  transform: translateZ(0);
+  width: 100%;
+}
+
+.fullscreen {
+  align-items: center;
+  animation: fadein .6s;
+  background: $lighterWhite;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  left: 0;
+  pointer-events: all;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 99999;
+
+  &:target {
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
+
+.circularDot {
+  animation: circular-ani 1.1s infinite ease;
+  border-radius: 50%;
+  height: $dotHeight;
+  width: $dotWidth;
+}
+
+.inlineDot {
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-name: g-r;
+  background-color: $grey450;
+  border-radius: 8px;
+  display: inline-block;
+  height: 8px;
+  margin-right: 12px;
+  vertical-align: top;
+  width: 8px;
+}
+
+.false {
+  display: none;
+}
+
+@keyframes circular-ani {
+  0%,
+  100% {
+    box-shadow: 0 -1 * $circleRadius 0 0 $red,
+    .71 * $circleRadius -.71 * $circleRadius 0 0 $fainterRed,
+    $circleRadius 0 0 0 $fainterRed,
+    .71 * $circleRadius .71 * $circleRadius 0 0 $fainterRed,
+    0 $circleRadius 0 0 $fainterRed,
+    - .71 * $circleRadius .71 * $circleRadius 0 0 $fainterRed,
+    - 1 * $circleRadius 0 0 0 $halfRed,
+    - .71 * $circleRadius -.71 * $circleRadius 0 0 $faintRed;
+  }
+
+  12.5% {
+    box-shadow: 0 -1 * $circleRadius 0 0 $faintRed,
+    .71 * $circleRadius -.71 * $circleRadius 0 0 $red,
+    $circleRadius 0 0 0 $fainterRed,
+    .71 * $circleRadius .71 * $circleRadius 0 0 $fainterRed,
+    0 $circleRadius 0 0 $fainterRed,
+    - .71 * $circleRadius .71 * $circleRadius 0 0 $fainterRed,
+    - 1 * $circleRadius 0 0 0 $fainterRed,
+    - .71 * $circleRadius -.71 * $circleRadius 0 0 $halfRed;
+  }
+
+  25% {
+    box-shadow: 0 -1 * $circleRadius 0 0 $halfRed,
+    .71 * $circleRadius -.71 * $circleRadius 0 0 $faintRed,
+    $circleRadius 0 0 0 $red,
+    .71 * $circleRadius .71 * $circleRadius 0 0 $fainterRed,
+    0 $circleRadius 0 0 $fainterRed,
+    - .71 * $circleRadius .71 * $circleRadius 0 0 $fainterRed,
+    - 1 * $circleRadius 0 0 0 $fainterRed,
+    - .71 * $circleRadius -.71 * $circleRadius 0 0 $fainterRed;
+  }
+
+  37.5% {
+    box-shadow: 0 -1 * $circleRadius 0 0 $fainterRed,
+    .71 * $circleRadius -.71 * $circleRadius 0 0 $halfRed,
+    $circleRadius 0 0 0 $faintRed,
+    .71 * $circleRadius .71 * $circleRadius 0 0 $red,
+    0 $circleRadius 0 0 $fainterRed,
+    - .71 * $circleRadius .71 * $circleRadius 0 0 $fainterRed,
+    - 1 * $circleRadius 0 0 0 $fainterRed,
+    - .71 * $circleRadius -.71 * $circleRadius 0 0 $fainterRed;
+  }
+
+  50% {
+    box-shadow: 0 -1 * $circleRadius 0 0 $fainterRed,
+    .71 * $circleRadius -.71 * $circleRadius 0 0 $fainterRed,
+    $circleRadius 0 0 0 $halfRed,
+    .71 * $circleRadius .71 * $circleRadius 0 0 $faintRed,
+    0 $circleRadius 0 0 $red,
+    - .71 * $circleRadius .71 * $circleRadius 0 0 $fainterRed,
+    - 1 * $circleRadius 0 0 0 $fainterRed,
+    - .71 * $circleRadius -.71 * $circleRadius 0 0 $fainterRed;
+  }
+
+  62.5% {
+    box-shadow: 0 -1 * $circleRadius 0 0 $fainterRed,
+    .71 * $circleRadius -.71 * $circleRadius 0 0 $fainterRed,
+    $circleRadius 0 0 0 $fainterRed,
+    .71 * $circleRadius .71 * $circleRadius 0 0 $halfRed,
+    0 $circleRadius 0 0 $faintRed,
+    - .71 * $circleRadius .71 * $circleRadius 0 0 $red,
+    - 1 * $circleRadius 0 0 0 $fainterRed,
+    - .71 * $circleRadius -.71 * $circleRadius 0 0 $fainterRed;
+  }
+
+  75% {
+    box-shadow: 0 -1 * $circleRadius 0 0 $fainterRed,
+    .71 * $circleRadius -.71 * $circleRadius 0 0 $fainterRed,
+    $circleRadius 0 0 0 $fainterRed,
+    .71 * $circleRadius .71 * $circleRadius 0 0 $fainterRed,
+    0 $circleRadius 0 0 $halfRed,
+    - .71 * $circleRadius .71 * $circleRadius 0 0 $faintRed,
+    - 1 * $circleRadius 0 0 0 $red,
+    - .71 * $circleRadius -.71 * $circleRadius 0 0 $fainterRed;
+  }
+
+  87.5% {
+    box-shadow: 0 -1 * $circleRadius 0 0 $fainterRed,
+    .71 * $circleRadius -.71 * $circleRadius 0 0 $fainterRed,
+    $circleRadius 0 0 0 $fainterRed,
+    .71 * $circleRadius .71 * $circleRadius 0 0 $fainterRed,
+    0 $circleRadius 0 0 $fainterRed,
+    - .71 * $circleRadius .71 * $circleRadius 0 0 $halfRed,
+    - 1 * $circleRadius 0 0 0 $faintRed,
+    - .71 * $circleRadius -.71 * $circleRadius 0 0 $red;
+  }
+}
+
+@keyframes fadein {
+  0%,
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}

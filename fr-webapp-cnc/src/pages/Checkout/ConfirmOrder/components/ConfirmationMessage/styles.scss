@@ -1,0 +1,36 @@
+@import '~theme/base/spa';
+
+.confirmationMsgWrap {
+  @include cartSpacing('l', 'v', true);
+  background: $grey250;
+
+  .confirmationTitle {
+    @include spacing('m', 'h');
+    @include spacing('z', 'x', true, 'b');
+    @include cartSpacing('l', 'x', false, 'b');
+    border-bottom: none;
+    font-size: $header8FontSize;
+    font-weight: $fontWeightBold;
+  }
+
+  .confirmationMessage {
+    @extend %baseFont;
+    @include spacing('z', 'x', true, 'b');
+    @include spacing('m', 'h');
+  }
+}
+
+.confirmHeader {
+  @include spacing('m', 'x', true, 'r');
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.toolTipText {
+  @extend %baseAPlus1;
+  @include spacing('z', 'a');
+  @include spacing('s+s', 'x', false, 'l');
+  display: list-item;
+  list-style-type: disc;
+}

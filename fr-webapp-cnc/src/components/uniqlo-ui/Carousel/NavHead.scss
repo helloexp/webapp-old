@@ -1,0 +1,52 @@
+@import '~theme/base/main';
+
+.navHead {
+  background-color: $grey500;
+  color: $white;
+  display: inline-block;
+  padding: 5px;
+  position: absolute;
+  text-align: center;
+  z-index: 3;
+
+  .arrow {
+    border: 10px solid transparent;
+    display: inline-block;
+  }
+
+  &.up {
+    left: 40%;
+    top: 0;
+
+    .arrow {
+      border-bottom-color: $white;
+    }
+  }
+
+  &.down {
+    bottom: 0;
+    left: 40%;
+
+    .arrow {
+      border-top-color: $white;
+    }
+  }
+
+  &.left {
+    left: 0;
+    top: 40%;
+
+    .arrow {
+      border-right-color: $white;
+    }
+  }
+
+  &.right {
+    right: 0;
+    top: 40%;
+
+    .arrow {
+      border-left-color: $white;
+    }
+  }
+}

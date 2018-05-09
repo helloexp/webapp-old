@@ -1,0 +1,7 @@
+@import '~theme/base/spa';
+
+.accountLogin {
+  @include spacing('m', 'h', true);
+  @include spacing('l', 'x', true, 'b');
+  background-color: $grey250;
+}

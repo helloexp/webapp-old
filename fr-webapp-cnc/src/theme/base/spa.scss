@@ -1,0 +1,207 @@
+@import 'spacing';
+@import 'variables';
+@import 'typography';
+@import 'icons';
+@import 'pure-mixins';
+@import 'spa-simple';
+@import 'cart-spacing';
+
+//button styles from spa
+%mediumButton {
+  @include spacing('xs', 'a', true);
+  height: 40px;
+}
+
+%smallButton {
+  @include spacing('z', 'a', true);
+  height: 28px;
+}
+
+%button {
+  @extend %mediumButton;
+  background-color: $buttonBackgroundColor !important;
+
+  span {
+    color: $grey900 !important;
+    text-shadow: none !important;
+    text-transform: uppercase;
+  }
+}
+
+%secondaryButton {
+  @extend %button;
+  background-color: $grey900 !important;
+
+  span {
+    color: $textColorInverted !important;
+  }
+}
+
+// text styles from spa
+%header {
+  @include spacing('z', 'a', true);
+  @include spacing('z', 'a');
+  color: $grey900;
+  text-transform: uppercase;
+}
+
+%header1 {
+  @extend %header;
+  font-size: $header1FontSize;
+}
+
+%header2 {
+  @extend %header;
+  font-size: $header2FontSize;
+}
+
+%header3 {
+  @extend %header;
+  font-size: $header3FontSize;
+}
+
+%textfield {
+  @include spacing('z', 'x', true, 't');
+  @include spacing('s', 'x', false, 't');
+  @include spacing('s', 'x', true, 'b');
+  @include spacing('s+m', 'x', false, 'b');
+  border: none;
+  border-bottom: 1px solid $textColorLight;
+  box-sizing: border-box;
+  color: $grey900;
+}
+
+// spa icon styles
+
+%uniIconCart::before {
+  @extend %iconCart;
+}
+
+%uniIconLogo::before {
+  @extend %iconUniqloLogo;
+}
+
+%uniIconRightChevron::before {
+  @extend %iconRightChevron;
+}
+
+%uniIconX::before {
+  @extend %iconIconX;
+}
+
+%uniIconShipping::before {
+  @extend %iconIconShipping;
+}
+
+%lockSymbol {
+
+  &::before {
+    @extend %icomoonSecure;
+    color: $black;
+    left: 0;
+ }
+}
+
+%infoIcon {
+  color: $textColorLight;
+  font-family: 'fontIcons';
+
+  &::before {
+    @extend %iconInfo;
+  }
+}
+
+%selectArrow {
+  select {
+    appearance: none;
+    border-radius: 0;
+    outline: none;
+  }
+
+  &::after {
+    @extend %uniIcon;
+    content: '\e910';
+    display: inline-block;
+    font-size: $icon0SmallSize;
+    position: absolute;
+    right: 5px;
+    top: $header3FontSize;
+  }
+}
+
+// spa container styles
+
+%frame {
+  @extend %dropShadow;
+  @include spacing('m', 'h', true);
+  @include spacing('s+m', 'v', true);
+  @include spacing('s', 'x', false, 'b');
+  background-color: $textColorInverted;
+}
+
+%list {
+  background-color: $textColorInverted;
+}
+
+%listItem {
+  @include spacing('m', 'v', true);
+  border-bottom: 1px solid $textColorInverted;
+  border-top: 1px solid $textColorLight;
+
+  &:last-child {
+    border-bottom: 1px solid $textColorLight;
+  }
+}
+
+%listItemSelected {
+  @include spacing('m', 'a', true);
+  border: 1px solid $cyanDark;
+
+  &:last-child {
+    border-bottom: 1px solid $cyanDark;
+  }
+}
+
+// Common styles
+%dataPicker {
+  @include spacing('s', 'v', true);
+  @include spacing('s+m', 'x', false, 'b');
+  background: none;
+  border: none;
+  border-bottom: 2px solid $greyLight;
+  color: $gray;
+  font-size: $header2FontSize;
+}
+
+%dataPicker:focus {
+  outline: none;
+}
+
+%uniIconEye::before {
+  @extend %iconLook;
+}
+
+.lockIcon {
+  @extend %lockSymbol;
+  font-size: $header1FontSize;
+}
+
+%dropShadow {
+  box-shadow: 0 0 3px 0 $shadowNormal;
+}
+
+%dropShadowStrong {
+  box-shadow: 0 0 4px 0 $shadowStrong;
+}
+
+%dropShadowCheckout {
+  box-shadow: 0 1px 2px 0 $dropShadowBlack;
+}
+
+%dropShadowOrder {
+  box-shadow: 0 1px 4px 0 $dropShadowBlack;
+}
+
+%dropShadowMiniBag {
+  box-shadow: 0 2px 4px 0 $dropShadowlightBlack;
+}

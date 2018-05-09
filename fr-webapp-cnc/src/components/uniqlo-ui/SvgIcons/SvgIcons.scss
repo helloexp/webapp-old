@@ -1,0 +1,35 @@
+@import '~theme/base/main';
+
+%svgIcon,
+.svgIcon {
+  @include transition;
+  @include square(24);
+  display: inline-block;
+  stroke:  $cyan500;
+  user-select: none;
+
+  &.small {
+    @include square(14);
+  }
+
+  &.medium {
+    @include square(22);
+  }
+
+  &.large {
+    @include square(28);
+  }
+
+  // styles from product grid
+  &.plusIcon {
+    fill: $grey400;
+    height: 100%;
+    stroke: $grey400;
+    stroke-width: 2px;
+    width: 100%;
+  }
+
+  &.noStokeIcon {
+    stroke: none;
+  }
+}

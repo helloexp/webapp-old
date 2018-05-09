@@ -1,0 +1,14 @@
+@import '~theme/base/spa';
+
+.orderSummaryItem {
+  .totalItems {
+    border-left: 1px solid $grey900;
+    font-weight: 400;
+    padding-left: 10px;
+  }
+
+  .itemPrice {
+    @extend %baseUA;
+    font-weight: $fontWeightLight;
+  }
+}

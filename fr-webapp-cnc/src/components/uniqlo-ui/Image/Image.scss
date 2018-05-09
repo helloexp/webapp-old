@@ -1,0 +1,101 @@
+@import '~theme/base/main';
+
+.image {
+  height: 100%;
+  width: 100%;
+
+  &.withImageTag {
+    border: none;
+    display: block;
+    height: auto;
+    max-height: 100%;
+    max-width: 100%;
+  }
+
+  &.withoutImageTag {
+    background: no-repeat center;
+    background-size: contain;
+    position: relative;
+  }
+
+  &.largeProductImage {
+    @extend %productImage%p100;
+  }
+
+  &.disabledMarker {
+    pointer-events: none;
+  }
+
+  &.enabledMarker {
+    pointer-events: auto;
+  }
+
+  // Passed from Swipable
+  &.swipable {
+    @extend %iconS;
+    position: absolute;
+    top: 40%;
+    z-index: 5;
+
+    &.next {
+      right: 0;
+    }
+
+    &.previous {
+      left: 0;
+    }
+  }
+
+  // Passed from IconHead
+  &.iconHeadImage {
+    @extend %componentImage;
+    float: left;
+  }
+
+  &.bigSize {
+    @extend %componentImage%collageL;
+    background-color: $grey150;
+  }
+
+  &.smallSize {
+    @extend %componentImage%collageM;
+    background-color: $grey150;
+  }
+
+  // from imagePLusText
+
+  &.imagePlusText {
+    display: flex;
+  }
+
+  &.logoImage {
+    height: 39px;
+    width: auto;
+  }
+
+  &.logoApplePayForm {
+    height: 20px;
+    width: auto;
+  }
+
+  // Tooltip Item parent component
+
+  &.imageFromTooltip {
+    @extend %productImage%p50;
+    display: inline-block;
+  }
+
+  &.cardImage {
+    @include spacing('xs', 'v');
+    display: block;
+    height: auto;
+    width: 2.5em;
+  }
+
+  &.cardCvvImage {
+    @include spacing('xs', 'x', true, 'r');
+    display: inline-block;
+    height: auto;
+    width: 40px;
+  }
+}

@@ -1,0 +1,169 @@
+@import '~theme/base/spa';
+
+.orderHistory {
+  background-color: $grey250;
+
+  .removeBorder {
+    border: none !important;
+  }
+
+  .topInfoWrapper {
+    @include spacing('m', 'a', true);
+  }
+
+  .infoHeader {
+    @extend %baseBPlus4;
+    @include spacing('z', 'a', true);
+    @include spacing('l', 'x', true, 'b');
+    @include spacing('m', 'x', false, 't');
+  }
+
+  .infoContentWrap {
+    @include spacing('m', 'x', true, 'b');
+
+    .infoContent {
+      @extend %baseA;
+    }
+
+    .infoLink {
+      @extend %baseA;
+
+      div {
+        color: $uniqloBlack001;
+        display: inline-block;
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .orderListContainer {
+    @extend %dropShadowCheckout;
+
+    .orderListHeader {
+      @extend %baseBPlus1;
+      @include spacing('m', 'v', true);
+      @include spacing('m', 'h', true);
+      background-color: $white;
+      border-bottom: 1px solid $grey150;
+      text-align: left;
+    }
+  }
+
+  .listWrapper {
+    @include spacing('s+m', 'x', true, 't');
+    background-color: $white;
+  }
+
+  .orderTileWrapper {
+    .footer {
+      @include spacing('l', 'v');
+      @include spacing('s', 'v', true);
+      border-bottom: 1px solid $grey150;
+      border-top: 1px solid $grey150;
+      text-align: center;
+
+      .footerBtn {
+        color: $black900;
+        font-size: $fontSizeMinus1;
+        line-height: 1;
+        opacity: 1;
+
+        div {
+          font-size: 10px;
+          line-height: 10px;
+
+          span {
+            color: $textColorLight;
+            font-size: 10px;
+            font-weight: bold;
+            line-height: 10px;
+          }
+        }
+
+        .labelStyle {
+          font-size: $textAreaFocusOuterFont;
+          font-weight: 700;
+        }
+
+        .disabledBtn {
+          color: $grey150;
+        }
+      }
+
+      & > div {
+        @include spacing('z', 'x', true, 'b');
+        border-right: 1px solid $grey150;
+        height: 20px;
+
+        &:last-child {
+          border-right: none;
+        }
+      }
+
+      &.lastOrder {
+        @include spacing('z', 'x', false, 'b');
+      }
+    }
+
+    &:last-child {
+      .footer {
+        @include spacing('z', 'x', false, 'b');
+      }
+    }
+  }
+
+  .backButtonWrapper {
+    @include spacing('m', 'x', true, 't');
+    @include spacing('m', 'h', true);
+
+    .backButtonFromOrder {
+      height: 52px;
+
+      & > div {
+        @extend %baseBPlus2;
+      }
+    }
+
+    .backToAccountLabel {
+      @extend %baseBPlus2;
+    }
+  }
+
+  .buttonContainer {
+    .caretDown {
+      @include spacing('z', 'v', true);
+      @include spacing('z', 'h', true);
+      color: $uniqloBlack001;
+      display: flex;
+
+      .labelStyle {
+        @extend %baseBPlus1;
+        @include spacing('m', 'x', false, 't');
+        flex: 1;
+      }
+
+      &::after {
+        @extend %uniIcon;
+        @include spacing('m', 'v', true);
+        @include spacing('z', 'h', false);
+        color: $gray67;
+        content: '\e917';
+        float: right;
+        font-size: 10px;
+      }
+    }
+  }
+}
+
+.noOrders {
+  @extend %baseA;
+  @extend %dropShadowCheckout;
+  @include spacing('l', 'v', true);
+  @include spacing('m', 'h', true);
+  background-color: $white;
+  display: block;
+}
+
+.noViewmore {
+  @include spacing('m', 'x', true, 'b');
+}

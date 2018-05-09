@@ -1,0 +1,59 @@
+@import '~theme/base/spa';
+@import '~theme/base/images';
+
+.uniqloTabContainer {
+  @include spacing('m', 'h', true);
+  @include spacing('s+m', 'x', true, 't');
+  @include spacing('z', 'x', true, 'b');
+
+  .barcode {
+    @extend %barcodeImg;
+    @include spacing('m', 'x', true, 'b');
+    height: auto;
+    margin: 0 auto;
+  }
+
+  .instructions {
+    @extend %baseAMinus1;
+  }
+
+  .topDivider {
+    @include spacing('l', 'x', false, 't');
+    background-color: $grey150;
+    height: 1px;
+    width: 100%;
+  }
+
+  .links {
+    @include spacing('s+m', 'v', true);
+    align-items: center;
+    border-bottom: 1px solid $grey150;
+    display: flex;
+
+    span {
+      @include spacing('z', 'x', true, 'r');
+      @include spacing('z', 'v', true);
+      color: $gray67;
+    }
+
+    h6 {
+      @extend %baseBPlus1;
+    }
+  }
+}
+
+.uniqloTabWrapper {
+  @include spacing('z', 'x', true, 'r');
+  @include spacing('s+m', 'x', true, 'b');
+
+  .bannerFooterText {
+    @extend %baseAMinus2;
+    @include spacing('m', 'h', true);
+    color: $gray500;
+  }
+
+  .scanDeChance {
+    @include spacing('s+m', 'x', true, 't');
+    @include spacing('m', 'x', true, 'b');
+  }
+}

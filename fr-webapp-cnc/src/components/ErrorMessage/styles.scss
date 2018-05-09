@@ -1,0 +1,107 @@
+@import '~theme/base/spacing';
+@import '~theme/base/colors';
+@import '~theme/base/variables';
+
+%pageErrors {
+  @include spacing('s', 'x', true, 't');
+  @include spacing('m', 'x', true, 'b');
+}
+
+.errorMessage {
+  @include spacing('m', 'h', true);
+  @include spacing('m', 'v', true);
+  display: flex;
+  flex-flow: row nowrap;
+  font-size: $header3FontSize;
+  text-align: left;
+
+  .errorText {
+    color: $redA500;
+  }
+
+  .warningText {
+    color: $brandWarning;
+  }
+
+  .closeButton {
+    @include spacing('m', 'h', true);
+    @include spacing('z', 'v', true);
+    background-color: transparent;
+    height: 15px;
+    width: 15px;
+
+    &::before {
+      color: $black;
+      content: 'x';
+      font-weight: $fontWeightLight;
+    }
+  }
+
+  // Cart page item provisional inventory error
+  &.cartItemError {
+    @include spacing('z', 'h', true);
+    @include spacing('z', 'x', true, 't');
+    @include spacing('l', 'x', true, 'b');
+  }
+
+  // delivery page error on top
+  &.deliveryPageError {
+    @extend %pageErrors;
+  }
+
+  &.deliveryStorePageError {
+    @include spacing('l', 'x', false, 'b');
+    @include spacing('z', 'v', true);
+    color: $red;
+    display: block;
+    text-align: center;
+  }
+
+  // cart page error on top
+  &.cartPageError {
+    @extend %pageErrors;
+    background-color: $white;
+  }
+
+  // Order page error on top
+  &.orderPageError {
+    @extend %pageErrors;
+    background-color: $white;
+  }
+
+  // gift card errors
+  &.giftCardError {
+    @extend %pageErrors;
+  }
+
+  // payment page error on top
+  &.paymentPageError {
+    @extend %pageErrors;
+  }
+
+  // Cart item edit modal error on top*/
+  &.editCartError {
+    @include spacing('m', 'h', true);
+    @include spacing('z', 'v', true);
+  }
+
+  &.couponPageErr {
+    @include spacing('z', 'h', true);
+  }
+
+  &.orderHistoryError {
+    @include spacing('z', 'x', true, 'b');
+  }
+
+  &.addressFormError {
+    @include spacing('z', 'a', true);
+    @include spacing('z', 'a', false);
+    @include spacing('m', 'x', true, 'b');
+  }
+
+  // mySize page error on top
+  &.mySizePageError {
+    @extend %pageErrors;
+    background-color: $white;
+  }
+}

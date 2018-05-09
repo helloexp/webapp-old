@@ -1,0 +1,38 @@
+@import '~theme/base/main';
+
+.carouselHead {
+  display: block;
+  text-align: center;
+
+  .wrapper {
+    cursor: pointer;
+    display: inline-block;
+    max-height: 75px;
+    min-height: 8px;
+    min-width: 8px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    &.empty {
+      background-color: $grey500;
+      border-radius: 5px;
+      margin-left: 2px;
+      margin-right: 2px;
+    }
+
+    &.highlightBasic {
+      border: 1px outset;
+    }
+
+    &.highlightEmpty {
+      background-color: $grey900;
+    }
+
+    > * {
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+}

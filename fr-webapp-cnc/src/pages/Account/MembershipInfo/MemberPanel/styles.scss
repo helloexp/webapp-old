@@ -1,0 +1,31 @@
+@import '~theme/base/spa';
+
+.memberPanel {
+  &.memberContainer {
+    @include spacing('z', 'x', false, 'b');
+
+    h6 {
+      @include spacing('s+s', 'v', true);
+    }
+  }
+
+  .field {
+    @include spacing('l', 'x', true, 'b');
+    position: relative;
+
+    &:first-child {
+      @include spacing('m', 'x', true, 't');
+    }
+
+    .label {
+      @extend %baseBPlus1;
+      @include spacing('m', 'x', false, 'b');
+      font-size: $header4FontSize;
+    }
+  }
+}
+
+.editLabel {
+  position: absolute;
+  right: 0;
+}

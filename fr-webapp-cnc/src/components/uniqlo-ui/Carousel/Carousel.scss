@@ -1,0 +1,16 @@
+@import '~theme/base/main';
+
+.carousel {
+  display: inline-block;
+  height: auto;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+
+  .navHead {
+    background-color: $grey500;
+    color: $white;
+    position: absolute;
+    z-index: 3;
+  }
+}

@@ -1,0 +1,49 @@
+@import '~theme/base/main';
+
+.link {
+  color: inherit;
+  display: flex;
+
+  %header,
+  .header {
+    color: $grey900;
+    margin: 0;
+    padding: 0;
+    text-transform: uppercase;
+  }
+
+  .heading {
+    @extend %baseB;
+    @include spacing('z', 'a');
+    @include spacing('z', 'a', true);
+    font-weight: 700;
+    text-align: left;
+  }
+}
+
+.content {
+  align-items: center;
+  display: flex;
+  flex-grow: 1;
+}
+
+.tabImageLink {
+  display: flex;
+  justify-content: center;
+}
+
+.inlineLink {
+  display: inline-block;
+}
+
+.caret {
+  @include square(24);
+  align-items: center;
+  color: $textColorLight;
+  content: '\e90d';
+  display: flex;
+  flex-shrink: 0;
+  font-size: $header1FontSize;
+  justify-content: center;
+  padding: 10px 0 10px 10px;
+}

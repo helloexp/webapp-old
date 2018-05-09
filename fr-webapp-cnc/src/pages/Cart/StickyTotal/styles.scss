@@ -1,0 +1,66 @@
+@import '~theme/base/spa';
+
+.stickyContainer {
+  @extend %dropShadow;
+  background-color: $black900;
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  right: 0;
+  z-index: 10;
+
+  &.hide {
+    display: none;
+  }
+
+  .message {
+    @include spacing('m', 'h', true);
+    @include cartSpacing('xl', 'v', true);
+    align-items: center;
+    background-color: $white;
+    display: flex;
+    white-space: pre-wrap;
+    word-break: break-all;
+  }
+
+  .stickyTotal {
+    @extend %dropShadow;
+    display: flex;
+    height: $stickyTotalButtonHeight;
+  }
+
+  .total {
+    align-items: center;
+    background-color: $white;
+    display: flex;
+    flex: 1;
+    justify-content: center;
+
+    span {
+      padding: 5px;
+    }
+
+    .totalAmount {
+      @extend %baseUBPlus1;
+      @include spacing('xs', 'x', false, 'l');
+    }
+  }
+}
+
+.checkoutWrapper {
+  flex: 1;
+}
+
+.checkout {
+  @include spacing('z', 'a');
+  @include spacing('z', 'a', true);
+
+  :global(.btnLabel) {
+    @extend %baseBPlus1;
+  }
+}
+
+.finePrintText {
+  @extend %baseBMinus1;
+  color: $gray67;
+}

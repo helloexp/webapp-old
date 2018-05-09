@@ -1,0 +1,181 @@
+@import '~theme/base/spa';
+
+.heading {
+  @extend %baseB;
+  @extend %smallBottomPadding;
+  color: $black900;
+  padding-top: 0;
+}
+
+.timeText {
+  @extend %baseA;
+  @extend %smallBottomPadding;
+  color: $black900;
+}
+
+.resultList {
+  &.noBottomPadding {
+    @extend %zeroBottomPadding;
+  }
+
+  .listTitle {
+    @extend %baseB;
+    @include spacing('l', 'x', false, 't');
+    @include spacing('l', 'x', true, 'b');
+    border-bottom: solid 2px $grey300;
+    display: block;
+  }
+
+  &.smallBottomSpacing {
+    @include spacing('z', 'x', true, 'b');
+  }
+
+  .caretLoadMore {
+    @extend %baseB;
+    @include cartSpacing('s', 'v');
+    @include spacing('z', 'v', true);
+    color: $black900;
+
+    & > div {
+      @extend %baseB;
+    }
+
+    &::after {
+      @extend %icoMoon;
+      color: $gray67;
+      content: '\e605';
+      float: right;
+      font-size: $fontSizePlus35;
+    }
+  }
+
+  .loadMoreSpacing {
+    @include spacing('m', 'x', false, 't');
+  }
+
+  .store {
+    @include spacing('l', 'v', true);
+    border-bottom: 1px solid $grey150;
+    display: flex;
+    margin: 0;
+
+    .content {
+      @extend %mediumHzSpacingP;
+      flex: 1;
+
+      .distanceText {
+        @extend %baseUA;
+        @include spacing('s', 'x', true, 'b');
+        color: $grey900;
+        letter-spacing: 0;
+      }
+
+      .timeContainer {
+        @include spacing('m', 'x', true, 'b');
+      }
+    }
+
+    .action {
+      border-left: 1px solid $grey150;
+      display: flex;
+      justify-content: center;
+      position: relative;
+      width: 20%;
+
+      .status {
+        @extend %baseB;
+        align-items: center;
+        color: $black900;
+        display: flex;
+        text-align: center;
+      }
+    }
+
+    .selectBtn {
+      @include spacing('z', 'a', true);
+      height: 100%;
+      left: 0;
+      position: absolute;
+    }
+  }
+}
+
+.closeIcon {
+  @extend %iconIconX;
+  @include square(24);
+  fill: $textColorLight;
+  float: right;
+  stroke: $textColorLight;
+}
+
+.titleHeader {
+  @extend %baseB;
+  @include spacing('m', 'x', false, 'b');
+  @include spacing('s', 'x', false, 't');
+  display: block;
+}
+
+.itemDetail {
+  @extend %baseAMinus1;
+  display: block;
+}
+
+.storeStock {
+  @include spacing('m', 'v', true);
+  border-bottom: 1px solid $textColorLight;
+  display: flex;
+  margin: 0;
+
+  &:last-of-type {
+    @include spacing('l', 'x', false, 'b');
+    border-bottom: none;
+  }
+}
+
+.storeDetail {
+  @extend %baseB;
+  color: $black900;
+}
+
+.storeStockItem {
+  @extend %baseB;
+  border-left: 1px solid $textColorLight;
+  color: $black900;
+  display: flex;
+  flex: 1;
+  justify-content: center;
+
+  & > svg {
+    align-self: center;
+  }
+}
+
+.stockInfo {
+  @include spacing('s', 'x', false, 'l');
+  @include spacing('xs', 'x', false, 'r');
+  align-self: center;
+}
+
+.itemContent {
+  @include spacing('xs', 'x', true, 'r');
+  flex: 5;
+}
+
+.storeName {
+  @include spacing('xs', 'x', true, 'r');
+  align-self: center;
+  flex: 4;
+}
+
+.btnClass {
+  font-size: $fontSizeBase;
+  font-weight: $fontWeightBold;
+}
+
+.featureContainer {
+  display: inline-block;
+}
+
+.delimiter {
+  color: $black900;
+}

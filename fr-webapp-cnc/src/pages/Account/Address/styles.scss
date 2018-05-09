@@ -1,0 +1,108 @@
+@import '~theme/base/spa';
+
+.addressBook {
+  @include spacing('z', 'x', true, 'b');
+  @include spacing('s', 'x', true, 't');
+  background-color: $grey250;
+
+  &.addressBookWhite {
+    background-color: $white;
+  }
+
+  .accountAddress {
+    @include spacing('m', 'h', true);
+    @include spacing('z', 'x', true, 't');
+    @include spacing('l', 'x', true, 'b');
+    background-color: $grey250;
+
+    .toolTip {
+      @include spacing('z', 'a');
+      border: none;
+      font-size: $header5FontSize;
+    }
+
+    .toolTipLink {
+      color: $black;
+      text-decoration: underline;
+    }
+
+    .addressListHead {
+      @include spacing('m', 'x', true, 'b');
+      @include spacing('m', 'x', false, 'b');
+      @include spacing('l', 'x', false, 't');
+   }
+
+    .addressListHeading {
+      @include spacing('z', 'a', true);
+      @include spacing('z', 'a');
+      border: none;
+      flex: 1;
+      font-size: $header5FontSize;
+    }
+
+    .confirmButton {
+      @include spacing('l', 'x', false, 't');
+    }
+
+    .addressFrame {
+      @include spacing('s+m', 'x', true, 't');
+    }
+  }
+
+  .removeIcon {
+    @extend %baseAPlus1;
+    @extend %icomoonClose;
+  }
+
+  .buttonLabel {
+    font-size: $fontSizePlus2;
+  }
+}
+
+.buttons {
+  @include spacing('l', 'x', false, 't');
+  @include spacing('s+m', 'x', false, 'b');
+  @include spacing('s', 'v', true);
+  border: {
+    bottom: 1px solid $greyLight;
+    top: 1px solid $greyLight;
+  }
+  display: flex;
+}
+
+.button {
+  flex-basis: 50%;
+  flex-grow: 2;
+  font: {
+    size: $textAreaFocusOuterFont;
+    weight: bold;
+  }
+  text-align: center;
+  width: auto;
+
+  + .button {
+    border-left: 1px solid $greyLight;
+  }
+
+  &.oneFourth {
+    flex-basis: 25%;
+    flex-grow: 1;
+  }
+}
+
+.tickIcon {
+  @extend %icomoonTick;
+  @include spacing('s', 'x', false, 'r');
+  color: $cyanDark;
+  font-size: $fontSizePlus1;
+}
+
+.closeIcon {
+  @extend %icomoonClose;
+  font-size: $fontSizePlus1;
+
+  &::before {
+    display: block;
+  }
+}
+

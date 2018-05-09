@@ -1,0 +1,54 @@
+@import '~theme/base/spa';
+@import '~theme/base/typography';
+
+.header {
+  @extend %header3;
+  color: $uniqloBlack001;
+  font-size: $fontSizeBase;
+}
+
+.message {
+  @extend %texts;
+  @extend %baseA;
+  @include spacing('l', 'x', true, 'b');
+  border-bottom: 1px solid $textColorLight;
+}
+
+.coupons {
+  @include spacing('z', 'h');
+}
+
+.couponForm {
+  .couponFormHeader {
+    @include spacing('l', 'x', false, 't');
+  }
+
+  .error {
+    @extend %errorText;
+    @include spacing('m', 'x', false, 't');
+    @include spacing('z', 'x', false, 'b');
+    @include spacing('z', 'h');
+  }
+}
+
+.headIconWrap {
+  @include spacing('l', 'x', true, 't');
+  @include spacing('m', 'x', false, 'b');
+  align-items: center;
+  display: flex;
+}
+
+.toolTipForContainer {
+  margin-left: auto;
+
+  @media screen and (min-width: 400px) {
+    margin-right: 2px;
+  }
+}
+
+.link {
+  @extend %baseB;
+  color: $uniqloBlack001;
+  font-weight: $fontWeightBold;
+  text-decoration: underline;
+}

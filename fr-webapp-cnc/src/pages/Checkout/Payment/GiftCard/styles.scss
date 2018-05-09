@@ -1,0 +1,139 @@
+@import '~theme/base/spa';
+
+@mixin labelText {
+  @include spacing('s', 'x', false, 'b');
+  color: $grey900;
+  display: block;
+  font-weight: $fontWeightBold;
+  text-transform: uppercase;
+}
+
+@mixin inputStyles {
+  @include spacing('s', 'v', true);
+  @include spacing('l', 'x', false, 'b');
+  border: none;
+  border-bottom: 2px solid $greyLight;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.balanceDue,
+.giftCardDetails {
+  @include spacing('m', 'v');
+
+  .label {
+    @include labelText;
+
+    &.noSpacingLabel {
+      @include spacing('z', 'x', false, 'b');
+    }
+  }
+
+  .cardHead {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .infoContainer {
+    border-bottom: 1px solid $grey150;
+  }
+
+  .info {
+    @include spacing('l', 'x', false, 'b');
+    color: $grey900;
+    display: block;
+    text-transform: uppercase;
+    width: 95%;
+  }
+
+  .instructions {
+    color: $cyanDark;
+  }
+
+  .addressHeader {
+    @include spacing('l', 'v');
+  }
+}
+
+.giftCardDetails {
+  @include spacing('s', 'h', true);
+}
+
+.giftCardFormRadio {
+  @include spacing('l', 'x', false, 't');
+
+  .title {
+    @include labelText;
+    @include spacing('l', 'x', false, 'b');
+  }
+
+  .radio {
+    @include spacing('l', 'x', false, 'b');
+  }
+
+  .inputField {
+    @include inputStyles;
+
+    &:focus {
+      border-bottom: 2px solid $cyanDark;
+      outline: none;
+    }
+  }
+}
+
+.paymentTitle {
+  font-weight: $fontWeightBold;
+}
+
+.giftCardWrap {
+  @include cartSpacing('l', 'x', true, 't');
+
+  .applyGiftCard {
+    @include spacing('z', 'x', false, 't');
+  }
+
+  .addressFormHeader {
+    @include cartSpacing('l', 'x', true, 'b');
+    @include spacing('z', 'x', true, 't');
+  }
+}
+
+.inputGroup {
+  @include cartSpacing('xl', 'x', false, 'b');
+  display: block;
+  position: relative;
+}
+
+.giftCardPin {
+  @include cartSpacing('xl', 'x', false, 'b');
+}
+
+.inputGroupError {
+  label {
+    &:last-child {
+      span {
+        display: none;
+      }
+    }
+  }
+}
+
+.requiredWrapper {
+  position: relative;
+}
+
+.required {
+  color: $blueGreen;
+  display: inline-flex;
+  font-size: $textAreaFocusOuterFont;
+  justify-content: flex-end;
+  line-height: 1;
+  position: absolute;
+  top: 100%;
+  width: 100%;
+}
+
+.inputBottomPadding {
+  @include cartSpacing('s', 'x', true, 'b');
+}

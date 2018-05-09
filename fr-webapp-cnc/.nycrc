@@ -1,0 +1,27 @@
+{
+  "extension": [
+    ".jsx",
+    ".js"
+  ],
+  "require": [
+    "babel-register"
+  ],
+  "exclude": [
+    "performance/",
+    "bin/",
+    "node_modules/",
+    "static/",
+    "nyc/",
+    "**/*-test.js",
+    "**/*.spec.js",
+    "coverage",
+    "webpack",
+    "test",
+    "src/routes",
+    "src/config"
+  ],
+  "reporter": ["lcov", "text-summary"],
+  "report-dir": "./coverage",
+  "sourceMap": true,
+  "instrument": true
+}

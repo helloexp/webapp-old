@@ -1,0 +1,72 @@
+@import '~theme/base/main';
+
+.carouselTile {
+  display: inline-block;
+  left: 0;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  vertical-align: middle;
+  width: 100%;
+
+  &.scroll {
+    transition: left 2s, opacity 2s, margin-left 2s;
+  }
+
+  &.fade {
+    &.show {
+      animation: fadeIn 2s;
+    }
+
+    &.hide {
+      animation: fadeOut 2s;
+    }
+  }
+
+  &.top {
+    top: 0;
+  }
+
+  &.bottom {
+    bottom: 0;
+  }
+
+  &.show {
+    margin-left: 0;
+    opacity: 1;
+    position: static;
+    z-index: 2;
+  }
+
+  > * {
+    vertical-align: middle;
+  }
+}
+
+@keyframes fadeIn {
+  0%   {opacity: 0;}
+  10%  {opacity: .1;}
+  20%  {opacity: .2;}
+  30%  {opacity: .3;}
+  40%  {opacity: .4;}
+  50%  {opacity: .5;}
+  60%  {opacity: .6;}
+  70%  {opacity: .7;}
+  80%  {opacity: .8;}
+  90%  {opacity: .9;}
+  100% {opacity: 1;}
+}
+
+@keyframes fadeOut {
+  0%   {opacity: 1;}
+  10%  {opacity: .9;}
+  20%  {opacity: .8;}
+  30%  {opacity: .7;}
+  40%  {opacity: .6;}
+  50%  {opacity: .5;}
+  60%  {opacity: .4;}
+  70%  {opacity: .3;}
+  80%  {opacity: .2;}
+  90%  {opacity: .1;}
+  100% {opacity: 0;}
+}

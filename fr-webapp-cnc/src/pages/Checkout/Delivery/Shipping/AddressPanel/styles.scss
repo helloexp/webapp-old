@@ -1,0 +1,121 @@
+@import '~theme/base/spa';
+
+.addressListWrapper {
+  @include spacing('m', 'h', true);
+  @include spacing('s+m', 'x', true, 't');
+  @include spacing('z', 'x', true, 'b');
+  box-shadow: 0 0 10px $greyMedium;
+
+  .addressWrap {
+    @include spacing('z', 'a', true);
+  }
+}
+
+.addressBookList {
+  @include spacing('s', 'x', false, 't');
+}
+
+.accountAddress {
+  @include spacing('z', 'h', true);
+  @include cartSpacing('s', 'x', true, 't');
+
+  .addressListHeading {
+    @include spacing('z', 'v', true);
+    @include spacing('z', 'x', false, 'b');
+    border: none;
+    font-size: $header2FontSize;
+    font-weight: $fontWeightHeavy;
+  }
+
+  .showMoreBtn {
+    @include spacing('z', 'x', false, 't');
+    @include spacing('l', 'x', false, 'b');
+    border: 1px solid $black;
+    box-shadow: none;
+    font-weight: bold;
+  }
+
+  .saveAndContinue {
+    @include spacing('z', 'x', false, 't');
+    @include spacing('m', 'x', false, 'b');
+    font-weight: bold;
+  }
+
+  .newAddressRegister {
+    @include spacing('z', 'x', false, 'b');
+    border: 1px solid $black;
+    box-shadow: none;
+  }
+
+  .buttonSpan {
+    font-size: $header2FontSize;
+    font-weight: $fontWeightBold;
+  }
+}
+
+.contentWrap {
+
+  &.content {
+    .check {
+      @include spacing('z', 'x', true, 'l');
+      @include spacing('z', 'x', true, 'r');
+    }
+  }
+}
+
+.headIconWrap {
+  @include spacing('s+m', 'x', false, 'b');
+  display: flex;
+  font-size: $header6FontSize;
+  justify-content: space-between;
+}
+
+.modalBody {
+  padding-bottom: $drawerFooterHeight;
+}
+
+.addressFooter {
+  @include spacing('l', 'x', false, 'b');
+  @include spacing('s', 'v', true);
+  border: {
+    bottom: 1px solid $greyLight;
+    top: 1px solid $greyLight;
+  }
+  display: flex;
+}
+
+.footerBtn {
+  flex-basis: 50%;
+  flex-grow: 2;
+  font: {
+    size: $textAreaFocusOuterFont;
+    weight: bold;
+  }
+  text-align: center;
+  width: auto;
+
+  + .footerBtn {
+    border-left: 1px solid $greyLight;
+  }
+
+  &.oneFourth {
+    flex-basis: 25%;
+    flex-grow: 1;
+  }
+}
+
+.tickIcon {
+  @extend %icomoonTick;
+  @include spacing('s', 'x', false, 'r');
+  color: $cyanDark;
+  font-size: $fontSizePlus1;
+}
+
+.closeIcon {
+  @extend %icomoonClose;
+  font-size: $fontSizePlus1;
+
+  &::before {
+    display: block;
+  }
+}

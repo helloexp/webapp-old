@@ -1,0 +1,70 @@
+@import '~theme/base/spa';
+
+.deliveryGifting {
+  height: 100%;
+  position: relative;
+  z-index: z('showHeader');
+
+  &.hideHeader {
+    z-index: z('mainHeader');
+  }
+
+  .mainContainer {
+    @include spacing('m', 'h', true);
+
+    .headWrap {
+      @include cartSpacing('l', 'v', true);
+      display: flex;
+      justify-content: space-between;
+
+      .deliveryMethod {
+        @extend %baseBPlus2;
+      }
+    }
+
+    .deliveryTitle {
+      @extend %baseBPlus2;
+      @include cartSpacing('xxl', 'x', false, 't');
+      @include cartSpacing('l', 'x', false, 'b');
+      @include spacing('z', 'x', true, 't');
+      color: $gray67;
+    }
+  }
+
+  .editButtonContainer {
+    margin-left: 40px;
+  }
+
+  .labelStyle {
+    @include spacing('l', 'x', false, 'b');
+    align-items: flex-start;
+    display: flex;
+    font-weight: $fontWeightHeavy;
+  }
+}
+
+.infoIcon {
+  @extend %iconInfo;
+  @include spacing('z', 'h', true);
+  display: flex;
+  justify-content: flex-end;
+  width: 40px;
+
+  &::before {
+    color: $gray;
+    font-size: $header0FontSize;
+    vertical-align: middle;
+  }
+}
+
+.linkTextWrapper {
+  @include spacing('m', 'x', true, 'b');
+  display: flex;
+  justify-content: flex-end;
+}
+
+.linkText {
+  h6 {
+    border-bottom: 1px solid $black;
+  }
+}

@@ -1,0 +1,44 @@
+@import '~theme/base/spa';
+
+.borderBottom {
+  border-bottom: 1px solid $grey150;
+}
+
+.applePayOrderDetails {
+  @include spacing('m', 'h', true);
+  @include cartSpacing('l', 'v', true);
+  background-color: $white;
+  box-shadow: 0 2px 4px $dropShadowBlack;
+  font-size: $header6FontSize;
+}
+
+.containerItems {
+  @include spacing('m', 'h');
+  @include cartSpacing('l', 'x', true, 't');
+  font-size: $header6FontSize;
+
+  .titleSpacing {
+    &.orderNumber {
+      @include spacing('z', 'a', false);
+      align-items: center;
+      display: flex;
+      font-size: $header4FontSize;
+      font-weight: 400;
+    }
+  }
+
+  .itemWrapper {
+    @include cartSpacing('m', 'x', false, 't');
+    @include cartSpacing('l', 'x', false, 'b');
+  }
+}
+
+.plannedDates {
+  @include cartSpacing('s', 'v', false);
+  display: block;
+}
+
+.letterSpacing {
+  @extend %baseBPlus1;
+  letter-spacing: .7px;
+}

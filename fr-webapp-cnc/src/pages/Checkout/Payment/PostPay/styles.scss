@@ -1,0 +1,101 @@
+@import '~theme/base/spa';
+
+%link {
+  @extend %baseB;
+  color: $uniqloBlack001;
+  display: block;
+  font-weight: $fontWeightBold;
+  text-decoration: underline;
+}
+
+.boxContainer {
+  @include spacing('s', 'h', true);
+  @include spacing('s+s', 'x', false, 't');
+  display: block;
+  flex-wrap: wrap;
+
+  .npDetails {
+    @include spacing('m', 'x', true, 'b');
+    display: block;
+    width: 100%;
+
+    .npBanner {
+      float: left;
+      max-width: 37.5%;
+      vertical-align: top;
+      width: 37.5%;
+    }
+
+    .aboutPostPay {
+      @include spacing('s', 'x', true, 'l');
+      display: block;
+      margin-left: 37.5%;
+    }
+  }
+
+  .memberInfoLink {
+    @extend %link;
+    @include spacing('m', 'v', true);
+    margin-left: auto;
+  }
+
+  .ageConfirmBox {
+    @include spacing('m', 'x', true, 'l');
+    @include spacing('xs', 'x', true, 'r');
+    @include spacing('m', 'v', true);
+    @include spacing('z', 'x', false, 'b');
+    border: 1px solid $grey150;
+    box-shadow: none;
+
+    > * {
+      label {
+        @include spacing('z', 'x', false, 'r');
+        align-self: flex-start;
+        width: auto;
+      }
+    }
+  }
+
+  .ageConfirmText {
+    @extend %baseFont;
+    @include spacing('z', 'x', true, 'r');
+    display: block;
+    font-weight: normal;
+    text-align: left;
+  }
+
+  .confirmPostPayBtn {
+    @include cartSpacing('s', 'x', false, 't');
+  }
+
+  .addressContainer {
+    width: 100%;
+
+    .addressHead {
+      @include spacing('z', 'x', true, 'b');
+    }
+  }
+
+}
+
+.infoModal {
+  display: flex;
+
+  .pleaseNoteHead {
+    @extend %baseB;
+    @include cartSpacing('l', 'x', true, 't');
+    @include cartSpacing('s', 'x', true, 'b');
+  }
+
+  .aboutPostPayLink {
+    @extend %link;
+    @include cartSpacing('l', 'x', false, 't');
+    display: inline-block;
+  }
+
+  .linkImage {
+    @include spacing('m', 'x', false, 'l');
+    max-width: 8.5%;
+    width: 8.5%;
+  }
+}

@@ -1,0 +1,28 @@
+@import '~theme/base/spa';
+
+.headerContainer {
+  .editBtn {
+    @extend %baseBMinus1;
+
+    &.noUnderline {
+      line-height: 1.2em;
+      text-decoration: none;
+    }
+  }
+}
+
+.freeText {
+  @extend %baseFont;
+  @include spacing('xs', 'x', true, 'l');
+  color: $blueGreen;
+  display: inline-block;
+  text-align: left;
+}
+
+.frameContent {
+  @extend %baseA;
+}
+
+.priceLine {
+  color: $uniqloBlack001;
+}

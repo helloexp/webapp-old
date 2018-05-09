@@ -1,0 +1,60 @@
+@import '~theme/base/spa';
+
+.wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.label {
+  @include spacing('s', 'x', false, 'b');
+}
+
+.selectWrapper {
+  @include spacing('s', 'x', true, 'b');
+  position: relative;
+
+  &::after {
+    border: {
+      left: 5px solid transparent;
+      right: 5px solid transparent;
+      top: 5px solid currentColor;
+    }
+    content: '';
+    height: 0;
+    position: absolute;
+    right: 0;
+    top: $inputHeight / 2;
+    width: 0;
+    z-index: 0;
+  }
+}
+
+.singleOption {
+  &::after {
+    display: none;
+  }
+}
+
+.select {
+  @extend %baseAPlus1;
+  -moz-appearance: none; // sass-lint:disable-line no-vendor-prefixes
+  -webkit-appearance: none; // sass-lint:disable-line no-vendor-prefixes
+  appearance: none;
+  background-color: transparent;
+  border: none;
+  color: $black900;
+  display: block;
+  height: $inputHeight;
+  outline: none;
+  padding: 0;
+  transition: all .2s;
+  width: 100%;
+  z-index: 1;
+
+  &:focus,
+  &:valid {
+    ~ .unit {
+      color: inherit;
+    }
+  }
+}

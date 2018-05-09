@@ -1,0 +1,40 @@
+@import '~theme/base/spa';
+
+.membershipContainer {
+
+  .buttonContainer {
+    @include spacing('m', 'h', 'true');
+    @include spacing('l', 'v', 'true');
+    background-color: $grayDim;
+    border-top: 1px solid $greyMedium;
+
+    .backToMemberShipBtn {
+      @include spacing('z', 'a');
+    }
+  }
+
+  .noCouponMessage {
+    @include spacing('m', 'h', true);
+    @include spacing('s+m', 'v', true);
+    background-color: $white;
+    font-size: $header2FontSize;
+  }
+
+  .headingContainer {
+    @include spacing('m', 'v', true);
+    background: $grayDim;
+
+    .pageHeading {
+      @include spacing('m', 'v', true);
+      @include spacing('z', 'v');
+      @include spacing('m', 'h');
+      border-bottom: 1px solid $greyMedium;
+      display: flex;
+      font-size: $header2FontSize;
+    }
+  }
+
+  .tabContainer {
+    @include spacing('z', 'h', true);
+   }
+}

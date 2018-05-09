@@ -1,0 +1,16 @@
+@import '~theme/base/spa';
+
+.boldHeaderText {
+  @extend %baseBPlus1;
+}
+
+.content {
+  @extend %dropShadowCheckout;
+  @include cartSpacing('l', 'v', true);
+  @include cartSpacing('s', 'x', false, 'b');
+}
+
+.priceStyle {
+  @extend %baseBPlus1;
+  border-left: none;
+}

@@ -1,0 +1,86 @@
+@import '~theme/base/spa';
+
+.itemCard {
+  @include spacing('l', 'v', true);
+  border-bottom: 1px solid $grey150;
+  display: flex;
+
+  &:first-child {
+    @include spacing('z', 'x', true, 't');
+  }
+
+  &.multiBuyWrapper {
+    @include spacing('l', 'x', true, 't');
+    @include spacing('m', 'h', true);
+    border: 1px solid $grey150;
+    margin-top: -1px;
+  }
+
+  &.multipleSkuMultiBuy {
+    border-top: none;
+  }
+
+  &.topItem {
+    @include spacing('z', 'v');
+  }
+
+  &.multiBuyFirstItem {
+    @include spacing('l', 'x', false, 't');
+  }
+
+  .imageContaner {
+    width: 40%;
+
+    .itemImage {
+      height: auto;
+    }
+  }
+
+  .detailsContainer {
+    @include spacing('m', 'x', false, 'l');
+    width: 55%;
+
+
+    .itemDatas {
+      @extend %baseA;
+      color: $uniqloBlack001;
+
+      &.itemCount {
+        font-weight: $fontWeightHeavy;
+      }
+
+      &:nth-child(2) {
+        @include spacing('z', 'x', false, 'b');
+      }
+
+      &:nth-child(5) {
+        @include spacing('s', 'v', false);
+        color: $gray500;
+      }
+    }
+
+    .boldData {
+      @extend %baseB;
+      @include spacing('s', 'x', false, 'b');
+      color: $black;
+    }
+
+    .itemPrice {
+      @extend %baseUBPlus1;
+      @include spacing('m', 'x', false, 't');
+      color: $black;
+      font-weight: $fontWeightHeavy;
+    }
+
+    .multiBuyPrice {
+      color: $red100;
+    }
+
+    .multiBuyFlag {
+      @include spacing('xs', 'x', false, 't');
+      color: $red100;
+    }
+
+  }
+
+}

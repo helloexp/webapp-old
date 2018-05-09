@@ -1,0 +1,82 @@
+@import '~theme/base/spa';
+
+.cancelOrder {
+
+  .cancelBody {
+    @include spacing('l', 'h', true);
+   }
+
+  .cancelationInfo {
+    @extend %baseA;
+    @include spacing('z', 'x', true, 't');
+    @include spacing('l', 'x', true, 'b');
+    display: block;
+  }
+
+  .cancelOrderButton {
+    @include spacing('l', 'x', false, 't');
+    @include spacing('l', 'x', false, 'b');
+
+    & > div {
+      @extend %baseBPlus2;
+      font-family: 'Hiragino Kaku Gothic ProN';
+    }
+  }
+
+  .quitText {
+    @extend %baseBPlus2;
+    color: $uniqloBlack001;
+    display: block;
+    text-align: center;
+  }
+
+  .cancelationInfoHead {
+    @include spacing('s', 'x', true, 'b');
+    font-size: $header4FontSize;
+  }
+}
+
+.noListContainer {
+  @extend %dropShadowCheckout;
+  @include spacing('l', 'v', true);
+  @include spacing('m', 'h', true);
+  background-color: $white;
+
+  .textValues {
+    @extend %baseA;
+  }
+}
+
+.backButtonWrapper {
+  @include spacing('l', 'x', true, 't');
+  @include spacing('m', 'h', true);
+
+  .backButtonFromOrder {
+    @include spacing('z', 'a');
+    height: 52px;
+
+    & > div {
+      @extend %baseBPlus2;
+    }
+  }
+}
+
+.orderDate {
+  @extend %baseBPlus1;
+  @include spacing('s', 'x', true, 'b');
+}
+
+.cancelHeading {
+  @extend %baseBPlus4;
+  @include spacing('m', 'h', true);
+  @include spacing('l', 'v', true);
+}
+
+.cancelDetailHead {
+  @extend %baseA;
+  @include spacing('m', 'x', true, 'b');
+}
+
+.completionWrapper {
+  background: $grey250;
+}

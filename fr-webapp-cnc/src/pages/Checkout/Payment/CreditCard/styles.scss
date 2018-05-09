@@ -1,0 +1,123 @@
+@import '~theme/base/spa';
+
+.creditPayment {
+  @include spacing('s', 'h', true);
+
+  .otherCardBtn {
+    @include cartSpacing('s', 'x', false, 't');
+    @include spacing('z', 'x', false, 'b');
+    border-color: $black900;
+    font-size: $fontSizePlus2;
+    font-weight: $fontWeightBold;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .useThisCardBtn {
+    font-size: $fontSizePlus2;
+  }
+
+  .creditTile {
+    @include cartSpacing('s', 'x', false, 't');
+    box-shadow: none;
+    padding: 0;
+  }
+
+  .check {
+    @include spacing('z', 'x', true, 'l');
+    @include spacing('z', 'x', true, 'r');
+    @include spacing('z', 'x', true, 'b');
+  }
+
+  .addressHeader {
+    @include cartSpacing('s', 'x', false, 'b');
+  }
+
+  .applyCreditCard {
+    @include cartSpacing('l', 'x', false, 't');
+  }
+}
+
+.shippingAddress {
+  @include spacing('l', 'x', false, 'b');
+}
+
+.paymentTitle {
+  font-weight: $fontWeightBold;
+}
+
+.billingTitle {
+  @extend %baseBPlus1;
+  @include cartSpacing('l', 'x', false, 'b');
+  color: $textTitleColor;
+  text-transform: uppercase;
+}
+
+.cardIconWrap {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.checkBox {
+  font-size: $fontSizePlus1;
+}
+
+.savedCardIcon {
+  @include spacing('s+m', 'x', true, 'b');
+}
+
+.addressText {
+  @include cartSpacing('l', 'x', false, 'b');
+}
+
+.ccEditorContainer {
+  .disabledBtn {
+    background-color: $grey150;
+  }
+
+  .cardIconWrap {
+    .checkBoxLabel {
+      font-weight: $fontWeightMedium;
+    }
+  }
+}
+
+.buttons {
+  @include cartSpacing('l', 'x', false, 't');
+  @include cartSpacing('s', 'v', true);
+  border: {
+    bottom: 1px solid $greyLight;
+    top: 1px solid $greyLight;
+  }
+  display: flex;
+}
+
+.button {
+  flex-basis: 100%;
+  font: {
+    size: $textAreaFocusOuterFont;
+    weight: bold;
+  }
+  text-align: center;
+
+  + .button {
+    border-left: 1px solid $greyLight;
+  }
+}
+
+.tickIcon {
+  @extend %icomoonTick;
+  @include spacing('s', 'x', false, 'r');
+  color: $cyanDark;
+  font-size: $fontSizeMinus3;
+}
+
+.closeIcon {
+  @extend %icomoonRemove;
+  font-size: $fontSizePlus35;
+}
+
+.saveCreditCardInfo {
+  @include cartSpacing('s', 'x', false, 't');
+}

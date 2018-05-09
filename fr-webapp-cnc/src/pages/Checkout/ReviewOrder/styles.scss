@@ -1,0 +1,251 @@
+@import '~theme/base/spa';
+
+%editButton {
+  font-size: $header4FontSize;
+}
+
+.reviewOrder {
+  .reviewOrderContainer {
+    @include spacing('m', 'h', true);
+    background-color: $grey250;
+
+    button {
+      border-bottom: 1px solid $uniqloBlack001;
+      font-size: $fontSizeMinus1;
+      text-decoration: none;
+    }
+
+    .icon {
+      @include spacing('s', 'x', false, 'r');
+      font-size: $fontSizePlus2;
+
+      &.tick {
+        @extend %icomoonTick;
+        color: $blueGreen;
+      }
+
+      &.warning {
+        @extend %iconWarning;
+        color: $redA500;
+      }
+    }
+
+    .orderSummaryWrapper {
+      @include cartSpacing('l', 'v', true);
+      @include cartSpacing('xl', 'x', false, 'b');
+
+      .splitPriceTile {
+        @include cartSpacing('l', 'x', false, 'b');
+        @include cartSpacing('l', 'v', true);
+        border-top: 1px solid $grey250;
+      }
+    }
+
+    .giftPanel {
+      @include cartSpacing('l', 'v', true);
+    }
+  }
+
+  h6 {
+    @extend %baseBMinus1;
+    @include spacing('z', 'x', false, 'b');
+  }
+
+  .taxWrapper {
+    @include cartSpacing('l', 'x', false, 'b');
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+
+    .container {
+      @include spacing('z', 'a', true);
+      box-shadow: none;
+    }
+
+    .check {
+      @include spacing('z', 'a', true);
+    }
+
+    .fineText {
+      font-weight: $fontWeightLight;
+    }
+  }
+
+  .isTax {
+    margin-bottom: 15px;
+  }
+
+  %headingContainer {
+    @include spacing('l', 'x', false, 'b');
+    @include spacing('l', 'x', false, 't');
+    align-items: flex-start;
+    border-bottom: 2px solid $greyMedium;
+    display: flex;
+    position: relative;
+
+    .deliveryEdit {
+      @extend %baseBMinus1;
+
+      .editLabel {
+        font-size: inherit;
+        line-height: 1.2em;
+        text-decoration: inherit;
+      }
+    }
+  }
+
+  .headingWrapper {
+    @extend %headingContainer;
+
+    &.headingWrap {
+      @include cartSpacing('l', 'x', false, 'b');
+      @include cartSpacing('xxl', 'x', false, 't');
+      align-items: center;
+      border: none;
+    }
+  }
+
+  .methodSelectorHead {
+    @extend  %baseBPlus2;
+    flex: 1;
+  }
+
+  .titleSpacing {
+    @include spacing('s', 'x', false, 'b');
+  }
+
+  .reviewcoupon {
+    @include spacing('m', 'v');
+    @include spacing('z', 'v', true);
+    border-bottom: none;
+  }
+
+  .activecoupon {
+    @include spacing('m', 'h', true);
+    @include spacing('s+m', 'v', true);
+    @include spacing('m', 'x', false, 't');
+    background-color: $white;
+    box-shadow: 0 1px 5px $grey300;
+  }
+
+  .lockIconWrap {
+    @include cartSpacing('s', 'x', false, 't');
+    @include spacing('z', 'a', true);
+    display: flex;
+    font-size: $header5FontSize;
+
+    .sideTextWrap {
+      font-size: $header4FontSize;
+      font-weight: normal;
+      line-height: 1.5em;
+      text-align: left;
+      width: 90%;
+    }
+  }
+}
+
+.headText {
+  @extend %header;
+  @extend %editButton;
+  font-weight: lighter;
+}
+
+.headSegmentEditLink {
+  @extend %header;
+  @extend %editButton;
+  float: right;
+}
+
+.headSegmentEditButton {
+  @extend %header;
+  @extend %editButton;
+  background: transparent;
+  float: right;
+  font-family: $fontFamilyUniqloRegular;
+  text-align: right;
+  text-shadow: none;
+  width: 150px;
+}
+
+.taxInfo {
+  @extend %infoIcon;
+  clear: both;
+  color: $textColorLight;
+  display: block;
+}
+
+.lockIcon {
+  @extend %lockSymbol;
+  @include spacing('s', 'x', false, 'r');
+  font-size: $lockIconSize;
+}
+
+.errorMessage {
+  color: $redA500;
+  text-align: center;
+}
+
+.infoIcon {
+  @extend %iconInfo;
+  @include spacing('z', 'h', true);
+  display: inline-block;
+
+  &::before {
+    color: $gray;
+    font-size: $header0FontSize;
+    vertical-align: middle;
+  }
+}
+
+.tlsLink {
+  @extend %largeLeftMargin;
+  @extend %extraSmallLeftPadding;
+  @include cartSpacing('s', 'x', false, 't');
+  color: $uniqloBlack001;
+  font-size: $fontSizeBase;
+  font-weight: $fontWeightBold;
+}
+
+.pageHeadWrap {
+  @include cartSpacing('l', 'x', true, 't');
+}
+
+.pageHeading {
+  @include cartSpacing('s', 'x', true, 'b');
+  font-size: $header5FontSize;
+  font-weight: $fontWeightBold;
+}
+
+.paymentDetailWrap {
+  @include spacing('s', 'x', false, 'b');
+}
+
+.headingStyle {
+  @include cartSpacing('l', 'x', true, 'b');
+  border-bottom: 1px solid $grey150;
+}
+
+.titleStyle {
+  @include cartSpacing('l', 'x', false, 't');
+  @include cartSpacing('l', 'x', true, 'b');
+  border-bottom: 1px solid $grey250;
+}
+
+.totalPriceItem {
+  @include cartSpacing('l', 'x', true, 'b');
+  @include cartSpacing('l', 'x', false, 'b');
+  border-bottom: 1px solid $grey150;
+}
+
+.totalLabelStyle {
+  display: block;
+  flex: 3;
+  font-size: $header4FontSize;
+  font-weight: $fontWeightHeavy;
+}
+
+.totalPriceStyle {
+  @extend %baseUBPlus2;
+  font-weight: $fontWeightHeavy;
+}

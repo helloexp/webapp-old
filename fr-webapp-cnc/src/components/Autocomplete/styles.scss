@@ -1,0 +1,57 @@
+@import '~theme/base/spa';
+
+.autocomplete {
+  position: relative;
+
+  &::before {
+    @extend %icomoonSearch;
+    color: $uniqloBlack001;
+    font-size: $fontSizePlus4;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+  }
+
+  .field {
+    @extend %baseAPlus1;
+    -webkit-appearance: none; // sass-lint:disable-line no-vendor-prefixes
+    border: 1px solid $grey150;
+    border-radius: 0;
+    box-shadow: none;
+    box-sizing: border-box;
+    height: 40px;
+    padding: 10px 15px;
+    width: 100%;
+
+    &::-webkit-input-placeholder { // sass-lint:disable-line no-vendor-prefixes
+      color: $gray67;
+    }
+
+    &::-moz-placeholder { // sass-lint:disable-line no-vendor-prefixes
+      color: $gray67;
+    }
+
+
+  }
+
+  .list {
+    background-color: $white;
+    border: 1px solid $textColorLight;
+    border-top: none;
+    box-sizing: border-box;
+    height: auto;
+    padding: 10px 15px;
+    position: absolute;
+    top: 40px;
+    width: 100%;
+    z-index: 5;
+
+    .item {
+      padding: 5px 0;
+    }
+
+    .selected {
+      background-color: $white;
+    }
+  }
+}

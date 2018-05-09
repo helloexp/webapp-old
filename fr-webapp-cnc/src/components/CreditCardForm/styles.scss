@@ -1,0 +1,168 @@
+@import '~theme/base/spa';
+
+%creditCardForm,
+.creditCardForm {
+  @include spacing('l', 'x', false, 't');
+
+  .cardTextField {
+    @include spacing('s+m', 'x', false, 'b');
+    @include spacing('s', 'v', true);
+    text-transform: uppercase;
+
+    &:focus {
+      border-bottom: 2px solid $cyanDark;
+    }
+  }
+
+  .expMonth,
+  .expYear {
+    @include spacing('s', 'v', true);
+    @include spacing('s+m', 'x', false, 'b');
+    background: none;
+    border: none;
+    border-bottom: 2px solid $greyLight;
+    border-radius: 0;
+    color: $uniqloGrey001;
+    font-size: $header3FontSize;
+    width: 48%;
+  }
+
+  .monthText,
+  .yearText {
+    color: $uniqloGrey001;
+    display: inline-block;
+    font-size: $textAreaFocusOuterFont;
+    text-transform: uppercase;
+    width: 50%;
+  }
+
+  .yearText {
+    @include spacing('z', 'x', false, 'l');
+    width: 45%;
+  }
+
+  .imageContainer {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .cvvImage {
+    @include spacing('xs', 'x', true, 'r');
+    display: inline-block;
+    height: auto;
+    width: 40px;
+  }
+
+  .cardForm {
+    @include spacing('m', 'x', false, 't');
+  }
+
+  .wrapCardImages {
+    @include spacing('l', 'v');
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+
+    .creditCard {
+      height: 25px;
+      text-transform: uppercase;
+      width: 40px;
+    }
+
+    .imageWrap {
+      display: inline-flex;
+    }
+  }
+
+  .wrapInfoIcon {
+    display: flex;
+    width: 24px;
+  }
+
+  .infoIcon {
+    @extend %icomoonInfo;
+    @include spacing('z', 'h', true);
+    line-height: 1;
+    vertical-align: middle;
+
+    &::before {
+      color: $gray;
+      font-size: $header0FontSize;
+    }
+
+    &::after {
+      vertical-align: middle;
+    }
+
+    &.noRightMargin {
+      @include spacing('z', 'x', false, 'r');
+    }
+  }
+
+  .toolTipTextElmnt {
+    &:first-child {
+      @include spacing('s', 'x', false, 'b');
+    }
+
+    &:last-child {
+      @include spacing('l', 'x', false, 'b');
+    }
+  }
+
+  &.footerMargin {
+    margin-bottom: $drawerFooterHeight;
+  }
+}
+
+.checkoutCreditCard {
+  @extend %creditCardForm;
+  @include cartSpacing('l', 'x', false, 't');
+
+  .wrapCardImages {
+    @include cartSpacing('l', 'v');
+  }
+
+  .inputContainer {
+    @include cartSpacing('xl', 'x', false, 'b');
+  }
+}
+
+.requiredWrapper {
+  position: relative;
+}
+
+.required {
+  color: $blueGreen;
+  display: inline-flex;
+  font-size: $textAreaFocusOuterFont;
+  justify-content: flex-end;
+  position: absolute;
+  top: 100%;
+  width: 100%;
+}
+
+.infoIcon {
+  width: 40px;
+
+  &::before {
+    color: $gray;
+    font-size: $header0FontSize;
+    vertical-align: middle;
+  }
+}
+
+.cardTextInput {
+  position: relative;
+}
+
+.uppercase {
+  input {
+    text-transform: uppercase;
+  }
+}
+
+.inputBottomPadding {
+  @include cartSpacing('s', 'x', true, 'b');
+ }

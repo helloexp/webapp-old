@@ -1,0 +1,30 @@
+@import '~theme/base/spa';
+
+.barCodeTextWrap {
+  .barCodeText {
+    @include spacing('s', 'x', false, 'b');
+    font-size: $header4FontSize;
+  }
+
+  .couponName {
+    font-weight: bold;
+  }
+
+  .barcodeImageWrapper {
+    @include spacing('l', 'h', false);
+  }
+
+  .barcodeImage {
+    @include spacing('m', 'x', false, 't');
+    @include spacing('l', 'x', false, 'b');
+  }
+}
+
+.barCodeMainText {
+  color: $gray;
+}
+
+.useCouponBtn {
+  @include spacing('m', 'x', false, 't');
+  @include spacing('l', 'x', false, 'b');
+}

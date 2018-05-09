@@ -1,0 +1,120 @@
+@import '~theme/base/spa';
+
+.completion {
+  @include spacing('s', 'x', true, 't');
+
+  .completionHeadWrapper {
+    @include spacing('s', 'x', false, 't');
+    @include spacing('m', 'x', false, 'b');
+    @include spacing('z', 'a', true);
+    @include spacing('m', 'h');
+    display: flex;
+    justify-content: space-between;
+
+    .completionHeader {
+      @extend %baseBPlus4;
+      @include spacing('z', 'a', true);
+      @include spacing('z', 'a');
+      @include spacing('s', 'x', true, 'b');
+      border: none;
+    }
+
+    .completionInfoButton {
+      background: transparent;
+      text-shadow: none;
+      width: auto;
+
+      .completionInfo {
+        color: $white300;
+        font-size: 25px;
+      }
+    }
+  }
+
+  .newAddressCompletion {
+
+    .zeroBottom {
+      @include spacing('z', 'x', true, 'b');
+    }
+
+    .completionText {
+      @include spacing('s+s', 'x', true, 'b');
+      @include spacing('m', 'h', true);
+    }
+
+    .completionContainer {
+      @include spacing('s+m', 'x', true, 'b');
+      border-bottom: 1px solid $white300;
+    }
+
+    .uniqloTopLink {
+      @include spacing('z', 'x', true, 'b');
+      color: $white300;
+    }
+
+    .sizeHeading {
+      @include spacing('m', 'a', true);
+      display: flex;
+
+      .sizeTitle {
+        width: 95%;
+      }
+
+      .sizeArrow {
+        @extend %baseBPlus2;
+        color: $gray;
+      }
+    }
+
+    .sampleSizeName {
+      @include spacing('s', 'x', false, 't');
+      @include spacing('l', 'x', false, 'b');
+      display: block;
+    }
+
+    .sizeName {
+      @include spacing('s', 'x', true, 'b');
+      @include spacing('l', 'x', false, 'b');
+      border: none;
+      border-bottom: 1px solid $textColorLight;
+      box-sizing: border-box;
+      color: $grey900;
+
+      &:focus {
+        border-bottom: 1px solid $cyanDark;
+        outline: none;
+      }
+    }
+
+    .acceptBtn {
+      @include spacing('m', 'h', true);
+    }
+
+    .completionBanner {
+      @include spacing('s+s', 'v');
+      @include spacing('z', 'h');
+      height: 150px;
+    }
+  }
+
+  .addressCompletion {
+
+    .addressCompletionDescription {
+      @extend %dropShadowCheckout;
+      @include spacing('l', 'v', true);
+      @include spacing('m', 'h', true);
+      background-color: $white;
+    }
+
+    .backToAddress {
+      @include spacing('m', 'x', false, 't');
+      @include spacing('l', 'x', false, 'b');
+      @include spacing('m', 'h');
+    }
+  }
+
+  .buttonLabel {
+    font-size: $fontSizePlus2;
+  }
+
+}

@@ -1,0 +1,122 @@
+@import '~theme/base/spa';
+
+.tooltip {
+  display: inline-block;
+  position: relative;
+
+  .tooltipShow {
+    display: block;
+  }
+
+  .toolTipHide {
+    display: none;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  .toolTipForContainer {
+    display: flex;
+  }
+
+  .toolTipContainerClass {
+    @extend %dropShadow;
+    @include spacing('m', 'h', true);
+    @include spacing('m', 'h');
+    @include spacing('m', 'v', true);
+    @include spacing('s', 'x', false, 'b');
+    background-color: $white;
+    border: 1px solid $blueGreen;
+    bottom: 100%;
+    box-sizing: border-box;
+    height: auto;
+    position: absolute;
+    z-index: z('tooltip');
+  }
+
+  // To be applied when tooltip is down
+  .downToolTipContainerClass {
+    @include spacing('s', 'x', false, 't');
+    bottom: inherit;
+    top: 100%;
+  }
+
+  %tooltipArrow {
+    height: 0;
+    position: absolute;
+    width: 0;
+
+    &::before,
+    &::after {
+      border-left: 12px solid transparent;
+      border-right: 12px solid transparent;
+      content: '';
+      height: 0;
+      left: 0;
+      position: absolute;
+      width: 0;
+    }
+
+    &::before {
+      top: 0;
+    }
+  }
+
+  .upArrow {
+    @extend %tooltipArrow;
+    top: -11px;
+
+    &::before {
+      border-bottom: 10px solid $blueGreen;
+    }
+
+    &::after {
+      border-bottom: 10px solid $white;
+      top: 1px;
+    }
+  }
+
+  .downArrow {
+    @extend %tooltipArrow;
+    bottom: -1px;
+
+    &::before {
+      border-top: 10px solid $blueGreen;
+    }
+
+    &::after {
+      border-top: 10px solid $white;
+      top: -1px;
+    }
+  }
+
+  .childrenComponents {
+    overflow-y: auto;
+  }
+
+  .imageContainer {
+    justify-content: space-between;
+  }
+
+  .imageContainerSingleImage {
+    display: flex;
+    justify-content: center;
+  }
+
+  .triggerElement {
+    @include dimensions(25px, 25px);
+    @include spacing('s+m', 'h', true);
+  }
+
+  .linkFromTooltip {
+    @include spacing('s', 'v', false);
+    color: $gray500;
+    display: inline-block;
+  }
+}
+
+.heading {
+  @extend %baseBPlus1;
+  @include spacing('s', 'x', false, 'b');
+}

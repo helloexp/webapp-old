@@ -1,0 +1,40 @@
+@import '~theme/base/spa';
+
+.guTabContainer {
+  @include spacing('m', 'h', true);
+  @include spacing('z', 'v', true);
+  @include spacing('z', 'x', true, 'b');
+
+  .barcode {
+    @include spacing('m', 'x', true, 'b');
+    margin: 0 auto;
+    width: auto;
+  }
+
+  .topDivider {
+    @include spacing('l', 'x', false, 't');
+    height: 1px;
+    width: 100%;
+  }
+
+  .links {
+    @include spacing('s+m', 'v', true);
+    align-items: center;
+    border-bottom: 1px solid $grey150;
+    display: flex;
+
+    h6 {
+      @extend %baseBPlus1;
+    }
+
+    span {
+      @include spacing('z', 'v', true);
+      @include spacing('z', 'x', true, 'r');
+      color: $textColorLight;
+    }
+
+    &:last-child {
+      border: none;
+    }
+  }
+}

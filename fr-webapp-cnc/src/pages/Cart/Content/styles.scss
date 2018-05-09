@@ -1,0 +1,86 @@
+@import '~theme/base/spa';
+
+.orderSummaryExpanded {
+  @include spacing('z', 'x', false, 'b');
+}
+
+.purchaseBtn {
+  @include spacing('m', 'x', false, 'b');
+}
+
+.purchaseBtnWithApplePay {
+  @include cartSpacing('l', 'x', false, 'b');
+}
+
+.titleStyle {
+  @include cartSpacing('l', 'v', true);
+}
+
+.orderSummaryBottomTile {
+  @include spacing('z', 'x', true, 't');
+  @include cartSpacing('l', 'x', true, 'b');
+  @include cartSpacing('xs', 'x', false, 't');
+  @include cartSpacing('l', 'x', false, 'b');
+  border-top: none;
+  font-weight: $fontWeightHeavy;
+}
+
+.summaryBottomTileBorder {
+  @include cartSpacing('l', 'v', true);
+  @include cartSpacing('xs', 'x', false, 't');
+  @include cartSpacing('l', 'x', false, 'b');
+  border-bottom: 1px solid $grey150;
+  border-top: 1px solid $grey150;
+  font-weight: $fontWeightHeavy;
+}
+
+.emptyMsg {
+  @include spacing('m', 'x', false, 't');
+  @include cartSpacing('xl', 'x', false, 'b');
+}
+
+.multiBuy {
+  @include spacing('s', 'x', false, 't');
+  @include spacing('s+m', 'x', true, 't');
+  @include spacing('s', 'h', true);
+  @include spacing('l', 'x', false, 'b');
+  border: 2px solid $textColorLight;
+
+  .footer {
+    @include spacing('z', 'a', true);
+    border-bottom: none;
+    border-top: none;
+    margin-left: -10px;
+    margin-right: -10px;
+  }
+}
+
+.continueBtn {
+  border: 1px solid $grey900;
+}
+
+.purchaseBtn,
+.continueBtn {
+  & > :global(.btnLabel) {
+    @extend %baseBPlus2;
+  }
+}
+
+.cartContainer {
+  @extend %dropShadow;
+  @include cartSpacing('l', 'x', false, 'b');
+  @include cartSpacing('l', 'x', true, 'b');
+  @include spacing('m', 'h', true);
+  background-color: $white;
+
+  .brandHeaderWrapper {
+    @include cartSpacing('l', 'v', true);
+    @include cartSpacing('l', 'x', false, 'b');
+    border-top: 1px solid $grey150;
+  }
+
+  .wishlistMessage {
+    @include cartSpacing('m', 'x', true, 't');
+    color: $uniqloGrey002;
+  }
+}

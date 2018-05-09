@@ -1,0 +1,36 @@
+@import '~theme/base/main';
+
+.label {
+  @extend %baseB;
+  @extend %icomoonCheckboxDeselected;
+  align-items: center;
+  display: flex;
+  font-weight: $fontWeightMedium;
+
+  &::before {
+    @extend %baseAPlus4;
+    @include spacing('s', 'x', false, 'r');
+    color: $gray67;
+    line-height: 1;
+    vertical-align: sub;
+  }
+
+  &.checked {
+    &::before {
+      @extend %icomoonCheckboxSelected;
+      background-color: $uniqloBlack001;
+      color: $white;
+      display: inline;
+    }
+  }
+
+  &.disabled {
+    &::before {
+      color: $textColorLight;
+    }
+  }
+}
+
+.input {
+  display: none;
+}

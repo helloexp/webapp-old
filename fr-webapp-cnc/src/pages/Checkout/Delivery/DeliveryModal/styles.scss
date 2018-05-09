@@ -1,0 +1,65 @@
+@import '~theme/base/spa';
+
+.description {
+  @include spacing('s', 'x', false, 't');
+  display: block;
+  font-size: $fontSizeMinus1;
+  padding-left: 10px;
+}
+
+.linkDescription {
+  border-bottom: none;
+}
+
+.contentHeading {
+  @extend %baseAPlus3;
+  @include spacing('l', 'x', true, 'b');
+  font-weight: $fontWeightBold;
+}
+
+.deliveryTitle {
+  @extend %baseB;
+  @include spacing('m', 'x', true, 'b');
+}
+
+.deliverySubTitle {
+  @extend %baseA;
+  @include spacing('m', 'x', true, 'b');
+  color: $uniqloBlack001;
+  display: block;
+}
+
+.descriptionLinkWrapper {
+  @include spacing('l', 'v', true);
+  border-bottom: 1px solid $grey150;
+}
+
+.descriptionLink {
+  @extend %baseB;
+  color: $uniqloBlack001;
+  font-weight: $fontWeightBold;
+  text-decoration: underline;
+}
+
+.toolTipTextElmnt {
+  @extend %baseAMinus2;
+  color: $gray500;
+  text-indent: -10px;
+
+  &::before {
+    content: '\203B';
+  }
+}
+
+.contentWrapper {
+  @include spacing('m', 'x', true, 't');
+  @include spacing('l', 'v', false);
+}
+
+.listWrapper {
+  @include spacing('s', 'v', false);
+}
+
+.extraMargin {
+  @include spacing('m', 'x', false, 'b');
+}

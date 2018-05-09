@@ -1,0 +1,111 @@
+@import '~theme/base/spa';
+
+.giftPanel {
+  @include spacing('z', 'v', false);
+  @include spacing('s+m', 'x', true, 't');
+  @include spacing('s+m', 'x', true, 'b');
+
+  &.giftOrderPanel {
+    @include spacing('z', 'x', true, 't');
+  }
+
+  a {
+    justify-content: flex-start;
+    text-decoration: none;
+
+    & > div {
+      display: flex;
+    }
+
+    & > div > div {
+      @include spacing('z', 'x', true, 'b');
+    }
+
+    & > div > span {
+      color: $textTitleColor;
+      display: block;
+      font-weight: normal;
+      text-transform: none;
+    }
+  }
+
+  .giftIcon,
+  .giftIconInline {
+    @include spacing('s', 'x', false, 'r');
+    @include spacing('z', 'x', false, 'l');
+    vertical-align: middle;
+  }
+
+  .giftIcon {
+    display: flex;
+    font-size: $fontSizePlus35;
+  }
+
+  .giftIconInline {
+    display: inline-block;
+    font-size: $fontSizePlus2;
+  }
+
+  .messageBlockContainer {
+    @include spacing('z', 'x', true, 'b');
+  }
+
+  .addressListHeading {
+    @extend %baseBPlus1;
+    @include spacing('s', 'x', true, 'b');
+  }
+
+  &.giftPanelConfirmation {
+    @include spacing('l', 'v', true);
+    @include spacing('m', 'h', false);
+    border-bottom: 1px solid $grey150;
+  }
+
+  .messageBox {
+    @extend %baseA;
+    @include spacing('m', 'x', false, 't');
+    @include spacing('z', 'x', false, 'b');
+    @include spacing('z', 'h', false);
+    @include spacing('m', 'h', true);
+    @include spacing('s', 'v', true);
+    background-color: $grey250;
+    border-bottom: none;
+  }
+
+  .breakLines {
+    font-size: $fontSizeBase;
+    white-space: pre-wrap;
+  }
+
+  .base1AMinus1 {
+    @extend %baseAMinus1;
+  }
+}
+
+.messageTopHead {
+  @extend %baseA;
+}
+
+.icomoonGift {
+  @extend %icomoonGift;
+  @include spacing('xs', 'x', false, 'r');
+  @include spacing('z', 'x', false, 'l');
+  font-size: $header0FontSize;
+  vertical-align: middle;
+}
+
+.icomoonGiftWrap {
+  align-items: center;
+  display: flex;
+  font-size: $fontSizeBase;
+}
+
+.textFont {
+  font-weight: $fontWeightHeavy;
+}
+
+.giftLink {
+  span {
+    @include spacing('z', 'v', true);
+  }
+}

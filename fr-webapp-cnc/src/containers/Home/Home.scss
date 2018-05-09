@@ -1,0 +1,68 @@
+@import '~theme/base/spa';
+
+.home {
+  dd {
+    margin-bottom: 15px;
+  }
+}
+
+.masthead {
+  background: $black200;
+  color: $white;
+  padding: 40px 20px;
+  text-align: center;
+
+  .logo {
+    $size: 100px;
+    height: $size;
+    margin: auto;
+    vertical-align: middle;
+    width: $size;
+
+    p {
+      line-height: $size;
+      margin: 0;
+    }
+
+    img {
+      margin: auto;
+      width: 75%;
+    }
+  }
+
+  h1 {
+    color: $cyan;
+    font-size: 1.4em;
+  }
+
+  h2 {
+    color: $lighterGray;
+    font-size: 2em;
+    margin: 20px;
+  }
+
+  a {
+    color: $lighterGray;
+  }
+
+  p {
+    margin: 10px;
+  }
+
+  .humility {
+    color: $humility;
+
+    a {
+      color: $humility;
+    }
+  }
+
+  .github {
+    font-size: 1.5em;
+  }
+}
+
+.counterContainer {
+  margin: 20px;
+  text-align: center;
+}

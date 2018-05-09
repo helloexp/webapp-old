@@ -1,0 +1,101 @@
+@import '~theme/base/colors';
+@import '~theme/base/spacing';
+
+.productGrid {
+  align-items: flex-start;
+
+  > div {
+    flex-grow: 0 !important;
+  }
+}
+
+%twoCol,
+.twoCol {
+  align-items: stretch;
+  flex-direction: row;
+  flex-shrink: 0;
+  flex-wrap: wrap;
+}
+
+.twoColPl {
+  @extend %twoCol;
+}
+
+%singleSm,
+.singleSm {
+  align-items: stretch;
+  display: block;
+  flex-direction: column;
+}
+
+.singleSmPl {
+  @extend %singleSm;
+}
+
+.multiSm {
+  @extend %twoCol;
+}
+
+.multiLg {
+  @extend %twoCol;
+}
+
+%singleLg {
+  align-items: stretch;
+  display: block;
+  flex-flow: column;
+}
+
+.singleLgPl {
+  @extend %singleLg;
+}
+
+.singleSmOutfit {
+  @extend %singleSm;
+}
+
+.singleSmCart {
+  @extend %singleSm;
+}
+
+.lgProduct {
+  @extend %singleLg;
+}
+
+.lgProduct1e1 {
+  @extend %singleLg;
+}
+
+.lgProduct3e4 {
+  @extend %singleLg;
+}
+
+.singleSmCart,
+.singleSm {
+  &.miniImage {
+    > :first-child {
+      flex: .75%;
+    }
+  }
+}
+
+.viewMore {
+  @include spacing('m', 'v', true);
+  border-bottom: 1px solid $greyLight;
+  border-top: 1px solid $greyLight;
+  color: $greyLight;
+  display: flex;
+  text-align: center;
+  width: 100%;
+
+  .viewMoreText {
+    color: $greyLight;
+    display: block;
+    width: 90%;
+  }
+
+  .viewMoreIcon {
+    fill: $greyLight;
+    stroke: $greyLight;
+  }
+}

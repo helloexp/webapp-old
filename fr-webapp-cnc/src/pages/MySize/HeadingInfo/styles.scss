@@ -1,0 +1,17 @@
+@import '~theme/base/spa';
+
+.container {
+  align-items: center;
+  display: flex;
+
+  .heading {
+    flex-grow: 1;
+  }
+
+  .infoIcon {
+    @extend %icomoonInfo;
+    color: $gray;
+    display: flex;
+    font-size: $fontSizePlus35;
+  }
+}

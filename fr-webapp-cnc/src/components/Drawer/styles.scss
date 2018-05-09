@@ -1,0 +1,266 @@
+@import '~theme/base/spa';
+
+%zeroPadding {
+  @include spacing('z', 'h', true);
+  @include spacing('z', 'v', true);
+}
+
+.drawer {
+  @include spacing('l', 'x', true, 't');
+  @include spacing('z', 'a');
+  background-color: $textColorInverted;
+  bottom: 0;
+  left: 0;
+  overflow: auto;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 12;
+
+  &.noNavBar {
+    bottom: 0;
+  }
+
+  .header {
+    @include spacing('l', 'x', true, 'b');
+    align-items: center;
+    display: flex;
+    text-transform: uppercase;
+
+    &.headerPadding {
+      @include spacing('m', 'h', true);
+    }
+
+    h1,
+    h2 {
+      flex: 1;
+    }
+
+    h4 {
+      padding: 0 40px;
+      text-align: center;
+    }
+
+    .closeIcon {
+      @extend %icomoonClose;
+      @include spacing('z', 'a', true);
+      align-self: baseline;
+      border-bottom: none;
+      color: $black900;
+      font-size: $fontSizePlus35;
+      height: $header0FontSize;
+      line-height: 1;
+      width: $header0FontSize;
+    }
+
+    .noMarginClose {
+      @extend %icomoonClose;
+      @include spacing('z', 'a', true);
+      align-self: baseline;
+      color: $uniqloBlack001;
+      font-size: $fontSizePlus35;
+      height: $header0FontSize;
+      line-height: 1;
+      width: $header0FontSize;
+    }
+
+    .drawerTitle {
+      @extend %baseBPlus3;
+      @include spacing('z', 'x', true, 'b');
+    }
+
+    .cartSpacingTitle {
+      font-size: $fontSizePlus3;
+      font-weight: $fontWeightBold;
+      line-height: 1.2em;
+    }
+
+    .cartSpacingSubTitle {
+      font-size: $header2FontSize;
+    }
+  }
+
+  .cartSpacingHeader {
+    @include cartSpacing('l', 'x', true, 'b');
+  }
+
+  .footer {
+    @extend %dropShadowStrong;
+    bottom: 0;
+    display: flex;
+    left: 0;
+    position: relative;
+    right: 0;
+
+    .cancelBtn,
+    .acceptBtn {
+      display: block;
+      flex: 1;
+
+      &.footerBtnUnselected {
+        color: $black900;
+      }
+    }
+  }
+
+  .giftingFooter,
+  .fixedHeightFooter,
+  .fixedFooter {
+    background-color: $white;
+    bottom: 0;
+    position: fixed;
+    z-index: 5;
+
+    &.fixedBorderedFooter {
+      border-top: 1px solid $grey150;
+      box-shadow: none;
+    }
+  }
+
+  .giftingFooter {
+    box-shadow: none;
+  }
+
+  .drawerBody {
+    @include spacing('l', 'h', true);
+  }
+
+  .giftHeader {
+    @include spacing('l', 'h', true);
+
+    .giftTitle {
+      @extend %baseBPlus3;
+      @include spacing('z', 'a', true);
+    }
+
+    button {
+      &::before {
+        @extend %baseCPlus1;
+        font-weight: $fontWeightHeavy;
+      }
+    }
+  }
+
+  &.giftDrawer {
+    @extend %baseFont;
+
+    .giftHeader {
+      font-size: $header2FontSize;
+      justify-content: space-between;
+    }
+
+    .drawerBody {
+      @include spacing('z', 'a', true);
+    }
+
+    .footer {
+      border-top: 1px solid $grey150;
+
+      .cancelBtn,
+      .acceptBtn {
+        border-top: none;
+      }
+
+      .btnLabel {
+        font-size: $header4FontSize;
+      }
+    }
+  }
+
+  &%cartDrawer {
+    @extend %zeroPadding;
+    height: 60%;
+    overflow: initial;
+    top: initial;
+
+    .drawerBody {
+      @extend %zeroPadding;
+    }
+
+    .header {
+      @include spacing('s+m', 'v', true);
+      @include spacing('m', 'h', true);
+      background-color: $white;
+      box-shadow: 0 3px 4px $faintBlack;
+      box-sizing: border-box;
+      justify-content: space-between;
+      position: fixed;
+      width: 100%;
+      z-index: 10;
+
+      .drawerTitle {
+        @extend %baseB;
+        @extend %zeroPadding;
+        font-weight: $fontWeightHeavy;
+        line-height: 24px;
+      }
+
+      .closeIcon {
+        height: 24px;
+        width: 24px;
+
+        &::before {
+          font-weight: $fontWeightHeavy;
+        }
+      }
+    }
+
+    .footer {
+      bottom: 52px;
+      box-shadow: 0 -2px 4px $dropShadowBlack;
+
+      .cancelBtn {
+        border-top: none;
+        color: $uniqloBlack001;
+      }
+
+      .btnLabel {
+        font-size: $header4FontSize;
+        line-height: 24px;
+      }
+    }
+  }
+
+  &.creditCardForm {
+    .drawerTitle {
+      @include spacing('z', 'a', true);
+    }
+  }
+
+  &.scrollTopCartDrawer {
+    @extend %cartDrawer;
+    height: 100%;
+    top: 0;
+    transition: top 2s;
+  }
+
+  &.applePayDrawer {
+    .header {
+      text-transform: none;
+    }
+
+    .drawerBody {
+      @include spacing('m', 'h', true);
+    }
+  }
+
+  &.applePayRegSuccessDrawer {
+    .drawerBody {
+      @include spacing('m', 'h', true);
+    }
+  }
+}
+
+.cartSpacingDrawer {
+  @include cartSpacing('l', 'x', true, 't');
+}
+
+.btnLabel {
+  &.btnLabelFixed {
+    @extend %baseBPlus1;
+  }
+}
+
+.fixedHeightFooter {
+  height: 52px;
+}

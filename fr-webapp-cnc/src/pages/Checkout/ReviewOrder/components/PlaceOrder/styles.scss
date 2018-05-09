@@ -1,0 +1,43 @@
+@import '~theme/base/spa';
+
+.placeOrderWrap {
+  @include spacing('z', 'x', false, 'b');
+  @include spacing('s', 'x', true, 't');
+  @include spacing('m', 'h', true);
+  text-align: center;
+
+  .placeOrderBtn {
+    border: none;
+    font-size: $header2FontSize;
+  }
+
+  .reviewOrderTextContainer {
+    @include spacing('z', 'x', true, 't');
+    @include cartSpacing('s', 'x', true, 'b');
+    color: $gray500;
+    display: block;
+    font-size: $fontSizeMinus1;
+    text-align: center;
+
+    span {
+      font-size: $header6FontSize;
+    }
+  }
+
+  &.noPadding {
+    padding: 0;
+
+    .placeOrderBtn {
+      border: none;
+      font-size: $header2FontSize;
+    }
+  }
+
+}
+
+.errorMessage {
+  @include spacing('s', 'x', false, 't');
+  @include spacing('l', 'x', false, 'b');
+  color: $red;
+  text-align: center;
+}

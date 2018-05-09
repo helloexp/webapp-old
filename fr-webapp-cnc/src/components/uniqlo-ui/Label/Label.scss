@@ -1,0 +1,25 @@
+@import '~theme/base/main';
+
+.label {
+  background-color: transparent;
+  color: $black;
+  display: inline-block;
+  font-size: 10px;
+  line-height: 15px;
+  text-align: center;
+
+  &.formLabel {
+    color: $grey500;
+    font-size: 12px;
+    font-weight: $fontWeightNormal;
+    text-transform: uppercase;
+  }
+
+  &.formEditLabel {
+    @extend %baseBMinus2;
+    color: $uniqloBlack001;
+    font-size: $fontSizeMinus1;
+    text-decoration: underline;
+    text-transform: uppercase;
+  }
+}

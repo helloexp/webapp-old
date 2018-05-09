@@ -1,0 +1,59 @@
+@import '~theme/base/spa';
+
+.boldText {
+  font-weight: $fontWeightHeavy;
+
+  &.storeSelection {
+    @extend %baseB;
+  }
+}
+
+.address {
+  @extend %baseA;
+  @include spacing('s', 'v');
+}
+
+.instructions {
+  @include spacing('s', 'v', false);
+  color: $black900;
+}
+
+.datesTextClass {
+  @include spacing('s', 'x', false, 't');
+}
+
+.options {
+  @include spacing('s', 'v', true);
+  @include spacing('m', 'x', false, 't');
+  border-bottom: 1px solid $grey150;
+  border-top: 1px solid $grey150;
+  display: flex;
+
+  .btn {
+    align-items: center;
+    border-right: 1px solid $greyLight;
+    display: flex;
+    flex: 1;
+    justify-content: center;
+
+    &:last-child {
+      border: none;
+    }
+
+    .optionBtn,
+    .removeBtn {
+      @extend %baseBMinus1;
+      color: $uniqloBlack001;
+      display: block;
+      width: 100%;
+    }
+
+    .removeBtn {
+      @extend %icomoonRemove;
+      align-items: center;
+      display: flex;
+      font-size: $fontSizePlus35;
+      justify-content: center;
+    }
+  }
+}

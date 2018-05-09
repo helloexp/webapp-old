@@ -1,0 +1,49 @@
+@import 'variables';
+
+%texts {
+  display: block !important;
+  font-size: $header6FontSize;
+  line-height: $header1FontSize;
+  text-align: left !important;
+}
+
+%primaryText {
+  @extend %texts;
+  color: $grey900 !important;
+}
+
+%infoText {
+  @extend %texts;
+  color: $cyanDark !important;
+}
+
+%errorText {
+  @extend %texts;
+  color: $textColorDanger !important;
+}
+
+%textfield:focus {
+  border-bottom: 1px solid $cyanDark;
+}
+
+%textfieldError {
+  border-bottom: 1px solid $textColorDanger;
+}
+
+// spa icon styles
+%uniIcon {
+  font-family: $fontFamilyUniqloIcons;
+  font-smoothing: antialiased;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  text-transform: none;
+}
+
+%box {
+  background-color: $textColorInverted;
+  border-bottom: 1px solid $boxBorderColor;
+  border-top: 1px solid $boxBorderColor;
+  padding: $boxInnerPadding;
+}
+

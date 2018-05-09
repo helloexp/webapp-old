@@ -1,0 +1,68 @@
+@import '~theme/base/main';
+
+.chip {
+  border-color: $red500;
+  color: $darkBlack;
+  display: block;
+  width: 100%;
+
+  &.zeroPaddingChip {
+    height: 22px;
+    padding: 0;
+    width: 22px;
+
+    .chipChild {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      width: auto;
+    }
+  }
+
+  &.productColorChip {
+    display: block;
+    width: 100%;
+
+    li {
+      margin-right: 1.25%;
+
+      &:last-child {
+        margin-right: 1.09%;
+      }
+    }
+  }
+
+  &.twoColumnProductColorChip {
+    @include spacing('m', 'x', false, 'b');
+  }
+
+  &.singleSmallProductColorChip {
+    @include spacing('s+s', 'x', false, 't');
+  }
+
+  .headingText {
+    @include spacing('m', 'x', false, 'b');
+    display: block;
+  }
+
+  .listBody {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    width: 100%;
+  }
+
+  &.headText {
+    display: block;
+  }
+
+  &.chipStyles {
+    .listBody {
+      display: flex;
+    }
+  }
+}

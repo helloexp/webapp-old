@@ -1,0 +1,20 @@
+@import '~theme/base/spa';
+
+.storesStates {
+  @include spacing('m', 'h', true);
+
+  .state,
+  .stateChildren {
+    font-size: $fontSizeBase;
+    text-align: left;
+  }
+
+  .groups {
+    border-bottom: 1px solid $textColorLight;
+  }
+
+  .backBtn {
+    border-bottom: 1px solid $textColorLight;
+    text-align: left;
+  }
+}

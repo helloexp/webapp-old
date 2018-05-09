@@ -1,0 +1,211 @@
+@import '~theme/base/spa';
+
+.orderDetails {
+  .storeWrapper {
+    @extend %dropShadowCheckout;
+  }
+
+  .detailsWrapper {
+    @include spacing('m', 'h', true);
+    @include spacing('l', 'x', true, 't');
+    @include spacing('m', 'x', true, 'b');
+    background-color: $white;
+  }
+
+  .orderDetailsWrapper {
+    @extend %dropShadowCheckout;
+    @include spacing('m', 'h', true);
+    @include spacing('l', 'x', true, 't');
+    @include spacing('m', 'x', true, 'b');
+    background-color: $white;
+
+    .orderDetailsHead {
+      @extend %baseBPlus1;
+      @include spacing('s', 'x', true, 'b');
+      @include spacing('z', 'a', true);
+    }
+
+    .shippingDetailsWrapper {
+      @include spacing('m', 'v', true);
+    }
+
+    .addLargeBottomPadding {
+      @include spacing('m', 'x', true, 'b');
+    }
+
+    .receiptView {
+      @include spacing('s', 'x', true, 'b');
+      @include spacing('m', 'x', true, 't');
+      border-bottom: 1px solid $grey150;
+    }
+
+    .cancelButtonInDetails {
+      @include spacing('l', 'v', true);
+      background: transparent;
+      border-top: 1px solid $grey150;
+
+      & > div {
+        color: $uniqloBlack001;
+        font-size: $fontSizePlus2;
+        font-weight: $fontWeightHeavy;
+      }
+
+      .labelClass {
+        color: $uniqloBlack001;
+      }
+
+      &:disabled {
+        .labelClass {
+          color: $grey150;
+        }
+      }
+    }
+
+    &.removeBottomPadding {
+      @include spacing('z', 'x', true, 'b');
+    }
+  }
+
+  .detailsBlockHeading {
+    @extend %baseBPlus3;
+    @include spacing('m', 'h', true);
+    @include spacing('l', 'v');
+  }
+
+  .orderDetailsTitle {
+    @extend %baseBPlus4;
+    @include spacing('m', 'h', true);
+    @include spacing('l', 'v', true);
+  }
+
+  .goBackButtonWrapper {
+    @include spacing('m', 'h', true);
+    border-top: 1px solid $greyLight;
+
+    .linkClass {
+      @extend %dropShadowCheckout;
+      @include spacing('m', 'v', true);
+      @include spacing('l', 'h', true);
+      @include spacing('l', 'x', false, 't');
+      background-color: $white;
+      font-weight: $fontWeightHeavy;
+    }
+
+    .goBackButton {
+      @include spacing('l', 'x', false, 't');
+      height: 52px;
+
+      & > div {
+        @extend %baseBPlus2;
+      }
+    }
+  }
+}
+
+.pickupInfoContainer {
+  @include spacing('m', 'h', true);
+  @include spacing('l', 'x', true, 'b');
+  background-color: $white;
+}
+
+.cvsInfoHeadView {
+  @include spacing('s', 'x', true, 'b');
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+
+  .cvsInfoHeading {
+    @extend %baseBPlus1;
+  }
+}
+
+.lightText {
+  @include spacing('s', 'v');
+  color: $uniqloGrey001;
+}
+
+.giftViewWrapper {
+  @include spacing('l', 'x', true, 't');
+  border-top: 1px solid $grey150;
+
+  .giftViewHeading {
+    font-size: $fontSizePlus1;
+  }
+}
+
+.deliveryAddressWrapper {
+  @include spacing('m', 'x', true, 'b');
+  border-bottom: 1px solid $grey150;
+}
+
+.giftViewHeading {
+  @include spacing('m', 'x', true, 'b');
+  font-weight: 700;
+}
+
+.summaryHeader {
+  @include spacing('m', 'x', false, 't');
+  @include spacing('m', 'x', true, 'b');
+}
+
+.giftIcon {
+  @include spacing('s', 'x', false, 'r');
+}
+
+.tooltipItemDot {
+  @include spacing('m', 'x', true, 'l');
+  display: block;
+  position: relative;
+
+  &::before {
+    content: '・';
+    left: 0;
+    position: absolute;
+    top: 0;
+  }
+}
+
+.tooltipItemLink {
+  color: inherit;
+  display: block;
+  text-decoration: underline;
+}
+
+.sejInfoLink {
+  color: $uniqloBlack001;
+  font-size: $header4FontSize;
+  font-weight: $fontWeightHeavy;
+
+  div {
+    text-decoration: underline;
+  }
+}
+
+.paymentMethodText {
+  @include spacing('m', 'x', true, 't');
+  @include spacing('l', 'x', true, 'b');
+}
+
+.cvsInfoText {
+  @extend %baseA;
+}
+
+.cvsInfoText3 {
+  @extend %baseAMinus2;
+  color: $gray500;
+}
+
+.timeFrameHeading {
+  @extend %baseBPlus1;
+}
+
+.paymentDetails {
+  @extend %baseA;
+}
+
+.addBackToCartBtn {
+  @include spacing('s+s', 'v', true);
+  background-color: $white;
+  border-top: 1px solid $grey150;
+  font-weight: $fontWeightHeavy;
+}

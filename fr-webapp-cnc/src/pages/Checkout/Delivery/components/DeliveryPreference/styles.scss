@@ -1,0 +1,31 @@
+@import '~theme/base/spa';
+
+.deliveryPreferenceWrap {
+  &.preferenceContainer {
+    @include cartSpacing('l', 'v', true);
+    @include cartSpacing('s', 'x', false, 'b');
+  }
+
+  .titleStyle {
+    @include cartSpacing('l', 'x', false, 'b');
+
+    div > h6 {
+      font-weight: $fontWeightHeavy;
+    }
+  }
+}
+
+.labelStyle {
+  @include cartSpacing('l', 'x', false, 'b');
+  align-items: flex-start;
+  display: flex;
+}
+
+.lastLabelStyle {
+  align-items: flex-start;
+  display: flex;
+}
+
+.subTitleStyle {
+  @include cartSpacing('s', 'x', false, 'b');
+}

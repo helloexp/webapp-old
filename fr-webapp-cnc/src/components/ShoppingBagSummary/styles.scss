@@ -1,0 +1,79 @@
+@import '~theme/base/spacing';
+@import '~theme/base/variables';
+@import '~theme/base/typography';
+@import '~theme/base/icons';
+@import '~theme/base/images';
+
+.itemsHeading {
+  flex-flow: row;
+  justify-content: flex-start;
+  text-align: left;
+
+  .summary {
+    @include spacing('s', 'x', false, 'r');
+    font-size: $header4FontSize;
+  }
+
+  .count {
+    white-space: nowrap;
+  }
+}
+
+.itemWrapper {
+  margin-left: -10px;
+  margin-right: -10px;
+
+  .itemText {
+    @extend %baseAPlus1;
+    @include spacing('s', 'x', false, 't');
+    display: block;
+    font-size: $fontSizeMinus2;
+    font-weight: $fontWeightBold;
+  }
+
+  .itemImage {
+    @include spacing('m', 'x', false, 't');
+    @include spacing('z', 'x', false, 'b');
+    @include spacing('s', 'x', false, 'l');
+    @include spacing('xs', 'x', false, 'r');
+    width: 20%;
+  }
+}
+
+.footerBtn {
+  @include spacing('z', 'a', true);
+  border-bottom: 1px solid currentColor !important;
+  display: flex;
+  font-size: $textAreaFocusOuterFont;
+  justify-content: flex-end;
+  line-height: 1;
+  margin-left: auto;
+  padding: 0;
+  width: initial;
+}
+
+.itemsWrap {
+  @include spacing('l', 'x', true, 't');
+  border-top: 1px solid $grey150;
+
+  .logo {
+    @extend %iconUniqloLogo;
+
+    &::before {
+      color: $redA500;
+      font-size: $logoMiniBagFontSize;
+    }
+  }
+
+  .guLogo {
+    width: 30px;
+  }
+}
+
+.miniCartImage {
+  @extend %componentImage%sq15xs1;
+}
+
+.editCartButton {
+  display: block;
+}

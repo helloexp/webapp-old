@@ -1,0 +1,21 @@
+import { constantsGenerator } from 'utils';
+
+const generateConstants = constantsGenerator('gifting');
+
+export const { FETCH_GIFTBAGS, FETCH_GIFTBAGS_SUCCESS, FETCH_GIFTBAGS_FAIL } = generateConstants('FETCH_GIFTBAGS');
+export const { SAVE_GIFTINGS, SAVE_GIFTINGS_SUCCESS, SAVE_GIFTINGS_FAIL } = generateConstants('SAVE_GIFTINGS');
+export const { SET_GIFTINGS, SET_GIFTINGS_SUCCESS, SET_GIFTINGS_FAIL } = generateConstants('SET_GIFTINGS');
+export const {
+  FETCH_MESSAGE_CARD_AMOUNTS,
+  FETCH_MESSAGE_CARD_AMOUNTS_SUCCESS,
+  FETCH_MESSAGE_CARD_AMOUNTS_FAIL,
+} = generateConstants('FETCH_MESSAGE_CARD_AMOUNTS');
+export const { FETCH_MESSAGE_CARDS, FETCH_MESSAGE_CARDS_SUCCESS, FETCH_MESSAGE_CARDS_FAIL } = generateConstants('FETCH_MESSAGE_CARDS');
+export const { LOAD_GIFT, LOAD_GIFT_SUCCESS, LOAD_GIFT_FAIL } = generateConstants('LOAD_GIFT');
+export const { FETCH_GIFTBAG_AMOUNTS, FETCH_GIFTBAG_AMOUNTS_SUCCESS, FETCH_GIFTBAG_AMOUNTS_FAIL } = generateConstants('FETCH_GIFTBAG_AMOUNTS');
+export const RESET_GIFT_BOX_VALUES = 'gifting/RESET_GIFT_BOX_VALUES';
+export const RESET_GIFT_VALUES = 'gifting/RESET_GIFT_VALUES';
+export const RESET_MESSAGE_CARD_VALUES = 'gifting/RESET_MESSAGE_CARD_VALUES';
+export const SELECT_GIFT_BOX = 'gifting/SELECT_GIFT_BOX';
+export const SELECT_GIFT_CARD = 'gifting/SELECT_GIFT_CARD';
+export const SET_MESSAGE = 'gifting/SET_MESSAGE';

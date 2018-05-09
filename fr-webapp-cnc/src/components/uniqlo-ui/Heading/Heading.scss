@@ -1,0 +1,119 @@
+@import '~theme/base/main';
+
+.heading {
+  color: $headingHruleColor;
+
+  &.hr1 {
+    @extend %baseBPlus1;
+    @include spacing('l', 'v', true);
+    border: 1px solid $headingHruleColor;
+  }
+
+  &.hr2 {
+    @extend %baseBPlus1;
+    @include spacing('m', 'v', true);
+    border: 1px solid $headingHruleColor;
+  }
+
+  // ImagePlusText component styles
+
+  &.imagePlusTextHeader {
+    @extend %baseBMinus1;
+    color: $uniqloBlack001;
+  }
+
+  &.imagePlusTextSubHeader {
+    @extend %baseBMinus1;
+    @include spacing('s', 'x', true, 't');
+    color: $uniqloBlack001;
+
+    &.zeroPaddingTop {
+      @include spacing('z', 'x', true, 't');
+    }
+  }
+
+  // single media component styles
+  &.singleMediaSubHeader {
+    @extend %baseB;
+    @include spacing('s', 'x', true, 'b');
+    color: $uniqloBlack001;
+  }
+
+  &.singleMediaHeader {
+    @extend %baseB;
+    @extend %hiragino%h5;
+    @include spacing('m', 'x', true, 'b');
+    color: $uniqloGrey001;
+    margin: 0;
+  }
+
+  // Cart and checkout headings
+  &.mainHeader {
+    @extend %baseBPlus3;
+    @include spacing('l', 'v', true);
+    padding-top: 0; // Top spacing is given by container
+    text-align: left;
+  }
+
+  &.mainHeaderHrule {
+    @extend %baseBPlus4;
+    @include spacing('m', 'v', true, 'b');
+    @include spacing('m', 'v', false, 'b');
+    text-align: left;
+  }
+
+  &.subHeader {
+    @extend %baseB;
+    @include spacing('m', 'v', true);
+    font-weight: $fontWeightHeavy;
+    text-align: left;
+  }
+
+  &.footerHeading {
+    @extend %baseAMinus3;
+    @include spacing('l', 'v', true);
+    @include spacing('m', 'h', true);
+    color: $uniqloGrey001;
+    text-align: center;
+  }
+
+  &.sectionTitle {
+    @include spacing('s', 'x', false, 'b');
+    @include spacing('s', 'v', true);
+    border-bottom: 1px solid $grey400;
+    color: $black;
+    font-size: 1.3em;
+    text-transform: uppercase;
+  }
+
+  &.cardHeader {
+    text-transform: uppercase;
+    width: 60%;
+  }
+
+  &.headerMessage {
+    @include spacing('s', 'v', true);
+    @include spacing('s', 'h', true);
+    background-color: $grey400;
+    text-align: center;
+  }
+
+  &.confirmationSectionTitle {
+    @include spacing('m', 'x', false, 'b');
+    border-bottom: 1px solid $grey400;
+    color: $grey900;
+    font-size: 1em;
+    padding-bottom: 7px;
+    text-align: left;
+    text-transform: uppercase;
+  }
+
+  &.sectionTitleGrey {
+    color: $grey400;
+  }
+}
+
+.noSpacingTop {
+  margin-top: 0;
+  padding-top: 0 !important;
+}

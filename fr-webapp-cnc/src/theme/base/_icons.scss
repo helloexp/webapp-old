@@ -1,0 +1,150 @@
+@import 'colors';
+@import 'variables';
+
+$uqIcons: (
+  'FloatingSmallAdd': '\e900',
+  'UniqloLogo': '\e93f',
+  'FlatSmallCheck': '\e940',
+  'FloatingCloseLarge': '\e901',
+  'FloatingCLoseSmall': '\e902',
+  'Play': '\e903',
+  'Account': '\e906',
+  'ArrowBack': '\e907',
+  'Cart': '\e935',
+  'Check': '\e908',
+  'CheckboxDeselected': '\e909',
+  'CheckboxDisabled': '\e90a',
+  'CheckboxSelected': '\e90b',
+  'ChevronDown': '\e917',
+  'ChevronDownSmall': '\e117',
+  'ChevronUpSmall': '\e90c',
+  'ChevronRightMicro': '\e90d',
+  'ChevronRightSmall': '\e90e',
+  'Close': '\e90f',
+  'Computer': '\e602',
+  'Dropdown': '\e910',
+  'DownChevron': '\e605',
+  'Filter': '\e915',
+  'FilterColor': '\e916',
+  'FilterFeatures': '\e918',
+  'FilterLength': '\e919',
+  'FilterPrice': '\e91c',
+  'FilterSelections': '\e91e',
+  'FilterSize': '\e91f',
+  'FilterSort': '\e921',
+  'FilterStyles': '\e923',
+  'GiftSelected': '\e925',
+  'Grid': '\e606',
+  'Heart': '\e607',
+  'Key': '\e609',
+  'Help': '\e927',
+  'Info': '\e928',
+  'IconShipping': '\e915',
+  'IconX': '\e90f',
+  'LargeStore': '\e603',
+  'LeftArrow': '\e60a',
+  'LeftChevron': '\e60b',
+  'List': '\e60c',
+  'Location': '\e60d',
+  'Look': '\e929',
+  'MapPinUniqloStore': '\e92a',
+  'Minus': '\e92b',
+  'Phone': '\e60e',
+  'Plus': '\e92c',
+  'Polaroids': '\e60f',
+  'RadioDisabled': '\e92f',
+  'RadioSelected': '\e930',
+  'Remove': '\e931',
+  'RightChevron': '\e90d',
+  'Search': '\e932',
+  'Secure': '\e933',
+  'SPNavMenu': '\e937',
+  'SPNavSearch': '\e938',
+  'SPNavStores': '\e939',
+  'ViewGrid': '\e93a',
+  'ViewList': '\e93b',
+  'ViewSingleColumn': '\e93c',
+  'Warning': '\e93d',
+  'HeavyRain': '\e123',
+  'ThunderStorm': '\e942',
+  'HeavySnow': '\e943',
+  'LightSnow': '\e944',
+  'Sunny': '\e945',
+  'PartlyCloudy': '\e946',
+  'MostlyCloudy': '\e947',
+  'GenderAge': '\e91b',
+);
+
+%uqFontIcon {
+  display: inline-block;
+  font-family: Uniqlo Icons;
+  font-smoothing: antialiased;
+  text-rendering: auto;
+}
+
+@each $name, $content in $uqIcons {
+  %icon#{$name}::before {
+    @extend %uqFontIcon;
+    content: $content;
+  }
+}
+
+// icoMoon icons
+$icomoonIcons: (
+  'ChevronRight': '\e611',
+  'ChevronLeft': '\e60b',
+  'ChevronDown': '\e605',
+  'ChevronUp': '\e618',
+  'Color': '\e905',
+  'Close': '\e939',
+  'Radio': '\e921',
+  'RadioSelected': '\ea54',
+  'Remove': '\e9a8',
+  'Tick': '\e92c',
+  'Gift': '\e914',
+  'CheckboxDeselected': '\e91e',
+  'CheckboxSelected': '\e920',
+  'Secure': '\e9b5',
+  'FilterDeselected': '\e946',
+  'FilterSelectedPath1': '\e94b',
+  'FilterSelectedPath2': '\e94c',
+  'FilterSelectedPath3': '\e94d',
+  'MultiSelectDeselected': '\e996',
+  'FloatCircle': '\e923',
+  'Search': '\e9b4',
+);
+
+%icoMoon {
+  font-family: 'icomoon' !important;
+  font-smoothing: antialiased;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  line-height: 1;
+  speak: none;
+  text-transform: none;
+}
+
+@each $name, $content in $icomoonIcons {
+  %icomoon#{$name}::before {
+    @extend %icoMoon;
+    content: $content;
+  }
+}
+
+%icomoonInfo {
+  font-size: $fontSizePlus35;
+
+  &::before {
+    @extend %icoMoon;
+    color: $gray67;
+    content: '\e98a';
+  }
+
+  &::after {
+    @extend %icoMoon;
+    color: $white;
+    content: '\e98b';
+    margin-left: -1em;
+  }
+}

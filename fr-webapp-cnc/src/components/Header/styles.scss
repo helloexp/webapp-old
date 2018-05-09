@@ -1,0 +1,120 @@
+@import '~theme/base/spacing';
+@import '~theme/base/variables';
+@import '~theme/base/icons';
+
+.header {
+  @include spacing('m', 'v', true);
+  background-color: $textColorInverted;
+  box-sizing: border-box;
+  font-family: $fontFamilySansSerif;
+  font-size: $fontSizeBase;
+  position: relative;
+  width: 100%;
+  z-index: z('mainHeader');
+
+  &.headerIsFixed {
+    position: fixed;
+  }
+
+  .miniBagCareUp {
+    &::before {
+      @extend %iconChevronDown;
+      transform: scale(1, -1);
+    }
+  }
+
+  .promotion {
+    background-color: $brandInfo;
+    color: $white;
+    font-weight: bold;
+    padding: 15px 5px;
+    text-align: center;
+  }
+
+  .logo {
+    height: auto;
+    width: 90px;
+  }
+
+  .gulogo {
+    height: auto;
+    width: 40px;
+  }
+
+  .uqGulogo {
+    display: flex;
+    height: auto;
+    justify-content: space-between;
+    max-width: 90px;
+    width: 90px;
+  }
+
+  .current {
+    @include spacing('m', 'h', true);
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+  }
+
+  .brand {
+    max-height: 50px;
+  }
+
+  .uqGubrand {
+    max-height: 40px;
+    width: 40px;
+  }
+
+  .hide {
+    display: none;
+  }
+
+  %caretDown,
+  .caretDown {
+    bottom: 0;
+    display: inline-block;
+    font-size: 25px;
+    right: 0;
+    top: 5px;
+
+    &::before {
+      @extend %iconChevronDown;
+      color: $textColorLight;
+      display: block;
+      font-size: 12px;
+      padding: 10px;
+    }
+  }
+
+  .caretUp {
+    @extend %caretDown;
+
+    &::before {
+      transform: scale(1, -1);
+    }
+  }
+}
+
+.imageWrapper {
+  :global(.linkContent) {
+    height: 40px;
+  }
+}
+
+.buttonsWrapper {
+  display: flex;
+
+  .firstButton {
+    @include spacing('m', 'x', false, 'r');
+  }
+
+  .buttonLabel {
+    display: block;
+    font-size: $fontSizeMinus3;
+    font-weight: $fontWeightBold;
+  }
+}
+
+.iconClass {
+  stroke: none;
+}

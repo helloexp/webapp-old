@@ -1,0 +1,15 @@
+@import '~theme/base/spa';
+
+.timeoutInfo {
+  @extend %baseFont;
+  @include cartSpacing('l', 'x', false, 'b');
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+
+.timeoutInfoText {
+  display: block;
+  width: 90%;
+}

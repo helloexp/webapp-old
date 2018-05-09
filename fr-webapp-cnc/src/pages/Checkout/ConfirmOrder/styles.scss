@@ -1,0 +1,151 @@
+@import '~theme/base/spa';
+
+.confirmOrderContainer {
+  background-color: $grey250;
+}
+
+.showMoreBtn {
+  border-bottom: 1px solid $textColorLight;
+  box-shadow: 0 1px 1px $textColorLight, 0 -1px 1px $textColorLight;
+  font-weight: bold;
+  margin-top: -15px;
+}
+
+.orderNumber {
+  @include spacing('xs', 'x', false, 'l');
+  color: $black;
+}
+
+.packingMethod,
+.paymentMethod,
+.orderSummeryWrap {
+  @include cartSpacing('l', 'v', true);
+  @include spacing('m', 'h', false);
+  border-bottom: 1px solid $grey150;
+  font-size: $header4FontSize;
+}
+
+.packingMethod {
+  .highlightBlock {
+    @include spacing('s', 'a', true);
+    background: $grey300;
+  }
+
+  .deliverySchedule {
+    @include spacing('l', 'x', false, 'b');
+    @include spacing('z', 'a', true);
+  }
+
+  .timeframeContainer {
+    @include spacing('z', 'v', true);
+  }
+
+  .otherPayment {
+    @include spacing('z', 'v', true);
+  }
+}
+
+.titleSpacing {
+  @include cartSpacing('s', 'x', false, 'b');
+  font-weight: $fontWeightHeavy;
+}
+
+.orderSummeryWrap {
+  border: none;
+  padding-bottom: 0;
+
+  .titleSpacing {
+    @include cartSpacing('l', 'x', false, 'b');
+
+    div > h6 {
+      font-weight: $fontWeightHeavy;
+    }
+  }
+}
+
+.continueShoppingButton {
+  @include spacing('z', 'x', true, 't');
+  @include cartSpacing('l', 'x', true, 'b');
+}
+
+.orderShippingAddress {
+  @include spacing('m', 'h', false);
+  border-bottom: 1px solid $grey150;
+}
+
+.plannedDates {
+  font-size: $header4FontSize;
+}
+
+%commonBtn {
+  border: 1px solid $grey900;
+
+  & > :global(.btnLabel) {
+    @extend %baseBPlus2;
+  }
+}
+
+.commonBtn {
+  @extend %commonBtn;
+}
+
+.continueBtn {
+  @include cartSpacing('xl', 'x', false, 't');
+}
+
+.orderHistoryButton {
+  @include spacing('z', 'x', true, 't');
+  @include cartSpacing('l', 'x', true, 'b');
+
+  & > button {
+    @extend %commonBtn;
+    @include cartSpacing('l', 'x', false, 't');
+  }
+}
+
+.brandHeader {
+  @extend %dropShadowCheckout;
+  @include cartSpacing('l', 'v', true);
+  @include spacing('m', 'h', true);
+  border-bottom: none;
+}
+
+.recommendationsContainer {
+  background-color: $grey250;
+  margin-right: 1px;
+}
+
+.totalItemSpacing {
+  @include spacing('z', 'x', false, 'b');
+  @include cartSpacing('l', 'x', true, 't');
+  @include cartSpacing('xs', 'x', false, 't');
+  @include cartSpacing('l', 'x', true, 'b');
+  border-bottom: 1px solid $grey150;
+}
+
+.linkWrapper {
+  @include spacing('m', 'v', true);
+  @include spacing('m', 'h');
+  @include spacing('l', 'x', true, 'l');
+  @include spacing('s+s', 'x', true, 'r');
+  background-color: $white;
+  box-shadow: 0 1px 2px 0 $dropShadowBlack;
+}
+
+.memberEditLinkWrapper {
+  @include cartSpacing('xl', 'x', true, 't');
+
+  :global(.linkContent) {
+    h6 {
+      @extend %baseBPlus1;
+    }
+  }
+}
+
+.orderListWrap {
+  border-top: 1px solid $grey150;
+}
+
+.whiteBackGround {
+  background-color: $white;
+}

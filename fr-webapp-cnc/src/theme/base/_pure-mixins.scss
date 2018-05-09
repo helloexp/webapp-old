@@ -1,0 +1,46 @@
+@mixin transform($transforms) {
+  transform: $transforms;
+}
+
+@mixin tooltipHolder($showClass: '') {
+  font-smoothing: antialiased;
+  position: relative;
+  transform: translateZ(0); //equivalent of translate3d
+}
+
+@mixin translate ($x, $y, $z) {
+  @include transform(translate3d($x, $y, $z));
+}
+
+@mixin square($size) {
+  height: #{$size + 'px'};
+  width: #{$size + 'px'};
+}
+
+@mixin autoHeight($size) {
+  height: auto;
+  width: #{$size + 'px'};
+}
+
+@mixin transition($args...) {
+  transition: $transtiondefault $args;
+}
+
+@mixin dimensions($width, $height) {
+  height: $height;
+  width: $width;
+}
+
+@mixin sideBoxShadow($size, $side, $color) {
+  box-shadow: inset  #{'-'+ $size} 0 #{$size} #{'-'+ $size}  $color;
+  content: ' ';
+  height: 100%;
+  position: absolute;
+  top: 0;
+  width: #{$size};
+  @if ($side == 'l') {
+    left: #{'-'+ $size};
+  } @else if  ($side == 'r') {
+    right: 0;
+  }
+}

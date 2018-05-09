@@ -1,0 +1,46 @@
+@import '~theme/base/spa';
+
+.storesLocation {
+
+  .prefecturesLink {
+    @include spacing('m', 'h');
+    @include spacing('m', 'x', false, 'b');
+    @include spacing('m', 'x', true, 'b');
+    align-items: center;
+    border-bottom: 1px solid $gray67;
+    display: flex;
+
+    .searchByPrefecture {
+      @include spacing('z', 'v', true);
+      @include spacing('z', 'x', true, 'l');
+      text-align: left;
+
+      &.empty {
+        color: $gray67;
+      }
+    }
+
+    &::after {
+      @extend %uniIcon;
+      color: $gray67;
+      content: '\e90e';
+      padding-bottom: 3px;
+    }
+  }
+
+  .mapContainer {
+    height: $mapHeight;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+
+    .searchBox {
+      @include spacing('m', 'h', true);
+      left: 0;
+      position: absolute;
+      right: 0;
+      top: 10px;
+      z-index: 1;
+    }
+  }
+}

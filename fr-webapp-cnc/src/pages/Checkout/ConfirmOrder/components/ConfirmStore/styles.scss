@@ -1,0 +1,70 @@
+@import '~theme/base/spa';
+
+.confirmationTitle {
+  @include spacing('m', 'h', true);
+  @include spacing('l', 'v', true);
+  background-color: $grey250;
+  border-bottom: none;
+  font-size: $header5FontSize;
+  font-weight: $fontWeightBold;
+}
+
+.orderConfirmWrap {
+  @include spacing('m', 'h');
+  @include spacing('m', 'x', true, 't');
+}
+
+.payAtStoreTitle {
+  @extend %baseFont;
+  @include spacing('m', 'v', false);
+  font-weight: $fontWeightNormal;
+}
+
+subTitleWrapper {
+  @include spacing('l', 'x', false, 'b');
+}
+
+.subTitle {
+  @extend %baseAMinus2;
+  @include spacing('s', 'x', false, 'b');
+  color: $gray500;
+  display: block;
+  text-align: left;
+}
+
+.storeNumberSpacing {
+  @include spacing('l', 'x', false, 'b');
+  color: $uniqloBlack001;
+  font-weight: $fontWeightHeavy;
+}
+
+.onlineNumberSpacing {
+  @include spacing('s', 'x', false, 'b');
+  font-weight: $fontWeightHeavy;
+}
+
+.barcodeInfo {
+  @extend %baseUA;
+  @include spacing('s', 'x', false, 't');
+  display: block;
+  text-align: center;
+}
+
+.barcodeWrapper {
+  @include spacing('s', 'x', false, 't');
+  @include spacing('z', 'x', false, 'b');
+}
+
+.barCodeImg {
+  height: auto;
+  margin: 0 auto;
+  width: 67.5%;
+}
+
+.expiryTime {
+  @include spacing('m', 'x', false, 'b');
+  color: $red;
+  display: block;
+  font-size: $fontSizePlus1;
+  font-weight: $fontWeightHeavy;
+}

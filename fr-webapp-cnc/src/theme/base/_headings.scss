@@ -1,0 +1,170 @@
+@import 'typography';
+
+%hiragino {
+  text-transform: uppercase;
+
+  &%h1 {
+    @extend %baseBPlus5;
+    margin-bottom: 30px;
+
+    &:nth-child(1) {
+      margin-top: 45px;
+    }
+  }
+
+  &%h2 {
+    @extend %baseBPlus4;
+
+    margin: 30px 0 20px;
+
+    &:nth-child(1) {
+      margin-top: 45px;
+    }
+  }
+
+  &%h3 {
+    @extend  %baseBPlus2;
+
+    margin: 30px 0 15px;
+
+    &:nth-child(1) {
+      margin-top: 45px;
+    }
+  }
+
+  &%h4 {
+    @extend %baseBPlus1;
+    margin: 15px 0 20px;
+  }
+
+  &%h5 {
+    @extend %baseB;
+    margin: 30px 0 10px;
+  }
+
+  &%h6 {
+    @extend %baseAMinus1;
+  }
+
+  &%h7 { //Not used currently
+    @extend %baseAMinus2;
+  }
+
+  &%h8 { //Not used currently
+    @extend %baseAMinus3;
+  }
+
+  %h2 + %h5,
+  %h3 + %h5 {
+    margin-top: 20px;
+  }
+
+  %h2 + :not(%h5),
+  %h2 + :not(%h5) {
+    margin-top: 30px;
+  }
+
+  &%subH1 { //Not used currently
+    @extend %baseAPlus5;
+  }
+
+  &%subH2 { //Not used currently
+    @extend %baseAPlus4;
+  }
+
+  &%subH3 { //Not used currently
+    @extend %baseAPlus2;
+  }
+
+  &%subH4 {
+    @extend %baseAPlus1;
+  }
+
+  &%subH5 {
+    @extend %baseA;
+  }
+
+  &%subH6 {
+    @extend %baseAMinus1;
+  }
+
+  &%subH7 {
+    @extend %baseAMinus2;
+  }
+
+  &%subH8 {
+    @extend %baseAMinus3;
+  }
+}
+
+%uniqlo {
+  text-transform: uppercase;
+
+  &%h1 { //TBD Not used currently
+    @extend %baseCPlus5;
+  }
+
+  &%h2 { //TBD Not used currently
+    @extend %baseCPlus4;
+  }
+
+  &%h3 {
+    @extend %baseCPlus2;
+  }
+
+  &%h4 {
+    @extend %baseCPlus1;
+  }
+
+  &%h5 {
+    @extend %baseC;
+    letter-spacing: .7em;
+    margin: 30px 0 10px;
+  }
+
+  &%h6 { //Not used currently
+    @extend %baseCMinus1;
+  }
+
+  &%h7 { //Not used currently
+    @extend %baseCMinus2;
+  }
+
+  &%h8 { //Not used currently
+    @extend %baseCMinus3;
+  }
+
+  &%subH1 { //Not used currently
+    @extend %baseAPlus5;
+  }
+
+  &%subH2 { //Not used currently
+    @extend %baseAPlus4;
+  }
+
+  &%subH3 {
+    @extend %baseAPlus2;
+    line-height: 1em;
+  }
+
+  &%subH4 {
+    @extend %baseAPlus1;
+    line-height: 1em;
+  }
+
+  &%subH5 {
+    @extend %baseA;
+  }
+
+  &%subH6 { //Not used currently
+    @extend %baseAMinus1;
+  }
+
+  &%subH7 { //Not used currently
+    @extend %baseAMinus2;
+  }
+
+  &%subH8 { //Not used currently
+    @extend %baseAMinus3;
+  }
+}

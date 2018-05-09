@@ -1,0 +1,192 @@
+@import '~theme/base/spa';
+
+%clickHOCButton {
+  outline: none;
+}
+
+.default {
+  @extend %clickHOCButton;
+  @include spacing('m', 'v', true);
+  @include spacing('xs', 'h', true);
+  background-color: $black;
+  border: none;
+  box-sizing: border-box;
+  color: $white;
+  display: block;
+  font: {
+    family: inherit;
+    size: $fontSizePlus2;
+    weight: bold;
+  }
+  text-align: center;
+  transition: opacity .2s;
+  width: 100%;
+
+  &.isDisabled {
+    background-color: $grey150;
+    color: $white;
+  }
+}
+
+.primary {
+  @extend %clickHOCButton;
+  @include spacing('m', 'v', true);
+  @include spacing('xs', 'h', true);
+  background-color: $red100;
+  border: none;
+  box-sizing: border-box;
+  color: $white;
+  display: block;
+  font: {
+    family: inherit;
+    size: $fontSizePlus2;
+    weight: bold;
+  }
+  text-align: center;
+  transition: opacity .2s;
+  width: 100%;
+
+  &.isDisabled {
+    background-color: $grey150;
+    color: $white;
+  }
+}
+
+.secondary {
+  @extend %clickHOCButton;
+  @include spacing('m', 'v', true);
+  @include spacing('xs', 'h', true);
+  background-color: transparent;
+  border: 1px solid currentColor;
+  box-sizing: border-box;
+  color: $black900;
+  display: block;
+  font: {
+    family: inherit;
+    size: $fontSizePlus2;
+    weight: bold;
+  }
+  text-align: center;
+  transition: opacity .2s;
+  width: 100%;
+
+  &.isDisabled {
+    background-color: $grey150;
+    color: $white;
+  }
+}
+
+.link {
+  @extend %clickHOCButton;
+  background-color: transparent;
+  border: none;
+  box-sizing: border-box;
+  color: currentColor;
+  display: inline-block;
+  font-family: inherit;
+  font-size: $fontSizeBase;
+  padding: 0;
+  position: relative;
+  text-align: center;
+  transition: opacity .2s;
+  width: initial;
+
+  &::after {
+    background-color: currentColor;
+    content: '';
+    height: 1px;
+    left: 0;
+    position: absolute;
+    top: 100%;
+    width: 100%;
+  }
+
+  &.isDisabled {
+    opacity: .5;
+  }
+}
+
+.close {
+  @extend %clickHOCButton;
+  align-items: center;
+  background-color: transparent;
+  border: none;
+  box-sizing: border-box;
+  color: currentColor;
+  display: flex;
+  font-family: inherit;
+  font-size: 30px;
+  height: 30px;
+  justify-content: center;
+  line-height: 1;
+  padding: 0;
+  text-align: center;
+  transition: opacity .2s;
+  width: 30px;
+}
+
+.edit {
+  @extend %clickHOCButton;
+  @extend %baseBMinus1;
+  background-color: transparent;
+  border: none;
+  box-sizing: border-box;
+  color: $black900;
+  display: inline-block;
+  font-family: inherit;
+  line-height: 1;
+  padding: 0;
+  text: {
+    align: center;
+    decoration: underline;
+  }
+  transition: opacity .2s;
+  width: initial;
+}
+
+.arrowRight {
+  @extend %clickHOCButton;
+  @extend %icomoonChevronRight;
+  align-items: center;
+  background-color: transparent;
+  border: none;
+  box-sizing: border-box;
+  color: currentColor;
+  display: flex;
+  font: {
+    family: inherit;
+    size: $fontSizePlus2;
+    weight: bold;
+  }
+  padding: 0;
+  position: relative;
+  text-align: center;
+  transition: opacity .2s;
+  width: 100%;
+
+  &::before {
+    color: $gray67;
+    font-size: $fontSizePlus35;
+    margin-left: auto;
+    order: 2;
+  }
+
+  &.isDisabled {
+    background-color: $grey150;
+    color: $white;
+  }
+}
+
+.flat {
+  @extend %clickHOCButton;
+  background-color: transparent;
+  border: none;
+  box-sizing: border-box;
+  display: block;
+  font-family: inherit;
+  line-height: 1;
+  padding: 0;
+  text-align: left;
+  transition: opacity .2s;
+  width: 100%;
+}

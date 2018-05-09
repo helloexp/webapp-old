@@ -1,0 +1,18 @@
+@import '~theme/base/main';
+
+.tabs {
+  .filterMiddle {
+    @include spacing('xl', 'x', true, 't');
+    @include spacing('ml', 'x', true, 'b');
+    padding-bottom: 70px;
+    padding-top: 130px;
+  }
+
+  .rootClass {
+    &:last-child {
+      a {
+        border-right: none;
+      }
+    }
+  }
+}

@@ -1,0 +1,76 @@
+@import 'colors';
+
+// spa variables
+$fontSizeBase: 13px;
+$fontSizePlus1: 14px;
+$fontSizePlus2: 16px;
+$fontSizePlus3: 17px;
+$fontSizePlus35: 24px;
+$fontSizePlus4: 20px;
+$fontSizePlus5: 46px;
+$fontSizeMinus1: 12px;
+$fontSizeMinus2: 11px;
+$fontSizeMinus3: 10px;
+
+$headerLogoFontSize: 36px;
+$logoMiniBagFontSize: 32px;
+$header0FontSize: 24px;
+$header1FontSize: 18px;
+$header2FontSize: 16px;
+$header3FontSize: 15px;
+$header4FontSize: 14px;
+$header5FontSize: 20px;
+$header6FontSize: 13px;
+$header7FontSize: 17px;
+$header8FontSize: 21px;
+$icon0FontSize: 10px;
+$icon0SmallSize: 8px;
+
+$inputHeight: 20px;
+$minibagBottomHeight: 59px;
+$minibagHeight: 70px;
+$stickyTotalButtonHeight: 50px;
+$applePayButtonHeight: 54px;
+$stickyTotalHeight: 117px;
+$headerHeight: 40px;
+$mapHeight: 281px;
+$confirmHeight: 300px;
+$confirmationHeight: 31vh;
+$drawerFooterHeight: 50px;
+$addressFooterHeight: 41px;
+$giftingImageWidth: 75px;
+$creditCardImageHeight: 26px;
+$applePayLoginButtonHeight: 50px;
+
+$textAreaFocusOuterFont: 12px;
+$boxInnerPadding: $header3FontSize;
+$upArrowSize: $icon0FontSize;
+$lockIconSize: $header5FontSize;
+$boxInnerPadding: $header4FontSize;
+$colourChipPaddingSmall: 4px;
+//$fontSizeBase: $header4FontSize;
+
+// from base
+$textFullBlack: $fullBlack;
+$textDarkBlack: $darkBlack;
+$textLightBlack: $lightBlack;
+$textMinBlack: $minBlack;
+$textFullWhite: $fullWhite;
+$textDarkWhite: $darkWhite;
+$textLightWhite: $lightWhite;
+
+// font weight
+$fontWeightLight: 300;
+$fontWeightNormal: 400;
+$fontWeightMedium: 500;
+$fontWeightBold: 600;
+$fontWeightHeavy: bold;
+
+$fontStyleButtonFontSize: 14;
+$transtiondefault: 450ms all 0ms linear;
+$headingHruleColor: $black900;
+
+$fontFamilySansSerif: -apple-system, 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', 'Noto Sans Japanese', Roboto, 'Droid Sans', メイリオ, Meiryo, sans-serif;
+
+$fontFamilyUniqloIcons: 'Uniqlo Icons';
+$fontFamilyUniqloRegular: 'Uniqlo Pro Regular', Helvetica, sans-serif;

@@ -1,0 +1,103 @@
+@import 'base/layout';
+
+// Spacings
+// generates classes by pattern: `.${type}${direction}${size}`
+// example: type = M (margin), direction = L (left), size = S (10px)
+// generate class name: .MLS { margin-left: 10px }
+
+$typeList: (
+  'M': 'margin',
+  'P': 'padding',
+);
+
+$directionListVertical: (
+  'T': ('top'),
+  'B': ('bottom'),
+  'V': ('top', 'bottom'),
+);
+
+$directionListHorizontal: (
+  'L': ('left'),
+  'R': ('right'),
+  'H': ('left', 'right'),
+);
+
+// Size list description:
+// Z - zero
+// T - tiny
+// E - extra small
+// S - small
+// M - medium
+// L - large
+// TTT - tiny + tiny + tiny
+// SM - small + medium
+// SS - small + small
+// TTS - tiny + tiny + small
+// SL - small + large
+// LL - large + large
+
+$sizeList: (
+  'Z': 0,
+  'T': '1px',
+  'E': '5px',
+  'S': '10px',
+  'M': '15px',
+  'SM': '25px',
+  'L': '30px',
+);
+
+$sizeListSmall: (
+  'TTT': '3px',
+  'E': '4px',
+  'S': '8px',
+  'TTS': '10px',
+  'M': '12px',
+  'SS': '16px',
+  'SM': '20px',
+  'L': '24px',
+  'SL': '32px',
+  'LL': '48px',
+);
+
+$sizeListLarge: (
+  'TTT': '5px',
+  'E': '5.5020px',
+  'S': '11.040px',
+  'TTS': '13.040px',
+  'M': '16.56px',
+  'SS': '22.08px',
+  'SM': '27.6px',
+  'L': '33.12px',
+  'SL': '44.16px',
+  'LL': '66.24px',
+);
+
+@mixin spacing($types, $directions, $sizes) {
+  @each $typeKey, $type in $types {
+    @each $directionKey, $direction in $directions {
+      @each $sizeKey, $size in $sizes {
+        .#{$typeKey}#{$directionKey}#{$sizeKey} {
+          @each $dir in $direction {
+            #{$type + '-' + $dir}: #{$size} !important;
+          }
+        }
+      }
+    }
+  }
+}
+
+@include spacing($typeList, $directionListVertical, $sizeList);
+@include spacing($typeList, $directionListHorizontal, $sizeList);
+
+@include media('<=smallDevice') {
+  @include spacing($typeList, $directionListHorizontal, $sizeListSmall);
+}
+
+@include media('>largeDevice') {
+  @include spacing($typeList, $directionListHorizontal, $sizeListLarge);
+}
+
+.horizontalGap {
+  margin-left: 4% !important;
+  margin-right: 4% !important;
+}

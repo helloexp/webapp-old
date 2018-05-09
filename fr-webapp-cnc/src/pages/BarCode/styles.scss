@@ -1,0 +1,91 @@
+@import '~theme/base/spa';
+
+.pageHeading {
+  @include spacing('l', 'x', true, 't');
+  @include spacing('m', 'x', true, 'b');
+  @include spacing('z', 'v', false);
+  @include spacing('m', 'h', false);
+  border-bottom: 1px solid $greyMedium;
+  display: flex;
+  font-size: $header2FontSize;
+}
+
+.barCodeOuterContainer {
+  @include spacing('xxs', 'x', true, 'b');
+  height: 100%;
+  position: relative;
+  z-index: 4;
+
+  .headingContainer {
+    @include spacing('m', 'x', false, 'b');
+    background: $grayDim;
+  }
+
+  .backToCouponListBtn {
+    @include spacing('z', 'a');
+  }
+
+  .useCouponText {
+    @include spacing('s+m', 'v', true);
+    color: $uniqloGrey001;
+    display: block;
+    text-align: center;
+  }
+
+  .storeCouponContainer {
+    @include spacing('l', 'v', true);
+    @include spacing('l', 'x', false, 'b');
+    background: $white;
+    box-shadow: 0 2px 4px $greyShade;
+
+    .barcodeImage {
+      @include spacing('z', 'v', true);
+      margin: auto;
+      width: 80%;
+    }
+
+    .headingText {
+      @include spacing('l', 'v', true);
+    }
+
+    .barcodeContainer {
+      @include spacing('l', 'x', false, 't');
+      border-top: 1px solid $grey90;
+    }
+
+    .noStoreCoupons {
+      @include spacing('l', 'x', false, 'b');
+      display: block;
+    }
+  }
+
+  .footer {
+    @include spacing('s+s', 'x', false, 't');
+    @include spacing('z', 'x', false, 'b');
+    bottom: 0;
+    left: 0;
+    position: fixed;
+    z-index: 4;
+  }
+
+  .cancelBtn {
+    border-top: 1px solid $grey900 !important;
+    flex: 1;
+  }
+
+  .acceptBtn {
+    flex: 1;
+  }
+
+  .buttonContainer {
+    display: flex;
+  }
+
+  .useMessageText {
+    @include spacing('l', 'v', true);
+    @include spacing('m', 'h', true);
+    background: $white;
+    border-top: 1px solid $grey90;
+    display: block;
+  }
+}

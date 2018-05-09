@@ -1,0 +1,27 @@
+@import '~theme/base/spa';
+
+.boldHeaderText {
+  @extend %baseBPlus1;
+}
+
+.instructions {
+  @include spacing('s', 'x', false, 't');
+  @include spacing('m', 'x', false, 'b');
+  color: $textColorLight;
+  display: block;
+}
+
+.confirm {
+  @include spacing('l', 'x', false, 't');
+}
+
+.content {
+  @extend %dropShadowCheckout;
+  @include cartSpacing('l', 'v', true);
+  @include cartSpacing('s', 'x', false, 'b');
+}
+
+.priceStyle {
+  @extend %baseBPlus1;
+  border-left: none;
+}

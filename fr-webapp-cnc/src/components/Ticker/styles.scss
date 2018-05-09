@@ -1,0 +1,190 @@
+@import '~theme/base/spacing';
+@import '~theme/base/variables';
+@import '~theme/base/typography';
+
+.overlay {
+  background-color: $uniqloGrey001;
+  height: 100%;
+  opacity: .5;
+  position: fixed;
+  top: $minibagHeight;
+  width: 100%;
+  z-index: 5;
+}
+
+.container {
+  @extend %baseBMinus2;
+  align-items: center;
+  clear: both;
+  display: flex;
+  flex-shrink: 0;
+  justify-content: center;
+  position: relative;
+  transition: background-color 400ms linear;
+  z-index: z('showHeader');
+
+  &.info {
+    background-color: $greyCool400;
+    border: 1px solid $greyCool400;
+    border-left: none;
+    border-right: none;
+    color: $white;
+
+    .linkUrl {
+      @extend %urlLink;
+      color: $white;
+    }
+  }
+
+  &.alert {
+    background-color: $white;
+    border: 1px solid $grey150;
+    border-left: none;
+    border-right: none;
+    box-sizing: border-box;
+    color: $redA500;
+
+    &.inverted {
+      background-color: $redA500;
+      color: $white;
+    }
+
+    .linkUrl {
+      @extend %urlLink;
+      color: $redA500;
+    }
+
+  }
+
+  .message {
+    @include spacing('m', 'h', true);
+    @include spacing('s', 'v', false);
+    overflow-wrap: break-word;
+    text-align: center;
+    width: 100%;
+
+    &.link {
+      &.infoLink {
+        color: $white;
+      }
+
+      &.alertLink {
+        color: $red100;
+      }
+    }
+
+    &.out {
+      overflow: hidden;
+    }
+  }
+}
+
+.imageContainer,
+.image {
+  display: block;
+  width: 100%;
+}
+
+%urlLink {
+  @include spacing('s', 'v', true);
+  @include spacing('s', 'h', true);
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+
+  12.5% { opacity: .25; }
+
+  25% { opacity: .5; }
+
+  50% { opacity: 1; }
+
+  100% { opacity: 1; }
+}
+
+@keyframes fadeOut {
+  0% { opacity: 1; }
+
+  25% { opacity: .5; }
+
+  50% { opacity: .25; }
+
+  75% { opacity: .125; }
+
+  100% { opacity: 0; }
+}
+
+@keyframes slideOut {
+  0% { transform: translate3d(0, 0, 0); }
+
+  25% { transform: translate3d(-25vw, 0, 0); }
+
+  50% { transform: translate3d(-50vw, 0, 0); }
+
+  75% { transform: translate3d(-75vw, 0, 0); }
+
+  100% { transform: translate3d(-100vw, 0, 0); }
+}
+
+@keyframes slideIn {
+  0% { transform: translate3d(100vw, 0, 0); }
+
+  25% { transform: translate3d(75vw, 0, 0); }
+
+  50% { transform: translate3d(50vw, 0, 0); }
+
+  75% { transform: translate3d(25vw, 0, 0); }
+
+  100% { transform: translate3d(0, 0, 0); }
+}
+
+.in {
+  animation-duration: .25s;
+  animation-fill-mode: backwards;
+}
+
+.out {
+  animation-duration: .25s;
+  animation-fill-mode: forwards;
+}
+
+:global(.highend) {
+  .in {
+    animation-name: fadeIn, slideIn;
+  }
+
+  .out {
+    animation-name: fadeOut, slideOut;
+  }
+}
+
+:global(.lowend) {
+  .in {
+    animation-name: fadeIn;
+  }
+
+  .out {
+    animation-name: fadeOut;
+  }
+}
+
+.applePayTicker {
+  color: $white;
+  font-size: $fontSizeMinus1;
+  font-weight: $fontWeightNormal;
+  text-align: center;
+
+  span {
+    display: block;
+
+    &:first-child {
+      @include spacing('xs', 'x', false, 'b');
+      font-size: $fontSizeMinus2;
+      font-weight: $fontWeightHeavy;
+    }
+  }
+}

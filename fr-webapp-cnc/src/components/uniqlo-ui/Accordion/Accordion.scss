@@ -1,0 +1,40 @@
+@import '~theme/base/main';
+
+.accordion {
+  border-color: solid $uniqloGrey001;
+
+  &.container {
+    width: 100%;
+  }
+
+  &.lineSeparator {
+    background: $uniqloGrey001;
+    height: 1px;
+  }
+
+  &.footer {
+    background-color: $white;
+  }
+
+  &.menu {
+    background-color: $white;
+    width: 100%;
+
+    &.lineSeparator {
+      display: none;
+    }
+  }
+
+  &.category {
+    background-color: $white;
+    width: 100%;
+  }
+}
+
+.accordion + .accordion {
+  .accordion {
+    .lineSeparator {
+      display: none;
+    }
+  }
+}

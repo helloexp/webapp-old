@@ -1,0 +1,24 @@
+@import '~theme/base/spa';
+
+.deliveryPreferenceWrap {
+  &.preferenceContainer {
+    @include cartSpacing('l', 'v', true);
+    @include cartSpacing('s', 'x', false, 'b');
+
+    .headerStyle {
+      @include cartSpacing('s', 'x', false, 'b');
+
+      div > h6 {
+        font-weight: $fontWeightHeavy;
+      }
+    }
+  }
+
+  .headerStyle {
+    @include cartSpacing('s', 'x', false, 'b');
+  }
+}
+
+.editLabelStyle {
+  font-weight: $fontWeightMedium;
+}

@@ -1,0 +1,71 @@
+@import 'colors';
+@import 'typography';
+
+html,
+body {
+  background-color: $grey250;
+  color: $black900;
+  font-family: $fontFamilySansSerif;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+input,
+textarea,
+button,
+select {
+  color: $black900;
+  font-family: $fontFamilySansSerif;
+}
+
+body {
+  -webkit-tap-highlight-color: $transparent; // sass-lint:disable-line no-vendor-prefixes
+
+  // do not change font size on device orientation change
+  -webkit-text-size-adjust: 100%; // sass-lint:disable-line no-vendor-prefixes
+}
+
+.uniqloMobileApp {
+  height: 100%;
+}
+
+// keeps iOS Safari toolbar constantly open
+:global(.safari),
+:global(.safari) > body {
+  height: 100%;
+  overflow-scrolling: touch;
+  overflow-y: scroll;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+:global(.hidden) {
+  display: none;
+}
+
+:global(.block) {
+  display: block;
+}
+
+:global(.flex) {
+  display: flex;
+}
+
+// input styles from spa
+textarea,
+input {
+  &:focus {
+    outline: none;
+  }
+}

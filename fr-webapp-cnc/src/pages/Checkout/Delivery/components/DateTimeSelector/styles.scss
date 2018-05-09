@@ -1,0 +1,60 @@
+@import '~theme/base/spa';
+
+.lastFooterText,
+.secondLastFooterText {
+  @extend %baseFont;
+  @include spacing('m', 'h', true);
+  background-color: $white;
+  display: block;
+  font-family: $fontFamilySansSerif;
+  text-align: left;
+}
+
+.lastFooterText {
+  @include spacing('l', 'x', true, 'b');
+  margin-bottom: $drawerFooterHeight;
+}
+
+.secondLastFooterText {
+  @extend %dropShadowStrong;
+  @include spacing('l', 'x', true, 't');
+}
+
+.nextDayWarningText {
+  @include spacing('m', 'x', true, 't');
+}
+
+.timeframeMessage {
+  @extend %dropShadowStrong;
+  @include spacing('l', 'x', true, 't');
+}
+
+.dateTimeLabel {
+  @extend %baseFont;
+  display: block;
+  text-align: left;
+}
+
+.dateTimeWrapper {
+  @include spacing('l', 'h', true);
+  flex: 1 1 0;
+  overflow: auto;
+}
+
+.footerSpacing {
+  margin-bottom: $drawerFooterHeight;
+}
+
+.drawerClass {
+  @include spacing('z', 'h', true);
+
+  .drawerBody {
+    @include spacing('z', 'h', true);
+    align-items: stretch;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    height: 100%;
+    justify-content: space-between;
+  }
+}

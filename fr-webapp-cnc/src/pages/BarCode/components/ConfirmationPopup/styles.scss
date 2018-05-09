@@ -1,0 +1,30 @@
+@import '~theme/base/spa';
+
+.popupOverlay {
+  height: 100%;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 4;
+}
+
+.popupContainer {
+  @include spacing('l', 'v', true);
+  @include spacing('s+s', 'h', true);
+  @include spacing('s+s', 'h', false);
+  background-color: $white;
+  box-shadow: 0 1px 5px 1px $grey90;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  top: 40%;
+
+  .popupText {
+    @extend %header1;
+  }
+
+  .closeIcon {
+    color: $textColorLight;
+  }
+}

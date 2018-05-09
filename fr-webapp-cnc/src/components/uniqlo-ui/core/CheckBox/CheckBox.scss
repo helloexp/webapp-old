@@ -1,0 +1,130 @@
+@import '~theme/base/main';
+
+.checkBox {
+  .label {
+    color: $darkBlack;
+    display: inline;
+    margin: 0 10px;
+  }
+
+  &:disabled {
+    color: $disabledColor;
+  }
+
+  &.filterCheckBox {
+    @include spacing('l', 'x', true, 'b');
+    align-self: flex-start;
+
+    input {
+      display: none;
+
+      &:checked + label {
+        color: $lightGreen1000;
+
+        &::before {
+          color: $lightGreen1000;
+        }
+      }
+    }
+
+    input + label {
+      @extend %baseBMinus1;
+      color: $uniqloGrey001;
+      margin: 0;
+
+      &::before {
+        color: $uniqloGrey001;
+        font-size: 19px;
+        vertical-align: sub;
+      }
+    }
+  }
+
+  &.spaCheckBox {
+    @include spacing('s+m', 'x', true, 'b');
+    @include spacing('m', 'h', true);
+    align-self: flex-start;
+    color: $uniqloBlack001;
+
+    &.noLeftSpacing {
+      @include spacing('z', 'x', true, 'l');
+      @include spacing('z', 'x', false, 'l');
+    }
+
+    input {
+      display: none;
+
+      &:checked + label {
+
+        &::before {
+          @extend %icomoonCheckboxSelected;
+          background-color: $uniqloBlack001;
+          color: $white;
+        }
+      }
+
+      &:disabled + label {
+        @extend %iconCheckboxDisabled;
+
+        &::before {
+          color: $grey500;
+        }
+      }
+    }
+
+    input + label {
+      @extend %baseB;
+      @extend %icomoonCheckboxDeselected;
+      margin: 0;
+
+      &::before {
+        @extend %baseAPlus3;
+        @include spacing('s', 'x', false, 'r');
+        color: $grey500;
+        vertical-align: sub;
+      }
+    }
+
+    .label {
+      align-items: center;
+      display: flex;
+      word-wrap: break-word;
+
+      &.slimLabel {
+        font-weight: $fontWeightNormal;
+      }
+
+      &::before {
+        flex: none;
+      }
+    }
+
+    &.checkIcon {
+      @include spacing('z', 'a', true);
+
+      .label {
+        &::before {
+          @include spacing('s', 'a', true);
+          line-height: 1;
+        }
+      }
+    }
+
+    &.formCheck {
+      @include spacing('z', 'a', true);
+
+      .label {
+        &::before {
+          @include spacing('s', 'v', true);
+          @include spacing('s', 'x', true, 'r');
+          line-height: 1;
+        }
+      }
+    }
+  }
+
+  &.spaCheck {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}

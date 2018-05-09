@@ -1,0 +1,67 @@
+@import '~theme/base/spa';
+
+.paymentContainer {
+  @include spacing('m', 'h', true);
+  background-color: $grey250;
+
+  .giftPanel {
+    @include cartSpacing('l', 'v', true);
+  }
+}
+
+.sectionTitle {
+  @extend %baseBPlus2;
+  @include spacing('z', 'v', false);
+  @include cartSpacing('l', 'x', true, 'b');
+  @include cartSpacing('xxl', 'x', false, 't');
+  color: $grey900;
+  text-transform: uppercase;
+}
+
+.headingContainer {
+  @include cartSpacing('l', 'v', true);
+  align-items: center;
+  display: flex;
+  position: relative;
+
+  .editLabel {
+    @extend %baseBMinus2;
+    font-size: $fontSizeMinus1;
+    font-weight: $fontWeightHeavy;
+  }
+}
+
+.tickIcon {
+  @include spacing('s', 'x', false, 'r');
+  color: $blueGreen;
+  font-size: $fontSizePlus2;
+
+  &.error {
+    color: $redA500;
+    font-size: $header3FontSize;
+  }
+}
+
+.icon {
+  @include spacing('s', 'x', false, 'r');
+  font-size: $fontSizePlus2;
+
+  &.tick {
+    @extend %icomoonTick;
+    color: $cyanDark;
+  }
+
+  &.warning {
+    @extend %iconWarning;
+    color: $redA500;
+  }
+}
+
+.methodSelectorHead {
+  @extend %baseBPlus2;
+}
+
+.deliveryEdit {
+  position: absolute;
+  right: 0;
+}

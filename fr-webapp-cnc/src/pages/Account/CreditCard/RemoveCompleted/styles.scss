@@ -1,0 +1,19 @@
+@import '~theme/base/spa';
+
+.mainContainer {
+  @include spacing('m', 'h', true);
+  background-color: $grey250;
+}
+
+.content {
+  @include spacing('l', 'x', false, 'b');
+}
+
+.heading {
+  @extend %baseBPlus4;
+}
+
+.backButton {
+  border: 1px solid $black;
+  font-weight: $fontWeightBold;
+}

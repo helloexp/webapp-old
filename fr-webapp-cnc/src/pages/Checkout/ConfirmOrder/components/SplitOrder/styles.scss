@@ -1,0 +1,23 @@
+@import '~theme/base/spa';
+
+.panelStyle {
+  @include cartSpacing('l', 'x', true, 't');
+  @include spacing('z', 'x', false, 'b');
+  border-bottom: 1px solid $grey150;
+
+  %panelHeader,
+  .panelHeader {
+    @include spacing('m', 'h', true);
+    @include cartSpacing('l', 'x', true, 'b');
+  }
+
+  &.expanded {
+    @include spacing('z', 'x', true, 'b');
+    border-bottom: 1px solid $grey150;
+
+    .panelHeader {
+      @extend %panelHeader;
+      border-bottom: 1px solid $grey250;
+    }
+  }
+}

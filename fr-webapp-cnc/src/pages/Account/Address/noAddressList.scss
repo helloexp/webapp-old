@@ -1,0 +1,65 @@
+@import '~theme/base/spa';
+
+.noAddressList {
+  @include spacing('m', 'h', true);
+  @include spacing('z', 'x', true, 't');
+  @include spacing('l', 'x', true, 'b');
+  background-color: $grey250;
+
+  .noAddressHeading {
+    @include spacing('z', 'a', true);
+    @include spacing('z', 'a');
+    border: none;
+    flex: 1;
+    font-size: $header5FontSize;
+  }
+
+  .addressListHead {
+    @include spacing('m', 'x', true, 'b');
+    @include spacing('m', 'x', false, 'b');
+    @include spacing('l', 'x', false, 't');
+  }
+
+  .toolTip {
+    @include spacing('z', 'a');
+    border: none;
+    font-size: $header5FontSize;
+  }
+
+  .toolTipLink {
+    color: $black;
+    text-decoration: underline;
+  }
+
+  .newAddressFormWrapper {
+    @include spacing('m', 'h', true);
+    @include spacing('l', 'x', true, 'b');
+    background-color: $white;
+    box-shadow: 0 1px 2px 0 $dropShadowBlack;
+
+    .checkBoxLabel {
+      font-size: $header4FontSize;
+    }
+  }
+
+  .emptyAddressListView {
+    @include spacing('l', 'v', true);
+    @include spacing('m', 'h', true);
+    @include spacing('m', 'x', false, 'b');
+    background-color: $white;
+    box-shadow: 0 1px 2px 0 $dropShadowBlack;
+
+    .details {
+      @extend %baseA;
+    }
+
+    .subButton {
+      @include spacing('l', 'v', false);
+      @include spacing('z', 'h', false);
+    }
+  }
+
+  .buttonLabel {
+    font-size: $fontSizePlus2;
+  }
+}

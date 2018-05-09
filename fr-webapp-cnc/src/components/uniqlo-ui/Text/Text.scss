@@ -1,0 +1,508 @@
+@import '~theme/base/main';
+
+.productDesktopTestimony {
+  @extend %baseAMinus3;
+  color: $uniqloGrey001;
+  text-align: left;
+  width: 50%;
+
+  &.spaceInBetween {
+    @include spacing('xs', 'x', true, 'l');
+  }
+}
+
+.text {
+  display: inline;
+
+  //***************************Button component child **********************
+  &.buttonModal {
+    color: $red;
+    display: block;
+    font-size: 25px;
+    padding: 2px;
+  }
+
+  &.buttonProductCard {
+    color: $grey650;
+    font-size: 18px;
+  }
+
+  //***************************Button component parent***********************
+  &.label {
+    font-size: 15px;
+  }
+
+  //***************************Modal component parent***********************
+  &.closeLabel {
+    color: $red;
+    display: block;
+    font-size: 25px;
+    padding: 2px;
+
+    &.closeText {
+      @extend %baseAPlus35;
+      line-height: 1em;
+    }
+  }
+
+  //***************************Cart and Checkout styles***********************
+  &%finePrint,
+  &.finePrint {
+    @extend %finePrintText;
+    display: block;
+    text-align: left;
+  }
+
+  &%blockText,
+  &.blockText {
+    @extend %baseFont;
+    display: block;
+    text-align: left;
+  }
+
+  &.instructions {
+    @extend %finePrint;
+    @include spacing('m', 'h');
+    @include spacing('m', 'v');
+    color: $grey600;
+  }
+
+  &.importantMessage {
+    @extend %baseFont;
+    color: $redA500 !important;
+    font-weight: $fontWeightHeavy;
+    text-transform: uppercase;
+  }
+
+  &.info {
+    @extend %baseFont;
+    color: $cyan700 !important;
+  }
+
+  &.error {
+    @extend %baseFont;
+    color: $redA500 !important;
+  }
+
+  //******************single media component *************************
+  &.singleMediaText {
+    @extend %baseAMinus1;
+    @include spacing('m', 'x', false, 'b');
+    color: $black900;
+    display: block;
+  }
+
+  &.tapableItemHeading {
+    @extend %baseC;
+    color: $black900;
+    display: block;
+    letter-spacing: inherit;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  &.productCardText {
+    &.productGenderText {
+      @extend %baseAMinus3;
+      color: $uniqloBlack001;
+      line-height: 1.5em;
+      text-align: right;
+
+      &:first-child {
+        text-align: left;
+      }
+
+      &.largeCarouselText {
+        @include spacing('z', 'x', false, 't');
+        float: right;
+        width: auto;
+      }
+    }
+
+    &.productSaleFlag,
+    &.productDesktopNotes {
+      color: $gray500;
+      display: block;
+    }
+
+    &.productSaleFlag {
+      @extend %zeroTopMargin;
+      @extend %baseAMinus1;
+      @include spacing('m', 'x', false, 'b');
+    }
+
+    &.termLimitSalesMessage {
+      @extend %baseFont;
+      @include spacing('m', 'x', false, 't');
+      color: $red100;
+      display: block;
+    }
+
+    &.productDesktopNotes {
+      @extend %baseCMinus3;
+      line-height: 11px;
+      margin: 0;
+    }
+
+    &.productPrice {
+      @extend %baseUB;
+      @extend %baseCPlus2;
+      color: $uniqloBlack001;
+      display: block;
+      letter-spacing: normal;
+      line-height: 1em;
+
+      &.productSpecialFlag {
+        color: $gray500;
+      }
+
+      &.productOnOffer {
+        color: $red100;
+
+        &.productOfferText {
+          font-weight: $fontWeightLight;
+        }
+
+        &.limitedText {
+          @extend %baseAMinus1;
+          @include spacing('m', 'x', false, 't');
+          color: $red100;
+        }
+
+        &.productDesktopOffer {
+          @extend %baseCPlus4;
+
+          &.productOfferText {
+            @extend %baseCMinus3;
+            font-weight: $fontWeightLight;
+            line-height: 12px;
+            margin: 0;
+          }
+        }
+      }
+
+      &.productOnDiscount {
+        text-decoration: line-through;
+
+        &.productDesktopDiscount {
+          @extend %baseCMinus3;
+          font-weight: $fontWeightLight;
+          line-height: 12px;
+          margin: 0;
+        }
+      }
+    }
+
+    &.singleLargePrice {
+      @extend %baseAPlus3;
+      @include spacing('m', 'x', false, 't');
+    }
+  }
+
+  &.pagination {
+    @include spacing('m', 'h');
+    display: flex;
+    justify-content: center;
+  }
+
+  //***************UqCarousel component scss*************
+  &%carouselProductText {
+    @extend %baseAMinus1;
+    @extend %baseFont;
+    display: block;
+  }
+
+  &.carouselLargeProductFlagText {
+    @extend %carouselProductText;
+    @include spacing('m', 'x', false, 't');
+    color: $gray500;
+  }
+
+  &.carouselLargeProductName {
+    @extend %carouselProductText;
+    @include spacing('s', 'x', true, 't');
+    color: $uniqloGrey001;
+    display: block;
+    white-space: normal;
+  }
+
+  &.carouselLargeProductLimitedText {
+    @extend %carouselProductText;
+    @include spacing('m', 'x', false, 't');
+    color: $red100;
+  }
+
+  &%carouselProductPrice {
+    @extend %baseAPlus2;
+    @extend %baseC;
+    @include spacing('m', 'x', false, 't');
+    display: block;
+    font-weight: bold;
+    letter-spacing: 0;
+    line-height: 1.5em;
+  }
+
+  &.carouselLargeProductPrice {
+    @extend %carouselProductPrice;
+    color: $black900;
+  }
+
+  &.carouselLargeProductPriceLimited {
+    @extend %carouselProductPrice;
+    color: $red100;
+  }
+
+  &.carouselLargeProductPriceFlag {
+    @extend %carouselProductPrice;
+    color: $gray500;
+  }
+
+  // AnchorButton //
+  &.anchorButton {
+    @extend %baseB;
+    @extend %baseAMinus3;
+  }
+
+  &.moreComments {
+    @extend %baseAMinus1;
+    color: $uniqloGrey001;
+  }
+
+  &.carouselLargeProductDetails {
+    @extend %baseAMinus1;
+    @include spacing('m', 'x', true, 't');
+    color: $uniqloBlack001;
+    display: inline-block;
+    max-width: 100%;
+    text-align: left;
+    white-space: normal;
+    word-break: break-word;
+  }
+
+  // ImagePlusText //
+  &.imagePlusText {
+    @extend %baseAMinus1;
+    @include spacing('s', 'x', true, 't');
+    color: $uniqloBlack001;
+    display: block;
+
+    &.zeroPaddingTop {
+      @include spacing('z', 'x', true, 't');
+    }
+  }
+
+  // popup window
+  &.closeText {
+    @extend %baseAPlus4;
+    color: $uniqloGrey001;
+    line-height: 100%;
+    padding: 0;
+  }
+
+  &.headingText {
+    font-size: 20px;
+    text-transform: uppercase;
+    width: 70%;
+  }
+
+  &.errorMessageText {
+    @include spacing('m', 'x', false, 't');
+    color: $red100;
+    display: block;
+    font-size: 13px;
+  }
+
+  &.deliveryDateText {
+    color: $grey700;
+    display: block;
+    font-size: 14px;
+    text-transform: uppercase;
+  }
+
+  &.popupTextSpacing {
+    @include spacing('l', 'x', true, 'b');
+    display: inline-block;
+  }
+
+  //************Filter Popup*******************
+  &.closeFilterText {
+    display: none;
+  }
+
+  //***************Tooltip component scss*************
+  &.textFromTooltip {
+    @extend %baseFont;
+    display: block;
+    max-width: 100%;
+    word-wrap: break-word;
+  }
+
+  &.orderNoText {
+    display: block;
+    font-weight: $fontWeightHeavy;
+  }
+
+  &.dateText {
+    @include spacing('xs', 'h', true);
+    @include spacing('xs', 'v', true);
+  }
+
+  &.messageText {
+    @include spacing('xs', 'h', true);
+    @include spacing('xs', 'v', true);
+  }
+
+  &.confirmationMsg {
+    @include spacing('xs', 'x', true, 'b');
+    display: block;
+  }
+
+  &.reviewOrderText {
+    @include spacing('m', 'x', true, 't');
+    display: inline-block;
+  }
+
+  &%description,
+  &.description {
+    @include spacing('s', 'x', true, 'r');
+    flex: 3;
+  }
+
+  &%price,
+  &.price {
+    flex: 1;
+    font-size: 18px;
+    font-weight: $fontWeightHeavy;
+    text-align: right;
+  }
+
+  &.totalLabel {
+    @extend %description;
+    font-weight: $fontWeightHeavy;
+  }
+
+  &.priceDeduction {
+    @extend %price;
+    color: $blueGreen;
+  }
+
+  &.tileHead {
+    color: $black;
+    font-size: 15px;
+    font-weight: $fontWeightHeavy;
+    margin: 0;
+    padding: 0;
+    text-transform: uppercase;
+  }
+
+  &.cardNumber {
+    display: block;
+    font-family: $fontFamilySansSerif;
+    font-size: .9em;
+  }
+
+  &.subInfo {
+    @include spacing('s', 'x', true, 't');
+    @include spacing('s+s', 'x', false, 'b');
+    clear: both;
+    color: $grey700;
+    display: block;
+    font-family: $fontFamilySansSerif;
+    font-size: 10px;
+    font-weight: $fontWeightMedium;
+  }
+
+  &.subMessage {
+    @include spacing('s', 'x', false, 't');
+    display: block;
+    font-size: 10px;
+    text-align: center;
+  }
+
+  // from productCard
+  &.colorChipPlus {
+    color: $grey400;
+    display: block;
+    height: auto;
+    overflow: auto;
+  }
+
+  &.twoPlusProductName {
+    @extend %baseBMinus1;
+    @include spacing('s', 'v', true);
+    display: block;
+    font-weight: $fontWeightLight;
+  }
+
+  &.twoPlusProductDescription {
+    @extend %baseAMinus2;
+    @include spacing('l', 'x', true, 'b');
+  }
+
+  &.giftMessageContainer {
+    @include spacing('s', 'v', true);
+    @include spacing('s', 'h', true);
+    background: $grey100;
+    border: none;
+    display: block;
+    white-space: pre;
+  }
+
+  &%inlineBlockText,
+  &.inlineBlockText {
+    @extend %blockText;
+    display: inline-block;
+  }
+
+  &.freeText {
+    @extend %inlineBlockText;
+    @include spacing('xs', 'x', true, 'l');
+    color: $blueGreen;
+  }
+
+  &.leftRightTextWrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &.couponHeading {
+    @extend %baseAPlus2;
+    @include spacing('xs', 'v', true);
+    display: block;
+  }
+
+  &.grayOut {
+    color: $grey300;
+  }
+
+  //Filter Component
+  &.cellText {
+    left: 50%;
+    line-height: 14px;
+    position: absolute;
+    top: 50%;
+    transform: translate3d(-50%, -50%, 0);
+  }
+
+  &.personalSize {
+    font-size: 9px;
+    left: 50%;
+    letter-spacing: 0;
+    margin-left: -50%;
+    position: absolute;
+    top: 70%;
+    width: 100%;
+  }
+}
+
+// from product Service
+.dotSep + .dotSep {
+  &::before {
+    @extend %baseB;
+    @include spacing('xs', 'h', true);
+
+    color: inherit;
+    content: '\00B7';
+    font-weight: 700;
+  }
+}

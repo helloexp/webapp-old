@@ -1,0 +1,134 @@
+@import '~theme/base/spacing';
+@import '../SvgIcons/SvgIcons';
+
+.imageGridCell {
+  display: flex;
+  flex: 1;
+  flex-shrink: 0;
+  height: initial;
+  justify-content: initial;
+}
+
+.imageSection {
+  background-size: contain;
+  box-sizing: border-box;
+  display: block;
+  flex: 1;
+  position: relative;
+
+  &.largeProduct {
+    @extend %carouselL;
+  }
+
+  &.largeProductRectangle1E1 {
+    @extend %carouselLargeSquare;
+  }
+
+  &.largeProductRectangle3E4 {
+    @extend %carouselLargeRect;
+  }
+
+  &.singleSmall {
+    @extend %productImage%p70;
+  }
+}
+
+.imageSectionBorder {
+  background-size: contain;
+  border-right: 1px solid $white;
+  box-sizing: border-box;
+  display: block;
+  position: relative;
+  width: 100%;
+}
+
+.productChip {
+  @extend %smallPlusSmallTopMargin;
+  @extend %mediumBottomMargin;
+  @extend %mediumHzSpacingP;
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+
+  &.noHzSpazing {
+    @include spacing('z', 'h', true);
+  }
+
+  &.noRightSpazing {
+    @include spacing('z', 'x', true, 'r');
+  }
+
+  &.mediumTopSpazing {
+    @extend %extraSmallBottomMargin;
+    @extend %mediumTopMargin;
+    @include spacing('z', 'a', true);
+  }
+
+  .childChipSmall {
+    @extend %colourChipSmall;
+
+    &:last-child {
+      @include spacing('z', 'x', false, 'r');
+    }
+  }
+}
+
+.productChildChip {
+  margin-right: 1.25%;
+
+  &:last-child {
+    margin-right: 1.09%;
+  }
+}
+
+.genderSize {
+  @extend %baseAMinus3;
+  @extend %mediumHzSpacingP;
+  color: $uniqloBlack001;
+  display: flex;
+  justify-content: space-between;
+
+  :last-child {
+    text-align: right;
+  }
+
+  &.genderSizeLarge {
+    @extend %smallPlusSmallTopMargin;
+    @extend %mediumBottomMargin;
+    box-sizing: border-box;
+    display: flex;
+    flex-basis: 50%;
+  }
+
+  &.genderSizeLarger {
+    @extend %extraSmallBottomMargin;
+    @extend %zeroTopMargin;
+    @extend %zeroHzSpacingP;
+    box-sizing: border-box;
+    display: flex;
+    flex-basis: 50%;
+    font-size: $fontSizeMinus2;
+    line-height: 1.5em;
+  }
+}
+
+.extendedBorder {
+  border-right: 1px solid $greyCool100;
+}
+
+.chipGender {
+  display: flex;
+}
+
+.certona {
+  display: block;
+}
+
+.productCardFavButton {
+  @include spacing('s', 'a', true);
+  position: absolute;
+}
+
+.plusIconStyles {
+  display: flex;
+}

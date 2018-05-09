@@ -1,0 +1,145 @@
+@import '~theme/base/spa';
+
+.pickupConvenience {
+  font-size: $fontSizeBase;
+
+  .confirmButton {
+    @include spacing('l', 'x', false, 't');
+  }
+}
+
+.convenienceMessage {
+  @extend %baseA;
+  @include cartSpacing('xl', 'x', false, 't');
+  @include cartSpacing('m', 'x', false, 'b');
+  display: block;
+}
+
+.convenienceCondition {
+  @extend %baseB;
+  @include cartSpacing('l', 'x', false, 'b');
+  color: $black900;
+  display: block;
+  text-decoration: underline;
+
+  h6 {
+    font-size: $header6FontSize;
+    font-weight: $fontWeightBold;
+  }
+}
+
+.convinenceTitle {
+  @extend %baseB;
+  @include cartSpacing('m', 'x', false, 'b');
+}
+
+.convenienceStoreContainer {
+  @include cartSpacing('l', 'x', false, 't');
+  align-items: center;
+  display: flex;
+
+  .convenienceStoreImg {
+    width: 30px;
+
+    &.storeImage {
+      align-self: flex-start;
+    }
+
+    &.trailingImage {
+      @include spacing('m', 'x', true, 'l');
+    }
+  }
+}
+
+.contentWrapper {
+  @include spacing('m', 'x', true, 'l');
+}
+
+.convenienceStore {
+  @extend %baseA;
+  align-items: center;
+  color: $uniqloBlack001;
+  display: flex;
+
+  &.convenienceStoreHeader {
+    line-height: 1em;
+  }
+
+  &.cvsBrandTitle {
+    @extend %baseBPlus1;
+  }
+
+  &AppVersionUp {
+    @extend %baseA;
+    @include cartSpacing('m', 'x', false, 't');
+    @include cartSpacing('xs', 'x', false, 'b');
+    color: $gray500;
+    display: block;
+    font-size: 11px;
+  }
+}
+
+.addressDetails {
+  line-height: 1em;
+  word-break: break-all;
+
+  &:last-child {
+    @include spacing('z', 'x', false, 'b');
+  }
+
+  &:first-child {
+    @include cartSpacing('m', 'x', false, 't');
+  }
+}
+
+.footer {
+  @include spacing('s+s', 'x', false, 't');
+  @include spacing('xs', 'x', false, 'b');
+  @include spacing('xs', 'v', true);
+  border-bottom: 1px solid $grey150;
+  border-top: 1px solid $grey150;
+  text-align: center;
+
+  .footerBtn {
+    .footerBtnSpan,
+    .removeBtn {
+      color: $black900;
+      font-size: $fontSizeMinus1;
+      font-weight: $fontWeightBold;
+    }
+
+    .removeBtn {
+      @extend %icomoonRemove;
+      align-items: center;
+      display: flex;
+      font-size: $fontSizePlus35;
+      justify-content: center;
+    }
+  }
+}
+
+.itemButtonWrapper {
+  @include spacing('z', 'x', true, 'b');
+  align-items: center;
+  border-right: 1px solid $textColorLight;
+  display: flex;
+  justify-content: center;
+
+  &:last-child {
+    border-right: none;
+  }
+}
+
+.caretRight {
+  color: $greyMedium;
+  font-size: $fontSizePlus35;
+  margin-left: auto;
+
+  &::before {
+    @extend %icomoonChevronRight;
+  }
+}
+
+.convenienceContainer {
+  flex-basis: 100%;
+}

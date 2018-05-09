@@ -1,0 +1,33 @@
+@import '~theme/base/spa';
+@import '~theme/base/images';
+
+.productImageWrap {
+  @include spacing('z', 'v', false);
+  display: flex;
+  flex-wrap: wrap;
+
+  .eachProductImage {
+    @include spacing('m', 'x', false, 'r');
+    flex-basis: 17.5%;
+    height: auto;
+    text-align: center;
+  }
+
+  .cartPoints {
+    @include cartSpacing('s', 'x', false, 't');
+    display: inline-block;
+    font-size: $fontSizeMinus2;
+    font-weight: $fontWeightBold;
+  }
+
+  .productImage {
+    // This is for a specific requirement where the image should be 16% of screen.
+    // Hence used `16vw`.
+    // In cases where `vw` does not work, used styles declared using media queries in `componentImage`.
+    // Hence used extend `componentImage` to give fallback width and height.
+    height: auto;
+    max-width: none;
+    width: 16vw;
+    @extend %componentImage%sq15xs1; // sass-lint:disable-line extends-before-declarations
+  }
+}

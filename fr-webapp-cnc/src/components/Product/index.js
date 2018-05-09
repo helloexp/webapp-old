@@ -1,0 +1,1 @@
+export ProductCertonaCarousel from './ProductCertonaCarousel';

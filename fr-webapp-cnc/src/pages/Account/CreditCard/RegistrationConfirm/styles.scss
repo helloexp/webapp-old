@@ -1,0 +1,9 @@
+@import '~theme/base/main';
+
+.registrationPanel {
+  @include spacing('l', 'x', false, 'b');
+}
+
+.addressContainer {
+  @include spacing('l', 'x', false, 'b');
+}

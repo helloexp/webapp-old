@@ -1,0 +1,16 @@
+@import '~theme/base/spa';
+@import '~theme/base/images';
+
+.carouselWrapper {
+  @extend %dropShadow;
+  @include spacing('l', 'x', true, 'b');
+  @include spacing('l', 'x', false, 'b');
+  @include spacing('m', 'x', true, 't');
+  background-color: $white;
+}
+
+.swipeContainer {
+  @extend %productImage%p80;
+  height: auto;
+  position: relative;
+}

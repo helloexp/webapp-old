@@ -1,0 +1,11 @@
+@import '~theme/base/variables';
+@import '~theme/base/spa';
+
+.iconStyle {
+  @include cartSpacing('xxs', 'x', false, 't');
+  display: block;
+  fill: $uniqloBlack001;
+  margin-left: auto;
+  margin-right: auto;
+  stroke: none;
+}

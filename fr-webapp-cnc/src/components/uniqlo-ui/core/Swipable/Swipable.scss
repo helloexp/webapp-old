@@ -1,0 +1,72 @@
+@import '~theme/base/main';
+
+.swipableWrapper {
+  overflow: hidden;
+}
+
+.swipable {
+  flex-flow: column nowrap;
+  position: relative;
+
+  .swipeMain {
+    display: flex;
+    flex-flow: row nowrap;
+    height: auto;
+    transition-timing-function: ease-in-out;
+
+    &.animated {
+      transition-property: all;
+    }
+
+    &.notAnimated {
+      transition-property: none;
+    }
+  }
+
+  .swipeItem {
+    @extend %mediumRightPadding;
+    flex-shrink: 0;
+
+    &:last-of-type {
+      margin-right: 0;
+      padding-right: 0;
+    }
+  }
+
+  .bulletWrapper {
+    @include spacing('m', 'x', false, 't');
+    background-color: $white;
+    line-height: 0;
+    text-align: center;
+
+    .wrapper {
+      cursor: pointer;
+      display: inline-block;
+      min-height: 6px;
+      min-width: 6px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+
+      &.empty {
+        background-color: $grey500;
+        border-radius: 3px;
+        margin-left: 3px;
+        margin-right: 3px;
+      }
+
+      &.highlightBasic {
+        border: 1px outset;
+      }
+
+      &.highlightEmpty {
+        background-color: $grey900;
+      }
+
+      > * {
+        height: 100%;
+        width: 100%;
+      }
+    }
+  }
+}

@@ -1,0 +1,12 @@
+@import '~theme/base/spa';
+
+.deliveryOptions {
+  font-weight: $fontWeightNormal;
+
+  .selectMethod {
+    @include spacing('l', 'x', false, 'b');
+    @include spacing('z', 'a', true);
+    font-size: $header4FontSize;
+    font-weight: $fontWeightHeavy;
+ }
+}

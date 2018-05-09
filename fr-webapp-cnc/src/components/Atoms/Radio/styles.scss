@@ -1,0 +1,26 @@
+@import '~theme/base/spa';
+
+.label {
+  @extend %icomoonRadio;
+  color: $gray67;
+  display: flex;
+  font-size: $fontSizePlus4;
+
+  &::before {
+    font-size: inherit;
+  }
+
+  &.checked {
+    @extend %icomoonRadioSelected;
+    color: $black900;
+  }
+
+  &.disabled {
+    color: $grey150;
+    opacity: .5;
+  }
+}
+
+.input {
+  display: none;
+}

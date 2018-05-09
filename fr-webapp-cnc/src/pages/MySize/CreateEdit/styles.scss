@@ -1,0 +1,47 @@
+@import '~theme/base/spa';
+
+.container {
+  @extend %mediumHzSpacing;
+  @extend %largeTopPadding;
+}
+
+.tile {
+  @extend %largeVtSpacingP;
+  @extend %mediumHzSpacingP;
+  @extend %largeBottomMargin;
+  background-color: $white;
+  box-shadow: 0 1px 2px 0 $lightShade;
+}
+
+.nudeSizeLink {
+  @extend %baseB;
+  @extend %largeBottomMargin;
+  color: $black900;
+  display: block;
+  text-decoration: underline;
+}
+
+.smallPlusMediumBottomMargin {
+  @extend %smallPlusMediumBottomMargin;
+}
+
+.largeBottomMargin {
+  @extend %largeBottomMargin;
+}
+
+.mySizeInfoToolTip {
+  @include spacing('m', 'x', false, 'b');
+}
+
+.mySizeInfoLink {
+  @extend %baseB;
+  @include spacing('m', 'x', false, 'b');
+  color: $black900;
+  display: block;
+  text-decoration: underline;
+}
+
+.mySizeInfoNoteList {
+  margin: 0;
+  padding-left: 20px;
+}

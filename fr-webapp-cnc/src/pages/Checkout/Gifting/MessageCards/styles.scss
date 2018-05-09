@@ -1,0 +1,11 @@
+@import '~theme/base/main';
+
+.cardTitle {
+  @include spacing('s+m', 'x', false, 'b');
+  @include spacing('l', 'x', true, 't');
+  border-top: 1px solid $grey150;
+}
+
+.noMessageCard {
+  @include spacing('s', 'x', false, 't');
+}

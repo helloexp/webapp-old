@@ -1,0 +1,298 @@
+@import '~theme/base/main';
+
+.tab {
+  font-family: $fontFamilyUniqloRegular;
+  position: relative;
+  width: 100%;
+  word-wrap: break-word;
+
+  %aCommon {
+    color: $uniqloGrey001;
+    display: block;
+  }
+
+  .filterLabel {
+    @extend %baseUCMinus3;
+    @extend %filterLabel;
+    background-color: $black;
+    border-radius: 8px;
+    color: $white;
+    letter-spacing: 0;
+    line-height: 19px;
+    margin-left: 5px;
+    position: absolute;
+    top: 17px;
+  }
+
+  &.genderTab {
+    a {
+      @extend %aCommon;
+      color: $white;
+      height: 64px;
+      line-height: 64px;
+      text-decoration: none;
+    }
+
+    span {
+      @extend %baseCMinus1;
+      letter-spacing: 0;
+    }
+
+    .first {
+      border-left: none;
+    }
+
+    .active {
+      .borderGenderClass {
+        border-bottom: 2px solid $white;
+        padding-bottom: 8px;
+      }
+    }
+
+    .noActive {
+      & span {
+        border-bottom: none;
+      }
+    }
+
+    .defaultBackground {
+      background-color: $white;
+      color: $black;
+    }
+  }
+
+  .red {
+    background-color: $red100;
+  }
+
+  .navyBlue {
+    background-color: $navyBlue;
+  }
+
+  .blue {
+    background-color: $blue500;
+  }
+
+  .pink {
+    background-color: $pink100;
+  }
+
+  .lightblue {
+    background-color: $blue100;
+  }
+
+  .green {
+    background-color: $neonGreen;
+  }
+
+  &.childVariation {
+    a {
+      @extend %aCommon;
+      @extend %baseAMinus2;
+      align-items: center;
+      border: 1px solid $grey150;
+      border-left: none;
+      box-sizing: border-box;
+      color: $white;
+      display: flex;
+      font-weight: $fontWeightNormal;
+      height: 64px;
+      line-height: 1.5em;
+      padding: 0 10px;
+      text-decoration: none;
+    }
+
+    span {
+      @extend %baseAMinus2;
+      @extend %baseD;
+      font-weight: $fontWeightBold;
+      letter-spacing: 0;
+    }
+
+    .active {
+      border-bottom: none;
+
+      &.defaultBackground {
+        background-color: $white;
+        color: $uniqloBlack001;
+      }
+
+      .borderBlackClass {
+        border-bottom: 2px solid $uniqloBlack001;
+      }
+
+      .borderGenderClass {
+        border-bottom: 2px solid $blueGreen;
+      }
+
+      .borderBlackClass,
+      .borderGenderClass {
+        @include spacing('vs', 'v', true);
+      }
+    }
+
+    .defaultBackground {
+      background-color: $grey250;
+      color: $uniqloGrey001;
+    }
+  }
+
+  &.containerBordered {
+    a {
+      @extend %aCommon;
+      @extend %baseBMinus2;
+      @include spacing('s', 'h', true);
+      align-items: center;
+      background-color: $grey250;
+      border: 1px solid $grey150;
+      border-right: none;
+      box-sizing: border-box;
+      color: $uniqloGrey001;
+      display: flex;
+      height: 64px;
+      justify-content: center;
+      text-decoration: none;
+    }
+
+    .first {
+      border-left: none;
+    }
+
+    .active {
+      background-color: $white;
+      border-bottom: none;
+      color: $uniqloBlack001;
+
+      span {
+        border-bottom: 2px solid $uniqloBlack001;
+      }
+
+      .borderGenderClass {
+        font-weight: $fontWeightHeavy;
+        position: relative;
+
+        &::after {
+          background-color: $lightGreen1000;
+          bottom: 0;
+          content: '';
+          height: 2px;
+          position: absolute;
+          right: 0;
+          width: 100%;
+        }
+      }
+    }
+
+    span {
+      @extend %baseBMinus2;
+      display: block;
+      padding-bottom: 8px;
+      padding-top: 8px;
+    }
+  }
+
+  &.containerBorderless {
+    a {
+      @extend %aCommon;
+      @extend %baseBMinus2;
+      @include spacing('s', 'h', true);
+      align-items: center;
+      background-color: $white;
+      border-bottom: 1px solid $grey150;
+      box-sizing: border-box;
+      color: $gray500;
+      display: flex;
+      height: 66px;
+      justify-content: center;
+      margin-bottom: 5px;
+      position: relative;
+      text-decoration: none;
+
+      &.active {
+        &::after {
+          border-bottom-width: 4px;
+          border-color: $lightGreen1000;
+          border-style: solid;
+          bottom: 0;
+          content: '';
+          left: 0;
+          position: absolute;
+          right: 0;
+          width: 100%;
+        }
+      }
+    }
+
+    .active {
+      border-bottom: none;
+      color: $uniqloBlack001;
+    }
+  }
+
+  &.accountLink {
+    a {
+      @extend %aCommon;
+      @extend %baseBMinus2;
+      @include spacing('s', 'h', true);
+      align-items: center;
+      background-color: $white;
+      box-sizing: border-box;
+      display: flex;
+      justify-content: center;
+      text-decoration: none;
+
+      &.active {
+        border-bottom: 4px solid $lightGreen1000;
+      }
+    }
+
+    .active {
+      border-bottom: none;
+    }
+  }
+
+  &.filterTab {
+    @include spacing('m', 'x', true, 't');
+    border-bottom: 1px solid $grey150;
+    box-shadow: 0 5px 5px -5px $black;
+
+    a {
+      @extend %aCommon;
+      @extend %baseAPlus3;
+      align-items: center;
+      color: $gray500;
+      display: flex;
+      flex-flow: column;
+      justify-content: center;
+      position: relative;
+      text-decoration: none;
+
+      &::before {
+        font-size: 22px;
+      }
+
+      div {
+        @extend %baseBMinus3;
+        @include spacing('s', 'x', true, 'b');
+        line-height: 16px;
+      }
+    }
+
+    .active {
+      border-bottom: none;
+      color: $lightGreen1000;
+
+      span {
+        &::after {
+          border: none solid $lightGreen1000;
+          border-bottom-width: 4px;
+          bottom: 0;
+          content: '';
+          left: 0;
+          position: absolute;
+          width: 100%;
+        }
+      }
+    }
+  }
+}

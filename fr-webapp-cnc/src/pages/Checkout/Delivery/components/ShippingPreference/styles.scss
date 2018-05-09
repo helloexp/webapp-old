@@ -1,0 +1,73 @@
+@import '~theme/base/spa';
+
+.shippingPreferenceDescription {
+  color: $gray500;
+
+  &.dot,
+  &.bullet {
+    @include spacing('m', 'x', true, 'l');
+    position: relative;
+
+    &::before {
+      left: 0;
+      position: absolute;
+      top: 0;
+    }
+  }
+
+  &.dot {
+    &::before {
+      content: '・';
+    }
+  }
+
+  &.bullet {
+    &::before {
+      content: '※';
+    }
+  }
+}
+
+.shippingDescription {
+  @include spacing('m', 'x', true, 'b');
+}
+
+.productProperties {
+  @extend %baseBMinus1;
+  @include spacing('z', 'x', false, 't');
+  @include cartSpacing('xxs', 'x', false, 'b');
+  display: block;
+  font-weight: $fontWeightLight;
+  line-height: 1.5em;
+}
+
+.productTitle {
+  @include spacing('s', 'x', false, 'b');
+  color: $uniqloBlack001;
+  display: block;
+  font-weight: $fontWeightBold;
+}
+
+.shipmentTitleStyle {
+  @include cartSpacing('s', 'x', false, 'b');
+  font-weight: $fontWeightBold;
+}
+
+.topSpacing {
+  @include cartSpacing('s', 'x', false, 't');
+}
+
+.largeTopSpacing {
+  @include cartSpacing('xl', 'x', false, 't');
+}
+
+.labelStyle {
+  @include cartSpacing('l', 'x', false, 't');
+  align-items: flex-start;
+  display: flex;
+  font-weight: $fontWeightHeavy;
+}
+
+.productTile {
+  @include cartSpacing('l', 'x', false, 'b');
+}

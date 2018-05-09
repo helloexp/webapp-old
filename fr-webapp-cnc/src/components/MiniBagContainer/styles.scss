@@ -1,0 +1,57 @@
+@import '~theme/base/spa';
+
+.wrapper {
+  align-items: center;
+  display: flex;
+  flex: 1;
+  height: $headerHeight;
+  justify-content: flex-end;
+  position: relative;
+  text-align: right;
+  vertical-align: middle;
+}
+
+.price {
+  @include spacing('s', 'x', true, 'r');
+  @include spacing('xs', 'x', false, 'b');
+  color: $gray67;
+  font-size: $textAreaFocusOuterFont;
+}
+
+.priceIconWrap {
+  @include spacing('s', 'x', true, 'r');
+  @include cartSpacing('xxs', 'x', true, 't');
+  align-items: baseline;
+  display: flex;
+  justify-content: flex-end;
+  line-height: 1;
+}
+
+.cartIcon {
+  @extend %iconCart;
+  font-size: $header2FontSize;
+  line-height: 1;
+
+  &::before {
+    @include spacing('xs', 'x', false, 'r');
+    color: $black;
+  }
+}
+
+.totalPrice {
+  font-family: $fontFamilyUniqloRegular;
+  font-size: $header1FontSize;
+  font-weight: $fontWeightHeavy;
+  line-height: 1;
+  text-align: right;
+}
+
+.miniBagCaret {
+  @media screen and (max-width: 320px) {
+    @include spacing('xs', 'a', true);
+  }
+
+  @include spacing('s', 'a', true);
+  color: $gray67;
+  font-size: $upArrowSize;
+}

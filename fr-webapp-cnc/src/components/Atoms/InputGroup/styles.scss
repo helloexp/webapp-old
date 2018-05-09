@@ -1,0 +1,16 @@
+@import '~theme/base/spa';
+
+.inputGroup {
+  align-items: flex-end;
+  display: flex;
+
+  > div {
+    @include spacing('m', 'x', false, 'l');
+    flex-basis: 100%;
+    flex-grow: 1;
+
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+}

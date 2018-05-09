@@ -1,0 +1,68 @@
+@import '~theme/base/spa';
+
+.definition {
+  display: flex;
+}
+
+.definitionTerm {
+  color: $black900;
+
+  &::after {
+    color: currentColor;
+    content: ':';
+    margin: 0 5px;
+  }
+}
+
+.definitionData {
+  margin: 0;
+}
+
+.footer {
+  @include spacing('xs', 'v', true);
+  border-bottom: 1px solid $grey150;
+  border-top: 1px solid $grey150;
+  text-align: center;
+}
+
+.footerItem {
+  @include spacing('z', 'x', true, 'b');
+  border-right: 1px solid $grey150;
+  height: 20px;
+
+  &.noBorder {
+    border-right: none;
+  }
+}
+
+.editContainer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.deleteButton {
+  @extend %icomoonRemove;
+  align-items: center;
+  background-color: transparent;
+  border: none;
+  display: flex;
+  font-size: $fontSizePlus4;
+  justify-content: center;
+  padding: 0;
+
+  &::before {
+    margin: 0 auto;
+  }
+}
+
+.editButton {
+  text-decoration: none;
+}
+
+.nudeSizeLink {
+  @extend %baseB;
+  @extend %largeBottomMargin;
+  color: $black900;
+  display: block;
+  text-decoration: underline;
+}

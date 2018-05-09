@@ -1,0 +1,19 @@
+@import '~theme/base/spa';
+
+.filmstrip {
+  width: 100%;
+}
+
+.heading {
+  @extend %baseBPlus3;
+  @include spacing('m', 'h');
+  @include spacing('l', 'x', true, 'b');
+  @include spacing('m+l', 'x', true, 't');
+  color: $black900;
+  font-size: 17px;
+}
+
+.smallSpacingHeading {
+  @include cartSpacing('l', 'x', true, 'b');
+  @include cartSpacing('xxl', 'x', true, 't');
+}

@@ -1,0 +1,9 @@
+@import '~theme/base/main';
+
+.navRight {
+  .arrowPolyline {
+    clip-rule: evenodd;
+    fill: $uniqloGrey002;
+    fill-rule: evenodd;
+  }
+}

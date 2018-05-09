@@ -1,0 +1,40 @@
+@import '~theme/base/main';
+
+.creditCardPanel,
+.creditCardDetails,
+.emptyMessage,
+.addButton {
+  @include spacing('l', 'x', false, 'b');
+}
+
+.addButton {
+  @extend %baseBPlus2;
+  background-color: $black;
+  color: $white;
+  font-weight: $fontWeightBold;
+  text-shadow: none;
+  text-transform: uppercase;
+}
+
+.editCreditCardContainer {
+  @include spacing('s', 'v', true);
+  border-bottom: 1px solid $grey150;
+  border-top: 1px solid $grey150;
+}
+
+.removeCreditCardCell {
+  border-left: 1px solid $uniqloGrey001;
+}
+
+.footerEdit {
+  @extend %baseBMinus1;
+}
+
+.footerDelete {
+  @extend %baseBMinus1;
+}
+
+.disclaimer {
+  @extend %baseA;
+  display: block;
+}

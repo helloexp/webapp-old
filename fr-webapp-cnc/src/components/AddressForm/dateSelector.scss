@@ -1,0 +1,36 @@
+@import '~theme/base/spa';
+
+.dateSelector {
+  @include spacing('m', 'x', true, 't');
+
+  .dateSelectorWrapper {
+    @include spacing('s', 'x', true, 't');
+
+    .yearSelector {
+      @extend %dataPicker;
+      width: 50%;
+    }
+
+    .monthSelector,
+    .daySelector {
+      @extend %dataPicker;
+      width: 20%;
+    }
+  }
+}
+
+
+.selects {
+  align-items: flex-end;
+  display: flex;
+  justify-content: space-between;
+}
+
+.year {
+  width: 50%;
+}
+
+.month,
+.day {
+  width: 20%;
+}

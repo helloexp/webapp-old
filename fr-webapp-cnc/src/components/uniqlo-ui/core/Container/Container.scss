@@ -1,0 +1,165 @@
+@import '~theme/base/main';
+@import '~theme/base/spa';
+
+.container {
+  &.z0 {
+    @include spacing('l', 'v', true);
+    box-shadow: none;
+  }
+
+  &.z1 {
+    @extend %dropShadow;
+    @include spacing('l', 'v', true);
+    background-color: $white;
+  }
+
+  &%z2,
+  &.z2 {
+    @include spacing('l', 'v', true);
+    @include spacing('l', 'h', true);
+    background-color: $white;
+    box-shadow: 0 1px 2px 0 $dropShadowBlack;
+  }
+
+  &.z3 {
+    @include spacing('m', 'h', true);
+  }
+
+  &%z4,
+  &.z4 {
+    @include spacing('m', 'h', true);
+    @include spacing('m', 'v', true);
+    background-color: $grey250;
+    border-bottom: 1px solid $grey400;
+  }
+
+  &.z5 {
+    align-items: center;
+    display: flex;
+    justify-content: space-around;
+  }
+
+  &.z6 {
+    align-items: center;
+    display: flex;
+  }
+
+  &.z7 {
+    @extend %zeroVtSpacingP;
+    @extend %zeroHzSpacing;
+    background-color: $white;
+  }
+
+  &.messageContainer {
+    @extend %z4;
+    @include spacing('s', 'v');
+    @include spacing('s', 'h');
+    background: $grey100;
+  }
+
+  &.miniBagToggle {
+    @include spacing('s+l', 'x', false, 'r');
+    color: $grey600;
+    display: inline-block;
+  }
+
+  &.logoWrap {
+    align-items: center;
+    display: flex;
+    justify-content: space-around;
+  }
+
+  &.selectedItemImage {
+    @extend %miniBagImg;
+    @include spacing('s', 'v');
+    @include spacing('s', 'h');
+    display: inline-block;
+    height: auto;
+    text-align: center;
+  }
+
+  &.miniBag {
+    @include spacing('s', 'v', true);
+    @include spacing('s', 'h', true);
+    height: 73vh;
+    margin: auto;
+    position: relative;
+    width: 85%;
+    z-index: 2;
+  }
+
+  &.topLine {
+    @include spacing('m', 'x', false, 't');
+    @include spacing('m', 'x', true, 't');
+    border-top: solid 1px $grey150;
+  }
+
+  &.item {
+    display: flex;
+  }
+
+  &.pickerContainer {
+    @include spacing('m', 'v', true);
+  }
+
+  &.tile {
+    @extend %z2;
+    @include spacing('m', 'v', false);
+  }
+
+  &.contentWrapper {
+    @include spacing('s+s', 'x', false, 't');
+    display: flex;
+    position: relative;
+  }
+
+  &.z8 {
+    @include spacing('s', 'x', false, 'b');
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &.imageWrapper {
+    @include spacing('s', 'x', false, 'l');
+    display: inline-flex;
+    height: 30px;
+  }
+
+  &.z9 {
+    @include spacing('m', 'h', false);
+    @include spacing('m', 'v', true);
+    border-bottom: 1px solid $grey400;
+  }
+
+  &.z10 {
+    @include spacing('m', 'x', true, 't');
+  }
+}
+
+.frame {
+  @include spacing('m', 'h', true);
+  @include spacing('s+m', 'v', true);
+  @include spacing('s', 'x', false, 'b');
+  background-color: $white;
+  box-shadow: 0 2px 4px $dropShadowBlack;
+}
+
+.groupContainer {
+  @include spacing('s', 'x', false, 'b');
+  background-color: $white;
+  box-shadow: 0 1px 2px 0 $dropShadowBlack;
+}
+
+.tile {
+  @include spacing('m', 'h');
+  @include spacing('s+m', 'v', true);
+}
+
+.groupContainer,
+.tile {
+  &::after {
+    clear: both;
+    content: '';
+    display: table;
+  }
+}

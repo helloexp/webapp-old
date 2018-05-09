@@ -1,0 +1,6 @@
+@import '~theme/base/spa';
+
+.addressContainer {
+  @include spacing('l', 'x', true, 'b');
+  @include spacing('l', 'x', false, 'b');
+}

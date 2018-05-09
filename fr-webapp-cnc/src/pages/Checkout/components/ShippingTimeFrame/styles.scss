@@ -1,0 +1,36 @@
+@import '~theme/base/spa';
+
+.mainContainer {
+  .panelStyle {
+    @include cartSpacing('l', 'v', true);
+    @include cartSpacing('s', 'x', false, 'b');
+
+    .headerStyle {
+      @include cartSpacing('s', 'x', false, 'b');
+
+      div > h6 {
+        font-weight: $fontWeightHeavy;
+      }
+    }
+  }
+}
+
+.splitHeading {
+  @include cartSpacing('s', 'x', true, 'b');
+}
+
+.timeFrameContainer {
+  &.timeFrameWrap {
+    @include spacing('z', 'x', true, 't');
+    color: $black900;
+    padding-bottom: 0;
+  }
+}
+
+.container {
+  @include cartSpacing('xl', 'x', false, 'b');
+
+  &.noBottomSpacing {
+    @include spacing('z', 'x', false, 'b');
+  }
+}

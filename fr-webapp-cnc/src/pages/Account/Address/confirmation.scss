@@ -1,0 +1,53 @@
+@import '~theme/base/spa';
+
+.confirmation {
+  .fieldsContainer {
+    border-bottom: 2px solid $greyLight;
+  }
+
+  .confirmButton {
+    @include spacing('l', 'x', false, 't');
+  }
+
+  .fieldHeader {
+    @include spacing('z', 'v', true);
+    font-size: $header1FontSize;
+  }
+
+  %fieldLabel,
+  .fieldLabel {
+    @include spacing('s', 'x', false, 'b');
+    display: block;
+    font-size: $header3FontSize;
+    text-align: left;
+    text-transform: none;
+  }
+
+  .newsLetterView {
+    .newsLetterHead {
+      @include spacing('s+s', 'x', true, 't');
+      @include spacing('xs', 'x', true, 'b');
+      font-size: $header1FontSize;
+    }
+  }
+
+  .newsLetterField {
+    @extend %fieldLabel;
+    color: $black;
+    font-size: $header6FontSize;
+
+    &:first-child {
+      @include spacing('z', 'x', false, 'b');
+    }
+  }
+
+  .labelClass {
+    @extend %baseA;
+    color: $black900;
+  }
+
+  .buttonLabel {
+    font-size: $fontSizePlus2;
+  }
+
+}

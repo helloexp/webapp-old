@@ -1,0 +1,50 @@
+@import '~theme/base/spa';
+
+.storeHeaderWrapper {
+  @include spacing('m', 'h', true);
+  @include spacing('l', 'x', true, 't');
+  background-color: $white;
+}
+
+.onlineNumberSpacing {
+  @extend %baseBPlus1;
+  @include spacing('m', 'x', false, 'b');
+  display: inline-block;
+}
+
+.detailsValues {
+  @extend %baseA;
+  display: block;
+}
+
+.barcodeWrapper {
+  @include spacing('s', 'x', false, 't');
+  @include spacing('z', 'x', false, 'b');
+}
+
+.barCodeImg {
+  margin: 0 auto;
+  width: 67.5%;
+}
+
+.barcodeInfo {
+  @extend %baseUA;
+  @include spacing('s', 'x', false, 't');
+  display: block;
+  text-align: center;
+}
+
+.dateHeading {
+  @include spacing('m', 'x', false, 'b');
+  color: $red;
+  display: block;
+  font-size: $fontSizePlus1;
+  font-weight: $fontWeightHeavy;
+}
+
+.payAtStoreTitle {
+  @extend %baseFont;
+  @include spacing('m', 'x', false, 'b');
+  display: block;
+  font-weight: $fontWeightNormal;
+ }

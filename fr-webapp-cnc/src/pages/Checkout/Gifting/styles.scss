@@ -1,0 +1,58 @@
+@import '~theme/base/spa';
+
+.giftContent {
+  @include spacing('l', 'h', true);
+  @include spacing('m', 'x', true, 'b');
+  flex: 1 1 0;
+  overflow: auto;
+}
+
+.giftPerOrder {
+  @extend %baseA;
+  @include spacing('z', 'v', false);
+  @include spacing('l', 'x', true, 'b');
+}
+
+.giftSubHeading {
+  @extend %baseBPlus1;
+  @include spacing('s+m', 'x', false, 'b');
+  color: $uniqloBlack001;
+}
+
+.giftSelectord {
+  font-weight: $fontWeightNormal;
+}
+
+.wrapConfirmMessage {
+  @extend %baseA;
+  @include spacing('l', 'v', true);
+  @include spacing('m', 'h', true);
+  box-shadow: 0 0 4px 0 $dropShadowlightBlack;
+  color: $black;
+  margin-bottom: $drawerFooterHeight;
+}
+
+.noGiftBox {
+  @include spacing('s', 'x', false, 't');
+  @include spacing('m', 'x', true, 'b');
+}
+
+.giftWarning {
+  @extend %baseA;
+  @include spacing('z', 'v', false);
+  @include spacing('m', 'x', true, 'b');
+  color: $black;
+}
+
+.drawerBody {
+  align-items: stretch;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  height: 100%;
+  justify-content: space-between;
+}
+
+.giftSize {
+  @include spacing('z', 'v', false);
+}

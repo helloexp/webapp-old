@@ -1,0 +1,248 @@
+@charset "UTF-8";
+
+$bps: (
+  'smallDevice': 320px, // from small to medium - theoretically everything below medium is small, but keep it systematic
+  //mediumDevice is not a necessity since we only have two breakpoints (small to medium and medium to large)
+  'largeDevice': 375px // from medium to large
+) !default;
+
+//can define more expressions for queries and checking attributes here
+//for identifying targets of specific styles
+$media-expressions: (
+  'screen': 'screen',
+  'print': 'print',
+  'handheld': 'handheld',
+  'landscape': '(orientation: landscape)',
+  'portrait': '(orientation: portrait)',
+  'retina2x': '(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)',
+  'retina3x': '(-webkit-min-device-pixel-ratio: 3), (min-resolution: 350dpi)'
+) !default;
+
+//intervals with which the checks are made for making sure a
+//breakpoint is hit, <129 for pixels will translate to max-width: 128
+$unit-intervals: (
+  'px': 1,
+  'em': 0.01,
+  'rem': 0.1
+) !default;
+
+@function noop() {
+}
+
+@function log($message) {
+  @if feature-exists('at-error') {
+    @error $message;
+  } @else {
+    @warn $message;
+    $_: noop();
+  }
+
+  @return $message;
+}
+
+@mixin log($message) {
+  @if log($message) {
+  }
+}
+
+//combine value and unit, $value expressed in $unit
+@function to-length($value, $unit) {
+  $units: ('px': 1px, 'cm': 1cm, 'mm': 1mm, '%': 1%, 'ch': 1ch, 'pc': 1pc, 'in': 1in, 'em': 1em, 'rem': 1rem, 'pt': 1pt, 'ex': 1ex, 'vw': 1vw, 'vh': 1vh, 'vmin': 1vmin, 'vmax': 1vmax);
+
+  @if not index(map-keys($units), $unit) {
+    $_: log('Invalid unit `#{$unit}`.');
+  }
+
+  @return $value * map-get($units, $unit);
+}
+
+//string to number
+@function to-number($value) {
+  @if type-of($value) == 'number' {
+    @return $value;
+  } @else if type-of($value) != 'string' {
+    $_: log('Value for `to-number` should be a number or a string.');
+  }
+
+  $result: 0;
+  $digits: 0;
+  $minus: str-slice($value, 1, 1) == '-';
+  $numbers: ('0': 0, '1': 1, '2': 2, '3': 3, '4': 4, '5': 5, '6': 6, '7': 7, '8': 8, '9': 9);
+
+  @for $i from if($minus, 2, 1) through str-length($value) {
+    $character: str-slice($value, $i, $i);
+
+    @if not (index(map-keys($numbers), $character) or $character == '.') {
+      @return to-length(if($minus, -$result, $result), str-slice($value, $i))
+    }
+
+    @if $character == '.' {
+      $digits: 1;
+    } @else if $digits == 0 {
+      $result: $result * 10 + map-get($numbers, $character);
+    } @else {
+      $digits: $digits * 10;
+      $result: $result + map-get($numbers, $character) / $digits;
+    }
+  }
+
+  @return if($minus, -$result, $result);
+}
+
+//return operator from expression
+@function get-expression-operator($expression) {
+  @each $operator in ('>=', '>', '<=', '<', '≥', '≤') {
+    @if str-index($expression, $operator) {
+      @return $operator;
+    }
+  }
+  //hack to be able to log, mixins not allowed inside functions
+  $_: log('No operator found in `#{$expression}`.');
+}
+
+//get dimension from expression - width, height etc.
+@function get-expression-dimension($expression, $operator) {
+  $operator-index: str-index($expression, $operator);
+  $parsed-dimension: str-slice($expression, 0, $operator-index - 1);
+  $dimension: 'width';
+
+  @if str-length($parsed-dimension) > 0 {
+    $dimension: $parsed-dimension;
+  }
+
+  @return $dimension;
+}
+
+//get dimension-prefix for expression, min, max
+@function get-expression-prefix($operator) {
+  @return if(index(('<', '<=', '≤'), $operator), 'max', 'min');
+}
+
+//returns the value from the expression, numeric
+@function get-expression-value($expression, $operator) {
+  $operator-index: str-index($expression, $operator);
+  $value: str-slice($expression, $operator-index + str-length($operator));
+
+  @if map-has-key($bps, $value) {
+    $value: map-get($bps, $value);
+  } @else {
+    $value: to-number($value);
+  }
+
+  $interval: map-get($unit-intervals, unit($value));
+
+  @if not $interval {
+    //log hack
+    $_: log('Unknown unit `#{unit($value)}`.');
+  }
+
+  @if $operator == '>' {
+    $value: $value + $interval;
+  } @else if $operator == '<' {
+    $value: $value - $interval;
+  }
+
+  @return $value;
+}
+
+//parse an expression to return a valid media query
+@function parse-expression($expression) {
+  // If it is part of $media-expressions, it has no operator
+  // then there is no need to go any further, just return the value
+  @if map-has-key($media-expressions, $expression) {
+    @return map-get($media-expressions, $expression);
+  }
+
+  $operator: get-expression-operator($expression);
+  $dimension: get-expression-dimension($expression, $operator);
+  $prefix: get-expression-prefix($operator);
+  $value: get-expression-value($expression, $operator);
+
+  @return '(#{$prefix}-#{$dimension}: #{$value})';
+}
+
+@function slice($list, $start: 1, $end: length($list)) {
+  @if length($list) < 1 or $start > $end {
+    @return ();
+  }
+
+  $result: ();
+
+  @for $i from $start through $end {
+    $result: append($result, nth($list, $i));
+  }
+
+  @return $result;
+}
+
+///
+///   Defining $tweakpoints, custom map will be merged with $bps
+///   Defining $tweak-media-expressions, custom map will be merged with $media-expressions
+///   Redefine configurations just for the scope of the call
+///
+///   @include media-context(('custom': 678px)) {
+///     .example {
+///       @include media('>phone', '<=custom') {
+///         // ...
+///       }
+///   }
+///
+///   @include media-context($tweak-media-expressions: ('all': 'all')) {
+///     .example {
+///       @include media('all', '>phone') {
+///         // ...
+///       }
+///   }
+///
+///   The two can be combined, extending both the list of expressions and breakpoints
+///
+@mixin media-context($tweakpoints: (), $tweak-media-expressions: ()) {
+  // Save global configuration
+  $global-breakpoints: $bps;
+  $global-media-expressions: $media-expressions;
+
+  // Update global configuration
+  $bps: map-merge($bps, $tweakpoints) !global;
+  $media-expressions: map-merge($media-expressions, $tweak-media-expressions) !global;
+
+  @content;
+
+  // Restore global configuration
+  $bps: $global-breakpoints !global;
+  $media-expressions: $global-media-expressions !global;
+}
+
+///
+///   Generate a media query based on conditions [Array]
+///   @include media('>phone') - single bp
+///   @include media('>phone', '<=tablet') - two bps
+///   @include media('>=320px', '<=450px') - custom values for two bps - tweakpoint
+///   @include media('phone', '<=460px') - custom values and set bp
+///   @include media('handheld') - static expression as defined in $media-expressions
+///   @include media('>=350px', '<tablet', 'retina3x') - all of em combined minus tweakpoint
+///
+@mixin media($conditions...) {
+  @if (length($conditions) == 0) {
+    @content;
+  } @else if (length($conditions) > 0) {
+    @media #{unquote(parse-expression(nth($conditions, 1)))} {
+      // Recursive call
+      @include media(slice($conditions, 2)...) {
+        @content;
+      }
+    }
+  }
+}
+
+$z-layers: (
+  "showHeader":          4,
+  "miniBag":             5,
+  "mainHeader":          6,
+  "tooltip":             7,
+  "messageBoxOverlay":   15,
+  "messageBox":          16,
+);
+
+@function z($layer) {
+  @return map-get($z-layers, $layer);
+}

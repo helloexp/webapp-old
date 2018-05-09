@@ -1,0 +1,51 @@
+@import '~theme/base/spa';
+
+.statusLinkContainer {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.uniqueStatusLabel {
+  @include spacing('s', 'x', true, 'r');
+}
+
+.fullWidthWrapper {
+  width: 100%;
+}
+
+.statusLink {
+  @extend %baseFont;
+  color: $black;
+  flex-basis: 100%;
+
+  &:last-child {
+    flex-basis: auto;
+  }
+}
+
+.statusFirstLink {
+  @extend %baseFont;
+  color: $black;
+}
+
+.linkWithUnderline {
+  div {
+    border-bottom: 1px solid $uniqloBlack001;
+  }
+}
+
+.barcodeLink {
+  div {
+    justify-content: flex-end;
+  }
+}
+
+.orderTile {
+  @extend %baseBPlus1;
+  @include spacing('s', 'x', false, 'b');
+}
+
+.plannedDateText {
+  @extend %baseA;
+  white-space: pre-line;
+}
